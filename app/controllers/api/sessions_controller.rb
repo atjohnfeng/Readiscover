@@ -14,7 +14,7 @@ def create
         if logout!
             return {}
         else
-            render json: status: 404
+            render {}
         end
     end
 
