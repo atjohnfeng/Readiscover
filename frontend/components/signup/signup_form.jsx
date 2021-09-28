@@ -26,6 +26,7 @@ class SignupForm extends React.Component {
     render() {
         return (
             <div>
+                <p>Signup &amp; Readiscover</p>
                 <form className="splash-sign-up-form"
                     onSubmit={this.handleSubmit}>
                     <label>Username: 

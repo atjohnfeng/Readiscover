@@ -13,11 +13,10 @@ def create
     def destroy
         if current_user
             logout!
-            render json: { message: 'You have successfully logged out.'}
-        else
-            render json: { error: 'Logout failed.'}, status: 404
+            # render json: { message: 'You have successfully logged out.'}
+        # else
+        #     render json: { error: 'Logout failed.'}, status: 404
         end
     end
 
 end
-# 
