@@ -1,13 +1,23 @@
-import { Route, withRouter } from "react-router";
+import React from 'react';
+import { connect } from 'react-redux';
+import { Route, withRouter, Redirect } from "react-router";
 
 const Auth = ({component: Component, path, loggedIn, exact}) => (
     <Route
         path={path}
         exact={exact}
         render={props =>
-            !loggedIn? <Component {...props} /> : <Redirect to="/" /> 
-        }
-    />
+            !loggedIn? <Component {...props} /> : <Redirect to="/home" /> 
+        } />
+);
+
+const Protected = ({component: Component, path, loggedIn, exact}) => (
+    <Route
+        path={path}
+        exact={exact}
+        render={props =>
+            loggedIn ? <Component {...props} /> : <Redirect to="/" />
+        } />
 );
 
 const mapStateToProps = state => {
@@ -16,4 +26,8 @@ const mapStateToProps = state => {
 
 export const AuthRoute = withRouter(
     connect(mapStateToProps)(Auth)
+);
+
+export const ProtRoute = withRouter(
+    connect(mapStateToProps)(Protected)
 );
