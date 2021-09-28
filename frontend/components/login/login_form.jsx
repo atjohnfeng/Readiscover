@@ -8,6 +8,15 @@ class LoginForm extends React.Component {
             password: ''
         }
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.loginDemoUser = this.loginDemoUser.bind(this);
+    }
+
+    loginDemoUser() {
+        const user = {
+            username: 'demo',
+            password: 'demolicious'
+        }
+        this.props.login(user);
     }
 
     handleSubmit(e) {
@@ -43,6 +52,7 @@ class LoginForm extends React.Component {
                             required />
                     </label>
                     <button>Sign in</button>
+                    <button className="demo-button" onClick={this.loginDemoUser}>Demo User</button>
                 </form>
             </div>
         )
