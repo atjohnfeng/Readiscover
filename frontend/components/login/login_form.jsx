@@ -79,6 +79,10 @@ class LoginForm extends React.Component {
             </div>
         )
     }
+
+    componentWillUnmount() {
+        this.props.reset();
+    }
 }
 
 export default LoginForm;

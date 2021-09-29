@@ -79,6 +79,10 @@ class SignupForm extends React.Component {
             </div>
         )
     }
+
+    componentWillUnmount() {
+        this.props.reset();
+    }
 }
 
 export default SignupForm;
