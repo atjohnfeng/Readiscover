@@ -6,7 +6,8 @@ class SignupForm extends React.Component {
         this.state = {
             username: '',
             email: '',
-            password: ''
+            password: '',
+            // errors: []
         }
         this.handleSubmit = this.handleSubmit.bind(this);
     }
@@ -48,6 +49,8 @@ class SignupForm extends React.Component {
                         <input type="password"
                         value={this.state.password}
                         onChange={this.update("password")}
+                        pattern=".{6,}" 
+                        title="Password must be six or more characters."
                         required/>
                     </label>
                     <button>Sign up</button>

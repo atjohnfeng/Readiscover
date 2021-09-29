@@ -15,6 +15,9 @@
  */
 
  * {
-     background-color: whitesmoke;
-     color: dimgray;
+     background-color: moccasin;
+ }
+
+ h1 {
+    color: saddlebrown;
  }
