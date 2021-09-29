@@ -32,30 +32,50 @@ class LoginForm extends React.Component {
         }
     }
 
+    renderErrors() {
+        return (
+            <ul>
+                {this.props.errors.map(error => <li>{error}</li>)}
+            </ul>
+        )
+    }
+
     render() {
         return (
-            <div className="form">
-                <h1>Sign in to Readiscover</h1>
-                <form className="splash-log-in-form"
-                    onSubmit={this.handleSubmit}>
-                    <label>Username:
-                        <input type="text"
-                            value={this.state.username}
-                            placeholder="Username"
-                            onChange={this.update("username")}
-                            required />
-                    </label>
-                    <label>
-                        Password:
-                        <input type="password"
-                            value={this.state.password}
-                            onChange={this.update("password")}
-                            required />
-                    </label>
-                    <button>Sign in</button>
-                </form>
-                <button className="demo-button" onClick={this.loginDemoUser}>Sign in with Demo User</button>
-                <p className="form-footer">Not a member? <Link to="/signup">Sign up</Link></p>
+            <div>
+                <div className="logo">
+                    <Link to="/">
+                        <img className="logo"
+                            src={window.logoURL}
+                            alt="readiscover-logo-image" />
+                    </Link>
+                </div>
+                <div className="form-container">
+                    <div className="form">
+                        <h1>Sign in to Readiscover</h1>
+                        <form className="splash-log-in-form"
+                            onSubmit={this.handleSubmit}>
+                            <label>Username:
+                                <input type="text"
+                                    value={this.state.username}
+                                    placeholder="Username"
+                                    onChange={this.update("username")}
+                                    required />
+                            </label>
+                            <label>
+                                Password:
+                                <input type="password"
+                                    value={this.state.password}
+                                    onChange={this.update("password")}
+                                    required />
+                            </label>
+                            <button>Sign in</button>
+                        </form>
+                        <button className="demo-button" onClick={this.loginDemoUser}>Sign in with Demo User</button>
+                        <p className="form-footer">Not a member? <Link to="/signup">Sign up</Link></p>
+                    </div>
+                    {this.renderErrors()}
+                </div>
             </div>
         )
     }
