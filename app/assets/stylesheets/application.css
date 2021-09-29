@@ -14,12 +14,3 @@
  *= require_self
  */
 
-footer {
-     background-image: url('footer-books.png');
-     background-repeat: repeat-x;
-     position: fixed;
-     bottom: 0;
-     height: 50px;
-     width: 100%;
-     margin-left: -10px;
- }
