@@ -55,7 +55,7 @@ class SignupForm extends React.Component {
                                     required/>
                             </label>
                             <label>E-mail Address: 
-                                <input type="text" 
+                                <input type="email" 
                                 value={this.state.email} 
                                 placeholder="you@yours.com"
                                 onChange={this.update("email")} 
