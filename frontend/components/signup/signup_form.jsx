@@ -27,7 +27,7 @@ class SignupForm extends React.Component {
     renderErrors() {
         return (
             <ul>
-                {this.props.errors.map(error => <li>{error}</li>)}
+                {this.props.errors.map((error, i) => <li key={`error{i}`}>{error}</li>)}
             </ul>
         )
     }
@@ -75,6 +75,8 @@ class SignupForm extends React.Component {
                         <p className="form-footer">Already a member? <Link to="/login">Sign in</Link></p>
                     </div>
                     {this.renderErrors()}
+                </div>
+                <div className="form-footer">
                 </div>
             </div>
         )

@@ -76,6 +76,8 @@ class LoginForm extends React.Component {
                     </div>
                     {this.renderErrors()}
                 </div>
+                {/* <div className="form-footer">
+                </div> */}
             </div>
         )
     }
