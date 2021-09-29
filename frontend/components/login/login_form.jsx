@@ -34,7 +34,7 @@ class LoginForm extends React.Component {
     render() {
         return (
             <div>
-                <p>Already a member? Log in.</p>
+                <label>Sign in to Readiscover</label>
                 <form className="splash-log-in-form"
                     onSubmit={this.handleSubmit}>
                     <label>Username:
@@ -52,8 +52,8 @@ class LoginForm extends React.Component {
                             required />
                     </label>
                     <button>Sign in</button>
-                    <button className="demo-button" onClick={this.loginDemoUser}>Demo User</button>
                 </form>
+                <button className="demo-button" onClick={this.loginDemoUser}>Sign in with Demo User</button>
             </div>
         )
     }
