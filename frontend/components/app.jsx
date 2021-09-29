@@ -11,7 +11,11 @@ const App = () => {
     return (
         <div>
             <header>
-                <h1>Readiscover</h1>
+                <Link to="/">
+                    <img className="logo"
+                        src={window.logoURL}
+                        alt="readiscover-logo-image" />
+                </Link>
                 <Switch>
                     <AuthRoute exact path="/" component={SplashContainer} />
                     <AuthRoute exact path="/signup" component={SignupContainer} />
