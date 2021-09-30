@@ -43,8 +43,9 @@
 }
 
 .nav-bar-icon {
-    border-radius: 16px;  
+    border-radius: 20px;  
     max-width: 25px;
+    margin-top: -2.5px;
 }
 
 .nav-image-link:hover {
@@ -64,6 +65,7 @@
 
 #dropdown {
     padding: 0px;
+    border-radius: 20px;
     border: none;
     margin-top: -1px;
 }
@@ -96,14 +98,12 @@
     background-color: white;
     margin-bottom: 15px;
     margin-left: -25px;
-    z-index: 1;
 }
 
 .search-bar {
     display: flex;
     width: 300px;
     margin-top: -5px;
-    z-index: 1;
 }
 
 .search-bar input {
