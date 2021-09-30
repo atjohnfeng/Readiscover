@@ -6,11 +6,15 @@
     <%= csp_meta_tag %>
     <script type="text/javascript">
       window.logoURL = "<%= image_url('readiscover-logo.png') %>"
-      window.githubLogo = "<%= image_url('tan-github-logo') %>"
-      window.linkedLogo = "<%= image_url('tan-linked-in') %>"
+      window.githubLogo = "<%= image_url('tan-github-logo.png') %>"
+      window.linkedLogo = "<%= image_url('tan-linked-in.png') %>"
       window.navProfileDefault = "<%= image_url('default-nav-profile.png') %>"
       window.defaultProfilePic = "<%= image_url('default-profile-pic.png') %>"
     </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>

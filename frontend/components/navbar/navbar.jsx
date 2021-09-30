@@ -52,8 +52,8 @@ class Navbar extends React.Component {
                                 className="nav-bar-icon" />
                         </button>
                         <ul className="dropdown-content">
-                            <li>
-                                {this.props.currentUser.username}
+                            <li className="welcome-greeting">
+                                Welcome {this.props.currentUser.username}!
                             </li>
                             <li>
                                 <button onClick={this.props.logout}
