@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import NavbarContainer from '../navbar/navbar_container';
 
 class Home extends React.Component {
     
@@ -9,17 +10,10 @@ class Home extends React.Component {
 
     render() {
         return (
-            <div>
-                <div>
-                    <div className="logo">
-                        <Link to="/">
-                            <img className="logo"
-                                src={window.logoURL}
-                                alt="readiscover-logo-image" />
-                        </Link>
-                    </div>
+            <div className="home">
+                <div className="nav-bar-container">
+                    <NavbarContainer />
                 </div>
-                <button onClick={this.props.logout}>Sign Out</button>
             </div>
         )
     }
