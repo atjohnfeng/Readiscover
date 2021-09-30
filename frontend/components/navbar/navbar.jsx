@@ -26,26 +26,30 @@ class Navbar extends React.Component {
                     <li className="nav-bar-link">
                         <Link to='/mybooks' className="nav-link">My Books</Link>
                     </li>
-                    <li>
+                    <li className="search-bar">
                         <input type="text" placeholder="Search books" />
                     </li>
                     <li className="nav-image-link">
                         <a href="https://github.com/atjohnfeng/Readiscover"
                             target="_blank ">
                             <img src={window.githubLogo}
-                                alt="github-logo-link" />
+                                alt="github-logo-link"
+                                className="nav-bar-icon" />
                         </a>
                     </li>
                     <li className="nav-image-link">
                         <a href="https://www.linkedin.com/in/john-feng-316220215/"
                             target="_blank">
                             <img src={window.linkedLogo}
-                                alt="linkedin-logo-link" />
+                                alt="linkedin-logo-link" 
+                                className="nav-bar-icon" />
                         </a>
                     </li>
                     <li className="nav-image-link">
                         <Link to="/home">
-                            Profile Image
+                            <img src={window.navProfileDefault}
+                                alt="profile-default-nav" 
+                                className="nav-bar-icon" />
                         </Link>
                     </li>
                     <li className="logout">
