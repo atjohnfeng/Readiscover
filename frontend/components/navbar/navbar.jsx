@@ -45,15 +45,21 @@ class Navbar extends React.Component {
                                 className="nav-bar-icon" />
                         </a>
                     </li>
-                    <li className="nav-image-link">
-                        <Link to="/home">
+                    <li className="dropdown">
+                        <button id="dropdown">
                             <img src={window.navProfileDefault}
                                 alt="profile-default-nav" 
                                 className="nav-bar-icon" />
-                        </Link>
-                    </li>
-                    <li className="logout">
-                        <button onClick={this.props.logout}>Sign Out</button>
+                        </button>
+                        <ul className="dropdown-content">
+                            <li>
+                                {this.props.currentUser.username}
+                            </li>
+                            <li>
+                                <button onClick={this.props.logout}
+                                    className="logout-button">Sign Out</button>
+                            </li>
+                        </ul>
                     </li>
                 </ul>
             </div>
