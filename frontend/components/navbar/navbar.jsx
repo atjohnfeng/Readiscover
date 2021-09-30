@@ -18,19 +18,21 @@ class Navbar extends React.Component {
                         </Link>
                     </li>
                     <li className="nav-bar-link">
-                        <Link to='/home'>Home</Link>
+                        <Link to='/home' className="nav-link">Home</Link>
                     </li>
                     <li className="nav-bar-link">
-                        <Link to='/mybooks'>My Books</Link>
+                        <Link to='/mybooks' className="nav-link">My Books</Link>
                     </li>
                     <li className="nav-image-link">
                         <a href="https://github.com/atjohnfeng/Readiscover">
-                            Github
+                            <img src={window.githubLogo}
+                                alt="github-logo-link" />
                         </a>
                     </li>
                     <li className="nav-image-link">
                         <a href="https://www.linkedin.com/in/john-feng-316220215/">
-                            LinkedIn
+                            <img src={window.linkedLogo}
+                                alt="linkedin-logo-link" />
                         </a>
                     </li>
                     <li className="nav-image-link">

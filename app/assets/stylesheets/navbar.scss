@@ -1,0 +1,34 @@
+.nav-bar {
+    display: absolute;
+    top: 0;
+    margin-top: -15px;
+    height: 50px;
+    background-color: #F4F1EA;
+}
+
+.nav-bar-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    list-style: none;
+}
+
+.nav-bar-list li {
+    padding-right: 15px;
+    // margin: 0 auto;
+}
+
+.nav-image-link img {
+    max-width: 25px;
+}
+
+.nav-bar-logo img{
+    width: 100%;
+    height: 80px;
+    overflow: hidden;
+    margin: -20%;
+}
+
+.nav-link {
+    color: brown
+}
