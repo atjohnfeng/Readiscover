@@ -3,7 +3,7 @@
     align-items: center;
     flex-direction: column;
     width: 100%;
-    margin-top: -100px;
+    margin-top: -60px;
 }
 
 .form {
@@ -23,11 +23,6 @@ form {
     align-items: left;
 }
 
-label {
-    display: block;
-    padding: 10px;
-}
-
 button {
     padding: 5px;
     margin: 2px;
@@ -36,19 +31,19 @@ button {
 } 
 
 .logo {
-     max-height: 100px;
+     max-height: 75px;
      max-width: auto;
+     overflow: hidden;
  }
 
-/* .form-footer {
-     background-image: url('footer-books.png');
-     background-repeat: repeat-x;
-     position: fixed;
-     bottom: 0;
-     height: 50px;
-     width: 100%;
-     margin-left: -10px;
- } */
+// .form-footer {
+//      background-image: url('footer-books.png');
+//      background-repeat: repeat-x;
+//      position: fixed;
+//      bottom: 0;
+//      height: 50px;
+//      width: 100%;
+//  } 
 
 body {
     background-image: image-url('form-background.jpeg');
@@ -61,6 +56,5 @@ footer {
      bottom: 0;
      height: 50px;
      width: 100%;
-     margin-left: -10px;
  }
     
