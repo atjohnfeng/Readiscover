@@ -23,6 +23,9 @@ class Navbar extends React.Component {
                     <li className="nav-bar-link">
                         <Link to='/mybooks' className="nav-link">My Books</Link>
                     </li>
+                    <li>
+                        <input type="text" placeholder="Search books" />
+                    </li>
                     <li className="nav-image-link">
                         <a href="https://github.com/atjohnfeng/Readiscover"
                             target="_blank ">
