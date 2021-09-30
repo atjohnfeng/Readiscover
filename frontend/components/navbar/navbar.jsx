@@ -28,6 +28,9 @@ class Navbar extends React.Component {
                     </li>
                     <li className="search-bar">
                         <input type="text" placeholder="Search books" />
+                        <button type="submit" className="search-icon">
+                            <i class="fa fa-search"></i>
+                        </button>
                     </li>
                     <li className="nav-image-link">
                         <a href="https://github.com/atjohnfeng/Readiscover"

@@ -14,10 +14,6 @@
     list-style: none;
 }
 
-.nav-bar-list li {
-    padding-right: 15px;
-}
-
 .nav-bar-logo img{
     width: 100%;
     height: 80px;
@@ -89,4 +85,30 @@
     font-size: 16px;
     color: #382110;
     padding: 5px;
+}
+
+.search-icon {
+    color: tan;
+}
+
+.search-bar {
+    width: 300px;
+}
+
+.search-bar input {
+    width: 100%;
+    height: 23px;
+    font-family: "Lato", "Helvetica Neue", Helvetica, sans-serif;
+}
+
+.search-bar button {
+    position: absolute;
+    top: 15px;
+    right: 631px;
+    border: none;
+    background-color: white;
+}
+
+.search-bar button:hover {
+    cursor: pointer;
 }
