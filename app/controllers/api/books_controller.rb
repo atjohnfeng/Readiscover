@@ -5,4 +5,9 @@ class Api::BooksController < ApplicationController
         render :show
     end
 
+    def index
+        @books = Book.all
+        render :index
+    end
+
 end
