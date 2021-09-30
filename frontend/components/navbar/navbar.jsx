@@ -24,10 +24,14 @@ class Navbar extends React.Component {
                         <Link to='/mybooks'>My Books</Link>
                     </li>
                     <li className="nav-image-link">
-                        <a href="#">Github</a>
+                        <a href="https://github.com/atjohnfeng/Readiscover">
+                            Github
+                        </a>
                     </li>
                     <li className="nav-image-link">
-                        <a href="#">LinkedIn</a>
+                        <a href="https://www.linkedin.com/in/john-feng-316220215/">
+                            LinkedIn
+                        </a>
                     </li>
                     <li className="nav-image-link">
                         <Link to="/home">
