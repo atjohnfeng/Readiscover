@@ -95,12 +95,15 @@
     border: none;
     background-color: white;
     margin-bottom: 15px;
+    margin-left: -25px;
+    z-index: 1;
 }
 
 .search-bar {
     display: flex;
     width: 300px;
     margin-top: -5px;
+    z-index: 1;
 }
 
 .search-bar input {
