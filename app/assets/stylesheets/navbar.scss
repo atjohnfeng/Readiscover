@@ -31,5 +31,17 @@
 }
 
 .nav-link {
-    color: brown
+    text-decoration: none;
+}
+
+.nav-bar-link:hover {
+    color: white;
+    background-color: #382110;
+}
+
+.nav-bar-list li {
+    font-family: "Lato", "Helvetica Neue", Helvetica, sans-serif;
+    font-size: 15px;
+    color: #382110;
+    padding: 15px 30px 0px 30px;
 }
