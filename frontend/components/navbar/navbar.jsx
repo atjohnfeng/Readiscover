@@ -29,7 +29,7 @@ class Navbar extends React.Component {
                     <li className="search-bar">
                         <input type="text" placeholder="Search books" />
                         <button type="submit" className="search-icon">
-                            <i class="fa fa-search"></i>
+                            <i className="fa fa-search"></i>
                         </button>
                     </li>
                     <li className="nav-image-link">

@@ -9,6 +9,6 @@ export const getBook = book => (
 export const getBooks = () => (
     $.ajax({
         method: 'get',
-        url: '/api/books'
+        url: '/api/books',
     })
 );
