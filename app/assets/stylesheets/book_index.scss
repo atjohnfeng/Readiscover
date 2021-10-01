@@ -2,10 +2,15 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-}
 
-.book-index-book-cover {
+    .book-index-book-cover {
     height: 225px;
     width: 150px;
     padding: 10px;
+
+        &:hover {
+            box-shadow: 0 3px 10px 0px black;
+            transition: box-shadow 0.3s ease-in-out;
+        }
+    }
 }
