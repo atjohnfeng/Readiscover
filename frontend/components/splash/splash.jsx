@@ -12,9 +12,16 @@ class Splash extends React.Component {
                         alt="readiscover-logo-image" />
                 </Link>
                 <div>
-                    Readiscover the joy of reading &amp; <Link to="/signup">Sign up</Link>
+                    Readiscover the joy of reading &amp; <Link to="/signup">Sign up</Link>!
                     <br />
-                    Already a member? <Link to="/login">Sign in</Link>
+                    <br />
+                    Already a member? <Link to="/login">Sign in</Link>!
+                    <br />
+                    <br />
+                    Browse our books <Link to="/books">here</Link>.
+                    <br />
+                    <br />
+                    Under construction.
                 </div>
             </div>
         )
