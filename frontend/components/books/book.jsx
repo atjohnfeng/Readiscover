@@ -16,15 +16,23 @@ class Book extends React.Component {
             return null;
         }
 
+        const { book } = this.props;
+
         return (
             <div className="book-show">
                 <NavbarContainer />
                 <div className="book-show-container">
-                    {<img className="book-show-book-cover"
-                        src={this.props.book.cover_img_url}
-                        alt={this.props.book.cover_img_url} /> 
-                        // console.log(this.props.book)
-                        }
+                    <div className="book-show-book-cover">
+                        <img className="book-show-book-cover"
+                        src={book.cover_img_url}
+                        alt={book.cover_img_url} />
+                    </div>
+                    <div className="book-show-book-info">
+
+                    </div>
+                    <div className="book-show-book-description">
+
+                    </div>
                 </div>
             </div>
         )
