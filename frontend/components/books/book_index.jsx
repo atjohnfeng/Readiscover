@@ -1,5 +1,6 @@
 import React from 'react';
 import NavbarContainer from '../navbar/navbar_container';
+import { Link } from 'react-router-dom';
 
 class BookIndex extends React.Component {
 
@@ -16,9 +17,11 @@ class BookIndex extends React.Component {
             <ul className="book-index-list">
                 {this.props.books.map((book, i) =>
                 <li key={`book-${i}`}>
-                    <img className="book-index-book-cover"
-                        src={book.cover_img_url} 
-                        alt={book.cover_img_url} />
+                    <Link to={`/books/${book.id}`}>
+                        <img className="book-index-book-cover"
+                            src={book.cover_img_url} 
+                            alt={book.cover_img_url} />
+                    </Link>
                 </li>)}
             </ul>
         )
