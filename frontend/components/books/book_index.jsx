@@ -16,9 +16,9 @@ class BookIndex extends React.Component {
             <ul className="book-index-list">
                 {this.props.books.map((book, i) =>
                 <li key={`book-${i}`}>
-                    <img className="book-index-cover"
-                        src={`${book.coverImgUrl}`} 
-                        alt={`book-${i}-cover`} />
+                    <img className="book-index-book-cover"
+                        src={book.cover_img_url} 
+                        alt={book.cover_img_url} />
                 </li>)}
             </ul>
         )
