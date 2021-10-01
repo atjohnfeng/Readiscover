@@ -6,6 +6,37 @@ class Navbar extends React.Component {
         super(props)
     }
 
+    renderDropdown() {
+        if (!!this.props.currentUser) {
+            return (
+                <ul className="dropdown-content">
+                    <li className="welcome-greeting">
+                        Welcome {this.props.currentUser.username}!
+                    </li>
+                    <li>
+                        <button onClick={this.props.logout}
+                        className="logout-button">Sign Out</button>
+                    </li>
+                </ul>
+            )
+        } else {
+            return (
+                <ul className="dropdown-content">
+                    <li className="login-dropdown-item">
+                        <Link to="/login">
+                            Log in
+                        </Link>
+                    </li>
+                    <li className="signup-dropdown-item">
+                        <Link to="/signup">
+                            Sign up
+                        </Link>
+                    </li>
+                </ul>
+            )
+        }
+    }
+
     render() {
         return (
             <div className="nav-bar">
@@ -54,15 +85,7 @@ class Navbar extends React.Component {
                                 alt="profile-default-nav" 
                                 className="nav-bar-icon" />
                         </button>
-                        <ul className="dropdown-content">
-                            <li className="welcome-greeting">
-                                Welcome {this.props.currentUser.username}!
-                            </li>
-                            <li>
-                                <button onClick={this.props.logout}
-                                    className="logout-button">Sign Out</button>
-                            </li>
-                        </ul>
+                        {this.renderDropdown()}
                     </li>
                 </ul>
             </div>
