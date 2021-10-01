@@ -1,6 +1,7 @@
 .book-index-list {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
 }
 
 .book-index-book-cover {
