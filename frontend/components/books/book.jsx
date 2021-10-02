@@ -20,9 +20,8 @@ class Book extends React.Component {
 
         return (
             <div>
-                <div className="header-div"></div>
+                <div className="header-div"><NavbarContainer /></div>
                     <div className="book-show">
-                        <NavbarContainer />
                         <div className="book-show-container">
                             <div className="book-show-book-cover">
                                 <img className="book-show-book-cover"

@@ -1,20 +1,21 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import NavbarContainer from '../navbar/navbar_container';
+
 
 class NotFound extends React.Component {
 
     render() {
         return (
             <div>
-                <div className="logo">
-                    <Link to="/">
-                        <img className="logo"
-                            src={window.logoURL}
-                            alt="readiscover-logo-image" />
-                    </Link>
+                <div className="header-div">
+                    <NavbarContainer />
                 </div>
-                <h1>404: Page Not Found</h1>
-                <Link to="/">Return to Home Page</Link>
+                    <div className="book-index">
+                        <div className="404-not-found">
+                            <h1>404: Page Not Found</h1>
+                        </div>
+                    </div>
+                <div className="footer-div"></div>
             </div>
         )
     }

@@ -30,9 +30,8 @@ class BookIndex extends React.Component {
     render() {
         return (
             <div>
-                <div className="header-div"></div>
+                <div className="header-div"><NavbarContainer /></div>
                     <div className="book-index">
-                        <NavbarContainer />
                         <div className="book-index-container">
                             {this.renderBooks()}
                         </div>
