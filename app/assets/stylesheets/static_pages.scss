@@ -1,3 +1,26 @@
 // Place all the styles related to the StaticPages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+    background-image: image-url('form-background.jpeg');
+}
+
+footer {
+    background-image: image-url('footer-books.png');
+    background-repeat: repeat-x;
+    position: fixed;
+    bottom: 0;
+    height: 50px;
+    width: 100%;
+ }
+
+ .header-div {
+    top: 0;
+    height: 50px;
+ }
+
+ .footer-div {
+     bottom: 0;
+     height: 50px;
+ }

@@ -29,11 +29,15 @@ class BookIndex extends React.Component {
 
     render() {
         return (
-            <div className="book-index">
-                <NavbarContainer />
-                <div className="book-index-container">
-                    {this.renderBooks()}
-                </div>
+            <div>
+                <div className="header-div"></div>
+                    <div className="book-index">
+                        <NavbarContainer />
+                        <div className="book-index-container">
+                            {this.renderBooks()}
+                        </div>
+                    </div>
+                <div className="footer-div"></div>
             </div>
         )
     }
