@@ -24,13 +24,19 @@
 }
 
 .nf-images {
+    position: relative;
+
     .shel {
         border-radius: 40px;
+        margin-left: -25px;
+        z-index: 2;
     }
 
     .giving-tree {
         height: 225px;
         width: 150px;
         border-radius: 4px;
+        margin-left: -25px;
+        z-index: 1;
     }
 }
