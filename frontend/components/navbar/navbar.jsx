@@ -64,7 +64,7 @@ class Navbar extends React.Component {
                         </button>
                     </li>
                     <li className="nav-image-link">
-                        <a href="https://github.com/atjohnfeng/Readiscover"
+                        <a href="https://github.com/atjohnfeng/"
                             target="_blank ">
                             <img src={window.githubLogo}
                                 alt="github-logo-link"
