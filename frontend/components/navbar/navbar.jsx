@@ -3,7 +3,11 @@ import { Link } from 'react-router-dom';
 
 class Navbar extends React.Component {
     constructor(props) {
-        super(props)
+        super(props);
+    }
+
+    componentDidMount() {
+        this.props.getBooks();
     }
 
     renderDropdown() {
@@ -73,6 +77,7 @@ class Navbar extends React.Component {
                             <i className="fa fa-search"></i>
                         </button>
                     </li>
+                    <ul id="book-search-list"></ul>
                     <li className="nav-image-link">
                         <a href="https://github.com/atjohnfeng/"
                             target="_blank ">
