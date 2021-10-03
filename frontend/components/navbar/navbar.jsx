@@ -13,22 +13,32 @@ class Navbar extends React.Component {
                     <li className="welcome-greeting">
                         Welcome {this.props.currentUser.username}!
                     </li>
-                    <li>
+                    <li className="li-dropdown-link">
+                        <Link to="/books" className="dropdown-link">
+                            All Books
+                        </Link>
+                    </li>
+                    <li className="li-dropdown-link">
+                        <Link to="/mybooks" className="dropdown-link">
+                            My Books
+                        </Link>
+                    </li>
+                    <li className="li-dropdown-link">
                         <button onClick={this.props.logout}
-                        className="logout-button">Sign Out</button>
+                        className="dropdown-button">Sign Out</button>
                     </li>
                 </ul>
             )
         } else {
             return (
                 <ul className="dropdown-content">
-                    <li className="login-dropdown-item">
-                        <Link to="/login">
+                    <li className="li-dropdown-link">
+                        <Link to="/login" className="dropdown-link">
                             Log in
                         </Link>
                     </li>
-                    <li className="signup-dropdown-item">
-                        <Link to="/signup">
+                    <li className="li-dropdown-link">
+                        <Link to="/signup" className="dropdown-link">
                             Sign up
                         </Link>
                     </li>
