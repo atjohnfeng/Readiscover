@@ -6,10 +6,6 @@ class Navbar extends React.Component {
         super(props);
     }
 
-    componentDidMount() {
-        this.props.getBooks();
-    }
-
     renderDropdown() {
         if (!!this.props.currentUser) {
             return (
