@@ -10,4 +10,4 @@ const mapDispatchToProps = dispatch => ({
     getBooks: () => dispatch(getBooks())
 })
 
-export default connect(mapStateToProps, null)(BookIndex);
+export default connect(mapStateToProps, mapDispatchToProps)(BookIndex);
