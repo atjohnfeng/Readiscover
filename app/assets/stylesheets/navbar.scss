@@ -93,7 +93,7 @@
 
 .search-icon {
     display: flex;
-    color: tan;
+    color: lightgrey;
     border: none;
     background-color: white;
     margin-bottom: 15px;
@@ -117,7 +117,7 @@
 
     input:focus {
         outline: none;
-        // box-shadow: 0 0 100px 0 #382110;
+        box-shadow: 0 0 3px rgba(0,0,0,0.2);
     }
 
     button:hover {
