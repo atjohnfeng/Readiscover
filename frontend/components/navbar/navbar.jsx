@@ -11,7 +11,7 @@ class Navbar extends React.Component {
             return (
                 <ul className="dropdown-content">
                     <li className="welcome-greeting">
-                        Welcome {this.props.currentUser.username}!
+                        {this.props.currentUser.username}
                     </li>
                     <li className="li-dropdown-link">
                         <Link to="/books" className="dropdown-link">
