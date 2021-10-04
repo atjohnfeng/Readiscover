@@ -6,6 +6,10 @@ class Navbar extends React.Component {
         super(props);
     }
 
+    componentDidMount() {
+        this.props.getBooks();
+    }
+
     renderDropdown() {
         if (!!this.props.currentUser) {
             return (
@@ -47,6 +51,23 @@ class Navbar extends React.Component {
         }
     }
 
+    renderSearch() {
+        const { user, books } = this.props;
+        const searchBar = document.getElementById('search-bar');
+        let filteredBooks;
+        if (!!searchBar) {
+            searchBar.addEventListener('keyup', e => {
+                let searchString = e.target.value;
+                filteredBooks = books.filter(book => {
+                    return book.title.toLowerCase().includes(searchString.toLowerCase()) || 
+                    book.author.toLowerCase().includes(searchString.toLowerCase());
+                })
+                console.log(filteredBooks)
+
+            });
+        }
+    }
+
     render() {
         return (
             <div className="nav-bar">
@@ -68,12 +89,15 @@ class Navbar extends React.Component {
                         <Link to='/mybooks' className="nav-link">My Books</Link>
                     </li>
                     <li className="search-bar">
-                        <input type="text" placeholder="Search books" />
+                        <input type="text" placeholder="Search books"
+                            id="search-bar" />
                         <button type="submit" className="search-icon">
                             <i className="fa fa-search"></i>
                         </button>
                     </li>
-                    <ul id="book-search-list"></ul>
+                    <ul id="book-search-list">
+                        {this.renderSearch()}
+                    </ul>
                     <li className="nav-image-link">
                         <a href="https://github.com/atjohnfeng/"
                             target="_blank ">

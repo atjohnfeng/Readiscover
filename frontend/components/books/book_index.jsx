@@ -8,9 +8,9 @@ class BookIndex extends React.Component {
         super(props);
     }
 
-    componentDidMount() {
-        this.props.getBooks();
-    }
+    // componentDidMount() {
+    //     this.props.getBooks();
+    // }
 
     renderBooks() {
         return (
