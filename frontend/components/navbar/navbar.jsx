@@ -6,7 +6,7 @@ class Navbar extends React.Component {
         super(props);
 
         this.state = {
-            results: null
+            results: []
         }
     }
 
@@ -15,11 +15,24 @@ class Navbar extends React.Component {
     }
 
     update() {
+        const { user, books } = this.props;
+        const searchBar = document.getElementById('search-bar');
+        let filteredBooks;
+        let searchString;
+        if (!!searchBar) {
+            searchBar.addEventListener('keyup', e => {
+                searchString = e.target.value;
+                filteredBooks = books.filter(book => {
+                    return book.title.toLowerCase().includes(searchString.toLowerCase()) ||
+                        book.author.toLowerCase().includes(searchString.toLowerCase());
+                })
+            });
+        }
+
         return e => {
             this.setState({
-                results: Math.random()
+                results: filteredBooks
             });
-            console.log(this.state);
         }
     }
 
@@ -65,24 +78,22 @@ class Navbar extends React.Component {
     }
 
     renderSearch() {
-        
+        console.log(this.state.results)
+
+        // return (
+        //     <ul className="search-results">
+        //         {books.map((book, i) => (
+        //             <li key={`result-${i}`} className="search-result">
+        //                 {book.title}
+        //                 {book.author}
+        //                 {console.log(books)}
+        //             </li>
+        //         ))}
+        //     </ul>
+        // )
     }
 
     render() {
-        const { user, books } = this.props;
-        const searchBar = document.getElementById('search-bar');
-        let filteredBooks;
-        let searchString;
-        if (!!searchBar) {
-            searchBar.addEventListener('keyup', e => {
-                searchString = e.target.value;
-                filteredBooks = books.filter(book => {
-                    return book.title.toLowerCase().includes(searchString.toLowerCase()) ||
-                        book.author.toLowerCase().includes(searchString.toLowerCase());
-                })
-                console.log(filteredBooks)
-            });
-        }
 
         return (
             <div className="nav-bar">
@@ -105,7 +116,7 @@ class Navbar extends React.Component {
                     </li>
                     <li className="search-bar">
                         <input type="text" placeholder="Search books"
-                            id="search-bar" onChange={this.update()} />
+                            id="search-bar" onChange={this.update()}/>
                         <button type="submit" className="search-icon">
                             <i className="fa fa-search"></i>
                         </button>
