@@ -29,17 +29,18 @@ class Navbar extends React.Component {
             filteredBooks = this.props.books.filter(book => {
                 return book.title.toLowerCase().includes(searchString.toLowerCase()) ||
                     book.author.toLowerCase().includes(searchString.toLowerCase());})
-                } else {
-                    filteredBooks = null;
-                }
+                } 
         if (!!filteredBooks) {
             return (
                 <ul className="search-results">
                     {filteredBooks.map((book, i) => (
-                        <li key={`result-${i}`} className="search-result">
-                            {book.title}
-                            {book.author}
-                        </li>
+                        <Link to={`/books/${book.id}`}
+                            key={`result-${i}`} className="search-result">
+                            <li>
+                                {book.title}
+                                {book.author}
+                            </li>
+                        </Link>
                     ))}
                 </ul>
             )
