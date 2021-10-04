@@ -44,7 +44,7 @@ class Navbar extends React.Component {
                                 </div>
                                 <div>
                                     <h1>{book.title}</h1>
-                                    <h2>{book.author}</h2>
+                                    <h2>by {book.author}</h2>
                                 </div>
                             </li>
                         </Link>
@@ -131,10 +131,8 @@ class Navbar extends React.Component {
                         <button type="submit" className="search-icon">
                             <i className="fa fa-search"></i>
                         </button>
-                    </li>
-                    <ul id="book-search-list">
                         {this.renderSearch()}
-                    </ul>
+                    </li>
                     <li className="nav-image-link">
                         <a href="https://github.com/atjohnfeng/"
                             target="_blank ">
