@@ -22,10 +22,14 @@ class Navbar extends React.Component {
         if (!!searchBar) {
             searchBar.addEventListener('keyup', e => {
                 searchString = e.target.value;
-                filteredBooks = books.filter(book => {
-                    return book.title.toLowerCase().includes(searchString.toLowerCase()) ||
-                        book.author.toLowerCase().includes(searchString.toLowerCase());
-                })
+                if (searchString.length >= 1) {
+                    filteredBooks = books.filter(book => {
+                        return book.title.toLowerCase().includes(searchString.toLowerCase()) ||
+                            book.author.toLowerCase().includes(searchString.toLowerCase());
+                    })
+                } else {
+                    filteredBooks = null;
+                }
             });
         }
 
@@ -78,19 +82,21 @@ class Navbar extends React.Component {
     }
 
     renderSearch() {
-        console.log(this.state.results)
+        const filteredObj = this.state.results;
+        if (!!filteredObj) {
+            const filteredBooks = Object.values(this.state.results);
+            return (
+                <ul className="search-results">
+                    {filteredBooks.map((book, i) => (
+                        <li key={`result-${i}`} className="search-result">
+                            {book.title}
+                            {book.author}
+                        </li>
+                    ))}
+                </ul>
+            )
+        }
 
-        // return (
-        //     <ul className="search-results">
-        //         {books.map((book, i) => (
-        //             <li key={`result-${i}`} className="search-result">
-        //                 {book.title}
-        //                 {book.author}
-        //                 {console.log(books)}
-        //             </li>
-        //         ))}
-        //     </ul>
-        // )
     }
 
     render() {
