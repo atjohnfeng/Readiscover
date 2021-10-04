@@ -4,10 +4,21 @@ import { Link } from 'react-router-dom';
 class Navbar extends React.Component {
     constructor(props) {
         super(props);
+
+        this.state = {
+            results: null
+        }
     }
 
     componentDidMount() {
         this.props.getBooks();
+    }
+
+    update() {
+        // this.setState({
+        //     results: 'apple'
+        // })
+        console.log(this.state);
     }
 
     renderDropdown() {
@@ -52,23 +63,25 @@ class Navbar extends React.Component {
     }
 
     renderSearch() {
-        const { user, books } = this.props;
-        const searchBar = document.getElementById('search-bar');
-        let filteredBooks;
-        if (!!searchBar) {
-            searchBar.addEventListener('keyup', e => {
-                let searchString = e.target.value;
-                filteredBooks = books.filter(book => {
-                    return book.title.toLowerCase().includes(searchString.toLowerCase()) || 
-                    book.author.toLowerCase().includes(searchString.toLowerCase());
-                })
-                console.log(filteredBooks)
-
-            });
-        }
+        
     }
 
     render() {
+        const { user, books } = this.props;
+        const searchBar = document.getElementById('search-bar');
+        let filteredBooks;
+        let searchString;
+        if (!!searchBar) {
+            searchBar.addEventListener('keyup', e => {
+                searchString = e.target.value;
+                filteredBooks = books.filter(book => {
+                    return book.title.toLowerCase().includes(searchString.toLowerCase()) ||
+                        book.author.toLowerCase().includes(searchString.toLowerCase());
+                })
+                console.log(filteredBooks)
+            });
+        }
+
         return (
             <div className="nav-bar">
                 <ul className="nav-bar-list">
@@ -90,7 +103,7 @@ class Navbar extends React.Component {
                     </li>
                     <li className="search-bar">
                         <input type="text" placeholder="Search books"
-                            id="search-bar" />
+                            id="search-bar" onChange={this.update()} />
                         <button type="submit" className="search-icon">
                             <i className="fa fa-search"></i>
                         </button>
