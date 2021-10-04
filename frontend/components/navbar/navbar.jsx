@@ -106,7 +106,6 @@ class Navbar extends React.Component {
     }
 
     render() {
-
         return (
             <div className="nav-bar">
                 <ul className="nav-bar-list">
@@ -121,10 +120,10 @@ class Navbar extends React.Component {
                         <Link to='/home' className="nav-link">Home</Link>
                     </li>
                     <li className="nav-bar-link">
-                        <Link to='/books' className="nav-link">All Books</Link>
+                        <Link to='/books' className="nav-link">allBooks</Link>
                     </li>
                     <li className="nav-bar-link">
-                        <Link to='/mybooks' className="nav-link">My Books</Link>
+                        <Link to='/mybooks' className="nav-link">myBooks</Link>
                     </li>
                     <li className="search-bar">
                         <input type="text" placeholder="Search books"
