@@ -8,6 +8,8 @@ class Navbar extends React.Component {
         this.state = {
             searchString: ''
         }
+
+        this.resetNavbar = this.resetNavbar.bind(this);
     }
 
     componentDidMount() {
@@ -22,11 +24,12 @@ class Navbar extends React.Component {
         }
     }
 
-    // resetNavbar() {
-    //     this.setState({
-    //         searchString: ''
-    //     })
-    // }
+    resetNavbar() {
+        this.setState({
+            searchString: ''
+        })
+        console.log(this.state);
+    }
 
     renderSearch() {
         let filteredBooks;
@@ -43,7 +46,7 @@ class Navbar extends React.Component {
                         <Link to={`/books/${book.id}`}
                             key={`result-${i}`}
                             className="search-result-link">
-                            <li className="search-result">
+                            <li className="search-result" onClick={this.resetNavbar}>
                                 <div className="search-result-img">
                                     <img src={book.cover_img_url} 
                                     alt={book.title} 
@@ -134,6 +137,7 @@ class Navbar extends React.Component {
                     </li>
                     <li className="search-bar">
                         <input type="text" placeholder="Search books"
+                            value={this.state.searchString}
                             id="search-bar" onChange={this.update()}/>
                         {this.renderSearch()}
                     </li>
