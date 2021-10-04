@@ -15,10 +15,12 @@ class Navbar extends React.Component {
     }
 
     update() {
-        // this.setState({
-        //     results: 'apple'
-        // })
-        console.log(this.state);
+        return e => {
+            this.setState({
+                results: Math.random()
+            });
+            console.log(this.state);
+        }
     }
 
     renderDropdown() {
