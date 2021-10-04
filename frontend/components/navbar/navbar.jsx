@@ -128,11 +128,11 @@ class Navbar extends React.Component {
                     <li className="search-bar">
                         <input type="text" placeholder="Search books"
                             id="search-bar" onChange={this.update()}/>
+                        {this.renderSearch()}
+                    </li>
                         <button type="submit" className="search-icon">
                             <i className="fa fa-search"></i>
                         </button>
-                        {this.renderSearch()}
-                    </li>
                     <li className="nav-image-link">
                         <a href="https://github.com/atjohnfeng/"
                             target="_blank ">
