@@ -1,6 +1,5 @@
 import React from 'react';
 import NavbarContainer from '../navbar/navbar_container';
-import { Link } from 'react-router-dom';
 
 class Home extends React.Component {
     
@@ -21,7 +20,6 @@ class Home extends React.Component {
                             <br />
                             Under Construction.
                             <br />
-                            <Link to="/notfound">Take a trip to the end of the sidewalk.</Link>
                         </div>
                     </div>
                 <div className="footer-div"></div>

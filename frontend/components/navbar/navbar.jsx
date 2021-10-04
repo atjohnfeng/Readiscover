@@ -35,10 +35,17 @@ class Navbar extends React.Component {
                 <ul className="search-results">
                     {filteredBooks.map((book, i) => (
                         <Link to={`/books/${book.id}`}
-                            key={`result-${i}`} className="search-result">
-                            <li>
-                                {book.title}
-                                {book.author}
+                            key={`result-${i}`}>
+                            <li className="search-result">
+                                <div>
+                                    <img src={book.cover_img_url} 
+                                    alt={book.title} 
+                                    className="search-result-img" />
+                                </div>
+                                <div>
+                                    <h1>{book.title}</h1>
+                                    <h2>{book.author}</h2>
+                                </div>
                             </li>
                         </Link>
                     ))}
@@ -65,6 +72,11 @@ class Navbar extends React.Component {
                         </Link>
                     </li>
                     <li className="li-dropdown-link">
+                        <Link to="/theend" className="dropdown-link">
+                            Take a Trip to The End of the Sidewalk
+                        </Link>
+                    </li>
+                    <li className="li-dropdown-link">
                         <button onClick={this.props.logout}
                         className="dropdown-button">Sign Out</button>
                     </li>
@@ -81,6 +93,11 @@ class Navbar extends React.Component {
                     <li className="li-dropdown-link">
                         <Link to="/signup" className="dropdown-link">
                             Sign up
+                        </Link>
+                    </li>
+                    <li className="li-dropdown-link">
+                        <Link to="/theend" className="dropdown-link">
+                            The End?
                         </Link>
                     </li>
                 </ul>
