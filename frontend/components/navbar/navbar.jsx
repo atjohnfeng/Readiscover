@@ -22,6 +22,12 @@ class Navbar extends React.Component {
         }
     }
 
+    // resetNavbar() {
+    //     this.setState({
+    //         searchString: ''
+    //     })
+    // }
+
     renderSearch() {
         let filteredBooks;
         const searchString = this.state.searchString;
@@ -35,14 +41,15 @@ class Navbar extends React.Component {
                 <ul className="search-results">
                     {filteredBooks.map((book, i) => (
                         <Link to={`/books/${book.id}`}
-                            key={`result-${i}`}>
+                            key={`result-${i}`}
+                            className="search-result-link">
                             <li className="search-result">
-                                <div>
+                                <div className="search-result-img">
                                     <img src={book.cover_img_url} 
                                     alt={book.title} 
                                     className="search-result-img" />
                                 </div>
-                                <div>
+                                <div className="search-result-info">
                                     <h1>{book.title}</h1>
                                     <h2>by {book.author}</h2>
                                 </div>
@@ -130,9 +137,9 @@ class Navbar extends React.Component {
                             id="search-bar" onChange={this.update()}/>
                         {this.renderSearch()}
                     </li>
-                        <button type="submit" className="search-icon">
-                            <i className="fa fa-search"></i>
-                        </button>
+                    <button type="submit" className="search-icon">
+                        <i className="fa fa-search"></i>
+                    </button>
                     <li className="nav-image-link">
                         <a href="https://github.com/atjohnfeng/"
                             target="_blank ">

@@ -6,17 +6,50 @@
     z-index: 2;
 
     .search-results {
+        display: flex;
+        flex-direction: column;
         border: 1px solid gainsboro;
         background-color: #F4F1EA;
         position: relative;
         width: 110%;
 
         .search-result-img {
-            max-width: 25px;
+            height: 40px;
+            width: 28px;
+            padding-right: 10px;
         }    
 
+        .search-result-link {
+            text-decoration: none;
+
+            .search-result-info {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+
+            &:hover {
+                background-color: #382110;
+
+                .search-result {
+                    color: white;
+                }
+            }
+        }
+
         .search-result {
-            display: block;
+            display: flex;
+            border-bottom: 0.5px solid gainsboro;
+            padding: 5px;
+            font-family: "Lato", "Helvetica Neue", Helvetica, sans-serif;
+            font-size: 16px;
+            font-weight: bolder;
+            color: #382110;
+
+            h2 {
+                font-size: 14px;
+                font-weight: normal;
+            }
         }
     }
 
