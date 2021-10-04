@@ -15,24 +15,6 @@ class Navbar extends React.Component {
     }
 
     update() {
-        // const { user, books } = this.props;
-        // const searchBar = document.getElementById('search-bar');
-        // let filteredBooks;
-        // let searchString;
-        // if (!!searchBar) {
-        //     searchBar.addEventListener('keyup', e => {
-        //         searchString = e.target.value;
-        //         if (searchString.length >= 1) {
-        //             filteredBooks = books.filter(book => {
-        //                 return book.title.toLowerCase().includes(searchString.toLowerCase()) ||
-        //                     book.author.toLowerCase().includes(searchString.toLowerCase());
-        //             })
-        //         } else {
-        //             filteredBooks = null;
-        //         }
-        //     });
-        // }
-
         return e => {
             this.setState({
                 searchString: e.target.value
@@ -44,15 +26,13 @@ class Navbar extends React.Component {
         let filteredBooks;
         const searchString = this.state.searchString;
         if (searchString.length >= 1) {
-                    filteredBooks = this.props.books.filter(book => {
-                        return book.title.toLowerCase().includes(searchString.toLowerCase()) ||
-                            book.author.toLowerCase().includes(searchString.toLowerCase());
-                    })
+            filteredBooks = this.props.books.filter(book => {
+                return book.title.toLowerCase().includes(searchString.toLowerCase()) ||
+                    book.author.toLowerCase().includes(searchString.toLowerCase());})
                 } else {
                     filteredBooks = null;
                 }
         if (!!filteredBooks) {
-            // const filteredBooks = Object.values(this.state.results);
             return (
                 <ul className="search-results">
                     {filteredBooks.map((book, i) => (
@@ -64,7 +44,6 @@ class Navbar extends React.Component {
                 </ul>
             )
         }
-
     }
 
     renderDropdown() {
