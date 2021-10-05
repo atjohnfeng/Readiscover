@@ -8,6 +8,7 @@
 
 User.delete_all
 Book.delete_all
+Review.delete_all
 
 # User Seeds
 demo_user = User.create(username: 'demo', email: 'demo@demo.com', password: 'demolicious')
