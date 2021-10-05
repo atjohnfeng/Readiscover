@@ -56,19 +56,19 @@ class LoginForm extends React.Component {
                         <form className="splash-log-in-form"
                             onSubmit={this.handleSubmit}>
                             <label>Username:
-                                <input type="text"
-                                    value={this.state.username}
-                                    placeholder="Username"
-                                    onChange={this.update("username")}
-                                    required />
                             </label>
+                            <input type="text"
+                                value={this.state.username}
+                                placeholder="Username"
+                                onChange={this.update("username")}
+                                required />
                             <label>
                                 Password:
-                                <input type="password"
-                                    value={this.state.password}
-                                    onChange={this.update("password")}
-                                    required />
                             </label>
+                            <input type="password"
+                                value={this.state.password}
+                                onChange={this.update("password")}
+                                required />
                             <button>Sign in</button>
                         </form>
                         <button className="demo-button" onClick={this.loginDemoUser}>Sign in with Demo User</button>
