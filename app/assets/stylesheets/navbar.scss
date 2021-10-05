@@ -1,7 +1,7 @@
 .nav-bar {
     position: fixed;
     top: 0;
-    width: 100%;
+    width: 100vmax;
     // background-color: #F4F1EA;
     // border-bottom: 1px solid gainsboro;
 }
@@ -10,7 +10,7 @@
     position: absolute;
     background-color: #F4F1EA;
     border-bottom: 1px solid gainsboro;
-    width: 100%;
+    width: 100vmax;
 
     display: flex;
     flex-direction: row;
