@@ -107,7 +107,7 @@ class Navbar extends React.Component {
                     </li>
                     <li className="li-dropdown-link">
                         <Link to="/theend" className="dropdown-link">
-                            The End?
+                            Take a Trip to The End of the Sidewalk
                         </Link>
                     </li>
                 </ul>
