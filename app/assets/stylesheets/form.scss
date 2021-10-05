@@ -14,6 +14,7 @@
     background-color: white;
     border-radius: 4px;
     border: 1px solid gainsboro;
+    font-family: "Lato", "Helvetica Neue", Helvetica, sans-serif;
 
     form {
         display: flex;
@@ -21,26 +22,66 @@
         justify-content: center;
         align-items: left;
     }
-}
 
-button {
-    padding: 5px;
-    margin: 2px;
-    border: 1px solid gainsboro;
-    border-radius: 4px;
-} 
+    label {
+        font-size: 12px;
+        font-weight: bolder;
+    }
+
+    h1 {
+        font-size: 24px;
+        font-weight: bolder;
+        padding: 18px;
+    }
+
+    .form-footer {
+        font-size: 10px;
+        padding: 10px;
+    } 
+
+    button {
+        font-family: "Lato", "Helvetica Neue", Helvetica, sans-serif;
+        padding: 5px;
+        margin: 2px;
+        border: 1px solid gainsboro;
+        border-radius: 4px;
+        width: 200px;
+
+        &:hover {
+            background-color: gainsboro;
+            border: 1px solid gray;
+        }
+    } 
+
+    input {
+        margin-bottom: 10px;
+        border: 1px solid #DCD6CC;
+        border-radius: 3px;
+        font-family: "Lato", "Helvetica Neue", Helvetica, sans-serif;
+        font-size: 12px;
+        width: 200px;
+
+        &:focus {
+            outline: none;
+            box-shadow: 0 0 3px rgba(0,0,0,0.2);
+        }
+    }
+
+    .error-list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .form-error {
+        max-width: 200px;
+        font-family: "Lato", "Helvetica Neue", Helvetica, sans-serif;
+        font-size: 12px;
+    }
+}
 
 .logo {
      max-height: 75px;
      max-width: auto;
      overflow: hidden;
  }
-
-// .form-footer {
-//      background-image: url('footer-books.png');
-//      background-repeat: repeat-x;
-//      position: fixed;
-//      bottom: 0;
-//      height: 50px;
-//      width: 100%;
-//  } 

@@ -34,8 +34,9 @@ class LoginForm extends React.Component {
 
     renderErrors() {
         return (
-            <ul>
-                {this.props.errors.map(error => <li>{error}</li>)}
+            <ul className="error-list">
+                {this.props.errors.map(error => 
+                <li className="form-error">{error}</li>)}
             </ul>
         )
     }
@@ -69,12 +70,12 @@ class LoginForm extends React.Component {
                                 value={this.state.password}
                                 onChange={this.update("password")}
                                 required />
+                            {this.renderErrors()}
                             <button>Sign in</button>
                         </form>
                         <button className="demo-button" onClick={this.loginDemoUser}>Sign in with Demo User</button>
                         <p className="form-footer">Not a member? <Link to="/signup">Sign up</Link></p>
                     </div>
-                    {this.renderErrors()}
                 </div>
                 {/* <div className="form-footer">
                 </div> */}
