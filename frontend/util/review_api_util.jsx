@@ -12,10 +12,10 @@ export const getReviews = bookId => (
     })
 );
 
-export const createReview = bookId => (
+export const createReview = review => (
     $.ajax({
         method: 'post',
-        url: `/api/books/${bookId}/reviews`,
+        url: `/api/books/${review.book_id}/reviews`,
         data: { review }
     })
 );
