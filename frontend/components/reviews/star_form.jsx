@@ -4,66 +4,72 @@ class StarForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            title: null,
-            body: null,
-            rating: null,
-            bookId: this.props.bookId,
-            userId: this.props.currentUser
+            rating: '',
+            book_id: this.props.bookId,
+            user_id: this.props.currentUser,
+            formType: 'create'
         }
-
-        this.handleSubmit = this.handleSubmit.bind(this);
+        this.updateRating = this.updateRating.bind(this);
     }
 
     componentDidMount() {
-        const review = this.props.getReview(this.props.bookId, this.props.currentUser)
-        if (!!review) {
-            this.setState({
-                title: review.title,
-                body: review.body,
-                rating: review.rating
-            })
-        }
+        // let review;
+        // if (!this.props.getReview(this.props.bookId, this.props.currentUser)) {
+        //     return null;
+        // } else {
+        //     review = this.props.getReview(this.props.bookId, this.props.currentUser)
+        // }
+        // if (!!review) {
+        //     this.setState({
+        //         title: review.title,
+        //         body: review.body,
+        //         rating: review.rating,
+        //         // formType: 'edit',
+        //     })
+        // } else {
+        //     this.setState({
+        //         // formType: 'create',
+        //     })
+        // }
+        // console.log(this.state.bookId)
     }
 
-    update(value) {
-        return e => {
-            this.setState({
-                rating: value
-            });
-            this.handleSubmit();
+    updateRating(value) {
+        const review = {
+            rating: value,
+            book_id: this.props.bookId,
+            user_id: this.props.currentUser
         }
+        debugger
+        this.props.createReview(review);
     }
 
-    handleSubmit(e) {
-        e.preventDefault();
-        let rating;
-        if (!this.state.review) {
-            rating = Object.assign({}, this.state.rating, this.state.userId, this.state.bookId)
-        } else {
-            rating = Object.assign({}, this.state.rating, this.state.userId, this.state.bookId, this.state.review.title, this.state.review.body)
-        }
-        this.props.createReview(rating);
-    }
 
     render() {
+        if (!this.props.bookId) {
+            return null;
+        }
+
         return (
             <div className="star-rating-form-container">
                 <form className="star-rating-form">
-                    <input type="radio" onClick={this.update(1)}
-                        value="1" className="rating-button">
-                    </input>
-                    <input type="radio" onClick={this.update(2)}
-                        value="2" className="rating-button">
-                    </input>
-                    <input type="radio" onClick={this.update(3)}
-                        value="3" className="rating-button">
-                    </input>
-                    <input type="radio" onClick={this.update(4)}
-                        value="4" className="rating-button">
-                    </input>
-                    <input type="radio" onClick={this.update(5)}
-                        value="5" className="rating-button">
-                    </input>
+                    <label>Rating
+                        <input type="radio" onChange={() => this.updateRating(1)}
+                            name="rating" value={1} className="rating-button">
+                        </input>
+                        <input type="radio" onChange={() => this.update('rating')}
+                            name="rating" value={2} className="rating-button">
+                        </input>
+                        <input type="radio" onChange={() => this.update('rating')}
+                            name="rating" value={3} className="rating-button">
+                        </input>
+                        <input type="radio" onChange={() => this.update('rating')}
+                            name="rating" value="4" className="rating-button">
+                        </input>
+                        <input type="radio" onChange={() => this.update('rating')}
+                            name="rating" value="5" className="rating-button">
+                        </input>
+                    </label>
                 </form>
             </div>
         )

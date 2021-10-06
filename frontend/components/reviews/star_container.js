@@ -5,7 +5,7 @@ import StarForm from './star_form';
 const mapStateToProps = (state, ownProps) => ({
     currentUser: state.session.id,
     errors: state.errors.reviewErrors,
-    bookId: ownProps.match.params.bookId
+    bookId: ownProps.bookId
 })
 
 const mapDispatchToProps = dispatch => ({

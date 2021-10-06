@@ -1,5 +1,6 @@
 import React from 'react';
 import NavbarContainer from '../navbar/navbar_container';
+import StarContainer from '../reviews/star_container'
 
 class Book extends React.Component {
 
@@ -52,6 +53,7 @@ class Book extends React.Component {
                                 </ul>
                             </div>
                         </div>
+                        <StarContainer bookId={this.props.book.id} />
                     </div>
                 <div className="footer-div"></div>
             </div>
