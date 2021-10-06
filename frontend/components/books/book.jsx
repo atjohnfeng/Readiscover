@@ -23,12 +23,15 @@ class Book extends React.Component {
             <div>
                 <div className="header-div"><NavbarContainer /></div>
                     <div className="book-show">
-                        <div className="book-show-container">
+                        <div className="book-show-left">
                             <div className="book-show-book-cover">
                                 <img className="book-show-book-cover"
-                                src={book.cover_img_url}
-                                alt={book.cover_img_url} />
+                                    src={book.cover_img_url}
+                                    alt={book.cover_img_url} />
                             </div>
+                            <StarContainer bookId={this.props.book.id} />
+                        </div>
+                        <div className="book-show-right">
                             <div className="book-show-book-info-top">
                                 <ul className="book-info-list-top">
                                     <li className="book-title">
@@ -53,7 +56,6 @@ class Book extends React.Component {
                                 </ul>
                             </div>
                         </div>
-                        <StarContainer bookId={this.props.book.id} />
                     </div>
                 <div className="footer-div"></div>
             </div>
