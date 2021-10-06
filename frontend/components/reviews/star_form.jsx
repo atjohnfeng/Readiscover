@@ -64,5 +64,6 @@ class StarForm extends React.Component {
             </div>
         )
     }
-
 }
+
+export default StarForm;
