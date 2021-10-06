@@ -6,10 +6,8 @@ class Api::ReviewsController < ApplicationController
     end
 
     def show
-        if !!current_user
-            @review = Review.find_by(book_id: params[:book_id], user_id: current_user.id)
-            render :show
-        end
+        @review = Review.find_by(book_id: params[:book_id], user_id: params[:user_id])
+        render :show
     end
 
     def create
@@ -22,24 +20,20 @@ class Api::ReviewsController < ApplicationController
     end
 
     def update
-        if !!current_user
-            @review = Review.find_by(book_id: params[:book_id], user_id: current_user.id)
-            if @review.update(review_params)
-                render :show
-            else
-                render json: @review.errors.full_messages, status: 422
-            end
+        @review = Review.find_by(book_id: params[:book_id], user_id: params[:user_id])
+        if @review.update(review_params)
+            render :show
+        else
+            render json: @review.errors.full_messages, status: 422
         end
     end
 
     def destroy
-        if !!current_user
-            @review = Review.find_by(book_id: params[:book_id], user_id: current_user.id)
-            if @review.destroy
-                render :show
-            else
-                render json: ['Delete failed.'], status: 422
-            end
+        @review = Review.find_by(book_id: params[:book_id], user_id: params[:user_id])
+        if @review.destroy
+            render :show
+        else
+            render json: ['Failed to delete review.'], status: 422
         end
     end
 
