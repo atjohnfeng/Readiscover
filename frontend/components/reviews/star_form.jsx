@@ -4,7 +4,8 @@ class StarForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            review: null,
+            title: null,
+            body: null,
             rating: null,
             bookId: this.props.bookId,
             userId: this.props.currentUser
@@ -17,7 +18,8 @@ class StarForm extends React.Component {
         const review = this.props.getReview(this.props.bookId, this.props.currentUser)
         if (!!review) {
             this.setState({
-                review: review,
+                title: review.title,
+                body: review.body,
                 rating: review.rating
             })
         }
@@ -37,6 +39,8 @@ class StarForm extends React.Component {
         let rating;
         if (!this.state.review) {
             rating = Object.assign({}, this.state.rating, this.state.userId, this.state.bookId)
+        } else {
+            rating = Object.assign({}, this.state.rating, this.state.userId, this.state.bookId, this.state.review.title, this.state.review.body)
         }
         this.props.createReview(rating);
     }
