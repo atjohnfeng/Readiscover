@@ -13,6 +13,7 @@
         background-color: #F4F1EA;
         position: relative;
         width: 330px;
+        max-height: 50vmax;
         overflow: auto;
 
         .search-result-img {
@@ -80,7 +81,6 @@
     top: 13px;
     left: -34px;
     height: 20px;
-    overflow: hidden;
 
     &:hover {
         cursor: pointer;
