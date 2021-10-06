@@ -1,5 +1,4 @@
 class Api::ReviewsController < ApplicationController
-
     def index
         @reviews = Review.where(book_id: params[:book_id])
         render :index
