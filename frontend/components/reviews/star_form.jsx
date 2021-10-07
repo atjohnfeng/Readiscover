@@ -13,13 +13,11 @@ class StarForm extends React.Component {
     }
 
     componentDidMount() {
-        if (!!this.props.getReview(this.props.bookId, this.props.currentUser)) {
+        if (this.props.getReview(this.props.bookId, this.props.currentUser)) {
             const review = this.props.getReview(this.props.bookId, this.props.currentUser)
             this.setState({
-                title: review.title,
-                body: review.body,
                 rating: review.rating,
-                formType: 'edit',
+                formType: 'edit'
             })
         }
     }
@@ -38,6 +36,17 @@ class StarForm extends React.Component {
         }
     }
 
+    renderStar(value) {
+        if (this.state.rating <= value) {
+            return (
+                "fa fa-star checked"
+            )
+        } else {
+            return (
+                "fa fa-star"
+            )
+        }
+    }
 
     render() {
         if (!this.props.bookId) {
@@ -47,11 +56,11 @@ class StarForm extends React.Component {
         return (
             <div className="star-rating-form-container">
                 <form className="star-rating-form">
-                    <span onClick={() => this.updateRating(1)} className="fa fa-star" />
-                    <span onClick={() => this.updateRating(2)} className="fa fa-star" />
-                    <span onClick={() => this.updateRating(3)} className="fa fa-star" />
-                    <span onClick={() => this.updateRating(4)} className="fa fa-star" />
-                    <span onClick={() => this.updateRating(5)} className="fa fa-star" />
+                    <span onClick={() => this.updateRating(1)} className={this.renderStar(1)} />
+                    <span onClick={() => this.updateRating(2)} className={this.renderStar(2)} />
+                    <span onClick={() => this.updateRating(3)} className={this.renderStar(3)} />
+                    <span onClick={() => this.updateRating(4)} className={this.renderStar(4)} />
+                    <span onClick={() => this.updateRating(5)} className={this.renderStar(5)} />
                 </form>
             </div>
         )
