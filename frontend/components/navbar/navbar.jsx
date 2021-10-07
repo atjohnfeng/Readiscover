@@ -168,6 +168,7 @@ class Navbar extends React.Component {
                         </button>
                         {this.renderDropdown()}
                     </li>
+                    <li className="hidden-li" />
                 </ul>
             </div>
         )

@@ -2,8 +2,8 @@
     display: inline-block;
     position: relative;
     margin-top: -3.5px;
-    margin-right: 10px;
-    width: 300px;
+    margin-right: 20px;
+    width: 290px;
     z-index: 2;
 
     .search-results {
@@ -12,7 +12,7 @@
         border: 1px solid gainsboro;
         background-color: #F4F1EA;
         position: relative;
-        width: 330px;
+        width: 320px;
         max-height: 50vmax;
         overflow: auto;
 
@@ -79,7 +79,7 @@
     z-index: 3;
     position: relative;
     top: 14px;
-    left: -28px;
+    left: -36px;
     height: 20px;
     padding: 0;
     margin: 0;
