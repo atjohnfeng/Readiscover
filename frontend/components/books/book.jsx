@@ -12,6 +12,21 @@ class Book extends React.Component {
         this.props.getBook(this.props.match.params.bookId)
     }
 
+    renderStarContainer() {
+        if (!this.props.currentUser) {
+            return (
+                <h2>You must log in to leave a rating.</h2>
+            )
+        } else {
+            return (
+                <div className="star-rating-container">
+                    <StarContainer bookId={this.props.book.id} />
+                    <h2>Rate this book</h2>
+                </div>
+            )
+        }
+    }
+
     render() {
         if (!this.props.book) {
             return null;
@@ -29,7 +44,7 @@ class Book extends React.Component {
                                     src={book.cover_img_url}
                                     alt={book.cover_img_url} />
                             </div>
-                            <StarContainer bookId={this.props.book.id} />
+                            {this.renderStarContainer()}
                         </div>
                         <div className="book-show-right">
                             <div className="book-show-book-info-top">
