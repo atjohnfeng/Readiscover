@@ -13,13 +13,18 @@ class StarForm extends React.Component {
     }
 
     componentDidMount() {
-        const review = this.props.getReview(this.props.bookId, this.props.currentUser)
-        if (!!review) {
-            this.setState({
-                rating: review.rating,
-                formType: 'edit'
-            })
-        }
+        // let review;
+        // if (!this.props.getReview(this.props.bookId, this.props.currentUser)) {
+        //     return null;
+        // } else {
+        //     review = this.props.getReview(this.props.bookId, this.props.currentUser);
+        // }
+        // if (!!review) {
+        //     this.setState({
+        //         rating: review.rating,
+        //         formType: 'edit'
+        //     })
+        // }
     }
 
     updateRating(value) {
@@ -36,7 +41,7 @@ class StarForm extends React.Component {
     }
 
     renderStar(value) {
-        if (this.state.rating <= value) {
+        if (value <= this.state.rating && this.state.rating !== '') {
             return (
                 "fa fa-star checked"
             )

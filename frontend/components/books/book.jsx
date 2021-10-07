@@ -11,7 +11,9 @@ class Book extends React.Component {
 
     componentDidMount() {
         this.props.getBook(this.props.match.params.bookId);
-        this.props.getReviews(this.props.match.params.bookId);
+        if (!this.props.getReviews(this.props.match.params.bookId)) {
+            return null;
+        }
     }
 
     renderStarContainer() {
@@ -31,7 +33,7 @@ class Book extends React.Component {
         } else {
             return (
                 <div className="star-rating-container">
-                    <StarContainer bookId={this.props.book.id} />
+                    <StarContainer bookId={this.props.match.params.bookId} />
                     <h2>Rate this book</h2>
                 </div>
             )
