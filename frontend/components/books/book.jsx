@@ -1,6 +1,7 @@
 import React from 'react';
 import NavbarContainer from '../navbar/navbar_container';
-import StarContainer from '../reviews/star_container'
+import StarContainer from '../reviews/star_container';
+import { Link } from 'react-router-dom';
 
 class Book extends React.Component {
 
@@ -15,7 +16,16 @@ class Book extends React.Component {
     renderStarContainer() {
         if (!this.props.currentUser) {
             return (
-                <h2>You must log in to leave a rating.</h2>
+                <div className="star-rating-container">
+                    <form className="star-rating-form">
+                        <Link to="/login"><span class="fa fa-star" /></Link>
+                        <Link to="/login"><span class="fa fa-star" /></Link>
+                        <Link to="/login"><span class="fa fa-star" /></Link>
+                        <Link to="/login"><span class="fa fa-star" /></Link>
+                        <Link to="/login"><span class="fa fa-star" /></Link>
+                    </form>
+                    <h2>Rate this book</h2>
+                </div>
             )
         } else {
             return (

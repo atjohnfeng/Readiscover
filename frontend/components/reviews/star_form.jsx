@@ -54,19 +54,19 @@ class StarForm extends React.Component {
             <div className="star-rating-form-container">
                 <form className="star-rating-form">
                     <input type="radio" onChange={() => this.updateRating(1)}
-                        name="rating" value={1} className="rating-button">
+                        name="rating" value={1} className="fa fa-star">
                     </input>
                     <input type="radio" onChange={() => this.updateRating(2)}
-                        name="rating" value={2} className="rating-button">
+                        name="rating" value={2} className="fa fa-star">
                     </input>
                     <input type="radio" onChange={() => this.updateRating(3)}
-                        name="rating" value={3} className="rating-button">
+                        name="rating" value={3} className="fa fa-star">
                     </input>
                     <input type="radio" onChange={() => this.updateRating(4)}
-                        name="rating" value={4} className="rating-button">
+                        name="rating" value={4} className="fa fa-star">
                     </input>
                     <input type="radio" onChange={() => this.updateRating(5)}
-                        name="rating" value={5} className="rating-button">
+                        name="rating" value={5} className="fa fa-star">
                     </input>
                 </form>
             </div>
