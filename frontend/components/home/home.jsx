@@ -1,5 +1,6 @@
 import React from 'react';
 import NavbarContainer from '../navbar/navbar_container';
+import { Redirect } from 'react-router-dom';
 
 class Home extends React.Component {
     
@@ -10,6 +11,7 @@ class Home extends React.Component {
     render() {
         return (
             <div>
+                <Redirect to="/books" />
                 <div className="header-div"><NavbarContainer /></div>
                     <div className="home">
                         <div className="home-content-container">

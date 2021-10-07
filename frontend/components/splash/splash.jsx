@@ -1,11 +1,12 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 
 class Splash extends React.Component {
 
     render() {
         return (
             <div>
+                <Redirect to="/books" />
                 <Link to="/">
                     <img className="logo"
                         src={window.logoURL}
