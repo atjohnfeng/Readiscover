@@ -13,8 +13,8 @@ class StarForm extends React.Component {
     }
 
     componentDidMount() {
-        if (this.props.getReview(this.props.bookId, this.props.currentUser)) {
-            const review = this.props.getReview(this.props.bookId, this.props.currentUser)
+        const review = this.props.getReview(this.props.bookId, this.props.currentUser)
+        if (!!review) {
             this.setState({
                 rating: review.rating,
                 formType: 'edit'
@@ -28,7 +28,6 @@ class StarForm extends React.Component {
             book_id: this.props.bookId,
             user_id: this.props.currentUser
         }
-        debugger
         if (this.state.formType === 'create') {
             this.props.createReview(review);
         } else if (this.state.formType === 'edit') {

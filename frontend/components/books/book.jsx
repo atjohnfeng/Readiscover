@@ -19,11 +19,11 @@ class Book extends React.Component {
             return (
                 <div className="star-rating-container">
                     <form className="star-rating-form">
-                        <Link to="/login"><span class="fa fa-star" /></Link>
-                        <Link to="/login"><span class="fa fa-star" /></Link>
-                        <Link to="/login"><span class="fa fa-star" /></Link>
-                        <Link to="/login"><span class="fa fa-star" /></Link>
-                        <Link to="/login"><span class="fa fa-star" /></Link>
+                        <Link to="/login"><span className="fa fa-star" /></Link>
+                        <Link to="/login"><span className="fa fa-star" /></Link>
+                        <Link to="/login"><span className="fa fa-star" /></Link>
+                        <Link to="/login"><span className="fa fa-star" /></Link>
+                        <Link to="/login"><span className="fa fa-star" /></Link>
                     </form>
                     <h2>Rate this book</h2>
                 </div>
