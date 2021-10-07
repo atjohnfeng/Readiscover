@@ -13,25 +13,19 @@ class StarForm extends React.Component {
     }
 
     componentDidMount() {
-        // let review;
-        // if (!this.props.getReview(this.props.bookId, this.props.currentUser)) {
-        //     return null;
-        // } else {
-        //     review = this.props.getReview(this.props.bookId, this.props.currentUser)
-        // }
-        // if (!!review) {
-        //     this.setState({
-        //         title: review.title,
-        //         body: review.body,
-        //         rating: review.rating,
-        //         // formType: 'edit',
-        //     })
-        // } else {
-        //     this.setState({
-        //         // formType: 'create',
-        //     })
-        // }
-        // console.log(this.state.bookId)
+        if (!this.props.getReview(this.props.bookId, this.props.currentUser)) {
+            return null;
+        } else {
+            review = this.props.getReview(this.props.bookId, this.props.currentUser)
+        }
+        if (review) {
+            this.setState({
+                title: review.title,
+                body: review.body,
+                rating: review.rating,
+                formType: 'edit',
+            })
+        }
     }
 
     updateRating(value) {
@@ -41,7 +35,11 @@ class StarForm extends React.Component {
             user_id: this.props.currentUser
         }
         debugger
-        this.props.createReview(review);
+        if (this.state.formType === 'create') {
+            this.props.createReview(review);
+        } else if (this.state.formType === 'edit') {
+            this.props.editReview(review)
+        }
     }
 
 
@@ -53,21 +51,11 @@ class StarForm extends React.Component {
         return (
             <div className="star-rating-form-container">
                 <form className="star-rating-form">
-                    <input type="radio" onChange={() => this.updateRating(1)}
-                        name="rating" value={1} className="fa fa-star">
-                    </input>
-                    <input type="radio" onChange={() => this.updateRating(2)}
-                        name="rating" value={2} className="fa fa-star">
-                    </input>
-                    <input type="radio" onChange={() => this.updateRating(3)}
-                        name="rating" value={3} className="fa fa-star">
-                    </input>
-                    <input type="radio" onChange={() => this.updateRating(4)}
-                        name="rating" value={4} className="fa fa-star">
-                    </input>
-                    <input type="radio" onChange={() => this.updateRating(5)}
-                        name="rating" value={5} className="fa fa-star">
-                    </input>
+                    <span onClick={() => this.updateRating(1)} className="fa fa-star" />
+                    <span onClick={() => this.updateRating(2)} className="fa fa-star" />
+                    <span onClick={() => this.updateRating(3)} className="fa fa-star" />
+                    <span onClick={() => this.updateRating(4)} className="fa fa-star" />
+                    <span onClick={() => this.updateRating(5)} className="fa fa-star" />
                 </form>
             </div>
         )
