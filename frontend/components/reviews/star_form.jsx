@@ -13,12 +13,8 @@ class StarForm extends React.Component {
     }
 
     componentDidMount() {
-        // let review;
-        // if (!this.props.getReview(this.props.bookId, this.props.currentUser)) {
-        //     return null;
-        // } else {
-        //     review = this.props.getReview(this.props.bookId, this.props.currentUser);
-        // }
+        // const review = this.props.getReview(this.props.bookId, this.props.currentUser);
+        // console.log(review)
         // if (!!review) {
         //     this.setState({
         //         rating: review.rating,

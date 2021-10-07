@@ -11,9 +11,7 @@ class Book extends React.Component {
 
     componentDidMount() {
         this.props.getBook(this.props.match.params.bookId);
-        if (!this.props.getReviews(this.props.match.params.bookId)) {
-            return null;
-        }
+        this.props.getReviews(this.props.match.params.bookId);
     }
 
     renderStarContainer() {

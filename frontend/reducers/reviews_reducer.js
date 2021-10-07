@@ -1,6 +1,6 @@
 import { RECEIVE_REVIEW, 
     RECEIVE_REVIEWS, 
-    DELETE_REVIEW } from '../actions/book_actions'
+    DELETE_REVIEW } from '../actions/review_actions'
 
 const reviewsReducer = (state = {}, action) => {
     Object.freeze(state);
