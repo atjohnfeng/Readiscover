@@ -10,7 +10,8 @@ class Book extends React.Component {
     }
 
     componentDidMount() {
-        this.props.getBook(this.props.match.params.bookId)
+        this.props.getBook(this.props.match.params.bookId);
+        this.props.getReviews(this.props.match.params.bookId);
     }
 
     renderStarContainer() {
