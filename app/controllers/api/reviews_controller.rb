@@ -5,7 +5,7 @@ class Api::ReviewsController < ApplicationController
     end
 
     def show
-        @review = Review.find_by(book_id: params[:book_id], user_id: params[:user_id])
+        @review = Review.where(book_id: params[:book_id], user_id: params[:user_id])
         render :show
     end
 
@@ -19,7 +19,7 @@ class Api::ReviewsController < ApplicationController
     end
 
     def update
-        @review = Review.find_by(book_id: params[:book_id], user_id: params[:user_id])
+        @review = Review.where(book_id: params[:book_id], user_id: params[:user_id])
         if @review.update(review_params)
             render :show
         else
@@ -28,7 +28,7 @@ class Api::ReviewsController < ApplicationController
     end
 
     def destroy
-        @review = Review.find_by(book_id: params[:book_id], user_id: params[:user_id])
+        @review = Review.where(book_id: params[:book_id], user_id: params[:user_id])
         if @review.destroy
             render :show
         else

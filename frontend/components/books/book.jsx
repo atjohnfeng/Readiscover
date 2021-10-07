@@ -53,7 +53,7 @@ class Book extends React.Component {
                             <div className="book-show-book-cover">
                                 <img className="book-show-book-cover"
                                     src={book.cover_img_url}
-                                    alt={book.cover_img_url} />
+                                    alt={book.title} />
                             </div>
                             {this.renderStarContainer()}
                         </div>
