@@ -1,17 +1,66 @@
 .book-show {
     display: flex;
-    flex-direction: row;
     justify-content: center;
     
     .book-show-left {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        align-items: center;
+        margin-top: 2vh;
+        margin-right: 4vh;
+        font-family: 'Montserrat', sans-serif;
+
         .book-show-book-cover {
-            width: 20vh;
-            height: 30vh;
-            padding: 10px;
+            width: 24vh;
+            height: 36vh;
+            border-top-right-radius: 16px;
+            border-bottom-right-radius: 16px;
+        }
+
+        .star-rating-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 14px;
+            margin-top: 10px;
+            margin-bottom: 10px;
         }
     }
 
     .book-show-right {
-        
+        margin-top: 2vh;
+        margin-left: 4vh;
+        display: flex;
+        flex-direction: column;
+        align-items: left;
+        max-width: 60vh;
+        font-family: 'Montserrat', sans-serif;
+
+        .book-show-book-info-top {
+            font-family: 'Libre Baskerville', serif;
+            margin-bottom: 10px;
+
+            .book-title {
+                font-size: 36px;
+                margin-bottom: 5px;
+            }
+
+            .book-author {
+                font-size: 24px;
+                margin-bottom: 10px;
+            }
+        }
+
+        .book-show-book-description {
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        .book-show-book-info-bottom {
+            font-size: 14px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid lightgrey;
+        }
     }
 }
