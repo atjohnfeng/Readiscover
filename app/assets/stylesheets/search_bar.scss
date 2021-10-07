@@ -78,9 +78,11 @@
     border: none;
     z-index: 3;
     position: relative;
-    top: 13px;
-    left: -34px;
+    top: 14px;
+    left: -28px;
     height: 20px;
+    padding: 0;
+    margin: 0;
 
     &:hover {
         cursor: pointer;
