@@ -67,3 +67,9 @@
         }
     }
 }
+
+@media only screen and (max-width: 1200px) {
+    .book-show {
+        flex-direction: column;
+    }
+}
