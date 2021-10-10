@@ -5,7 +5,8 @@ import { getReviews } from '../../actions/review_actions'
 
 const mapStateToProps = (state, ownProps) => ({
     book: state.entities.books[ownProps.match.params.bookId],
-    currentUser: state.session.id
+    currentUser: state.session.id,
+    reviews: state.entities.reviews
 })
 
 const mapDispatchToProps = dispatch => ({

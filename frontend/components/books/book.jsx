@@ -13,7 +13,7 @@ class Book extends React.Component {
         this.props.getBook(this.props.match.params.bookId);
         this.props.getReviews(this.props.match.params.bookId);
     }
-
+    
     renderStarContainer() {
         if (!this.props.currentUser) {
             return (
@@ -34,6 +34,23 @@ class Book extends React.Component {
                     <StarContainer bookId={this.props.match.params.bookId} />
                     <h2>Rate this book</h2>
                 </div>
+            )
+        }
+    }
+
+    renderReviews() {
+        const reviews = Object.values(this.props.reviews);
+        if (!!reviews) {
+            return (
+                <ul className="book-show-reviews">
+                    {reviews.map((review, i) => {
+                        return <li key={`review-${i}`}>
+                            {console.log(review)}
+                            <h2>Reviewed by: {review.user_id}</h2>
+                            <h2>Rating: {review.rating}</h2>
+                        </li>
+                    })}
+                </ul>
             )
         }
     }
@@ -80,6 +97,10 @@ class Book extends React.Component {
                                         Published {book.published_date}
                                     </li>
                                 </ul>
+                            </div>
+                            <div>
+                                <h1>User Reviews</h1>
+                                {this.renderReviews()}
                             </div>
                         </div>
                     </div>

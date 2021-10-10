@@ -71,13 +71,18 @@
 @media only screen and (max-width: 1200px) {
     .book-show {
         flex-direction: column;
+        align-items: center;
+
+        .book-show-right {
+            max-width: 90vh;
+        }
     }
 
-    .book-show-left {
-        margin-left: 60px;
-    }
+    // .book-show-left {
+    //     margin-left: 60px;
+    // }
 
-    .book-show-right {
-        margin-right: 60px;
-    }
+    // .book-show-right {
+    //     margin-right: 60px;
+    // }
 }
