@@ -77,12 +77,14 @@
             max-width: 90vh;
         }
     }
+}
 
-    // .book-show-left {
-    //     margin-left: 60px;
-    // }
+@media only screen and (max-width: 600px) {
+    .book-show-left {
+        margin-left: 60px;
+    }
 
-    // .book-show-right {
-    //     margin-right: 60px;
-    // }
+    .book-show-right {
+        margin-right: 60px;
+    }
 }
