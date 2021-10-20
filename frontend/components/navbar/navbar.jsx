@@ -153,7 +153,7 @@ class Navbar extends React.Component {
                         </a>
                     </li>
                     <li className="nav-image-link">
-                        <a href="https://www.linkedin.com/in/john-feng-316220215/"
+                        <a href="https://www.linkedin.com/in/atjohnfeng/"
                             target="_blank">
                             <img src={window.linkedLogo}
                                 alt="linkedin-logo-link" 

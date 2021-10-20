@@ -4,6 +4,18 @@
     <title>Readiscover</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <meta property="og:title" content="Readiscover" />
+     <meta property='og:image' content="<%= image_url('index.png') %>"/>
+     <meta property="og:description"
+       content="Rediscover the joy of reading. Readiscover is a Goodreads clone, 
+       a social media platform where users can log books they have read or want 
+       to read. Users can also review books, and find information on books they 
+       are interested in. Users may create bookshelves to organize their books, 
+       or use the pre-determined shelves of 'read' and 'to-be-read'."
+     />
+     <meta property="og:url"
+       content="http://readiscover.herokuapp.com/"
+     />
     <script type="text/javascript">
       window.logoURL = "<%= image_url('readiscover-logo.png') %>"
       window.githubLogo = "<%= image_url('tan-github-logo.png') %>"
