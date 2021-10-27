@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { createReview, editReview } from '../../actions/review_actions';
+import { createReview, editReview, getReview } from '../../actions/review_actions';
 import { getBook } from '../../actions/book_actions';
 import StarForm from './star_form';
 
@@ -13,7 +13,8 @@ const mapStateToProps = (state, ownProps) => ({
 const mapDispatchToProps = dispatch => ({
     getBook: bookId => dispatch(getBook(bookId)),
     createReview: review => dispatch(createReview(review)),
-    editReview: review => dispatch(editReview(review))
+    editReview: review => dispatch(editReview(review)),
+    getReview: (book_id, user_id) => dispatch(getReview(book_id, user_id))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(StarForm);

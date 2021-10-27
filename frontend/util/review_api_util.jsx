@@ -1,7 +1,7 @@
-export const getReview = (bookId, id) => (
+export const getReview = (bookId, userId) => (
     $.ajax({
         method: 'get',
-        url: `/api/books/${bookId}/reviews/${id}`
+        url: `/api/books/${bookId}/reviews/${userId}`
     })
 );
 

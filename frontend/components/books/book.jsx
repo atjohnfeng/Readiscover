@@ -1,6 +1,7 @@
 import React from 'react';
 import NavbarContainer from '../navbar/navbar_container';
 import StarContainer from '../reviews/star_container';
+import ReviewIndexContainer from '../reviews/review_index_container';
 import { Link } from 'react-router-dom';
 
 class Book extends React.Component {
@@ -12,6 +13,12 @@ class Book extends React.Component {
     componentDidMount() {
         this.props.getBook(this.props.match.params.bookId);
         this.props.getReviews(this.props.match.params.bookId);
+    }
+
+    componentDidUpdate(prevProps) {
+        if (JSON.stringify(this.props.reviews) !== JSON.stringify(prevProps.reviews)) {
+            this.props.getReviews(this.props.match.params.bookId);
+        }
     }
     
     renderStarContainer() {
@@ -39,20 +46,19 @@ class Book extends React.Component {
     }
 
     renderReviews() {
-        const reviews = Object.values(this.props.reviews);
-        if (!!reviews) {
-            return (
-                <ul className="book-show-reviews">
-                    {reviews.map((review, i) => {
-                        return <li key={`review-${i}`}>
-                            {console.log(review)}
-                            <h2>Reviewed by: {review.user_id}</h2>
-                            <h2>Rating: {review.rating}</h2>
-                        </li>
-                    })}
-                </ul>
-            )
-        }
+        // const reviews = Object.values(this.props.reviews);
+        // if (reviews.length > 0) {
+        //     return (
+        //         <ul className="book-show-reviews">
+        //             {reviews.map((review, i) => {
+        //                 return <li key={`review-${i}`}>
+        //                     <h2>Reviewed by: {review.user_id}</h2>
+        //                     <h2>Rating: {review.rating}</h2>
+        //                 </li>
+        //             })}
+        //         </ul>
+        //     )
+        // }
     }
 
     render() {
@@ -100,7 +106,8 @@ class Book extends React.Component {
                             </div>
                             <div>
                                 <h1>User Reviews</h1>
-                                {this.renderReviews()}
+                                <ReviewIndexContainer reviews={this.props.reviews} bookId={this.props.match.params.bookId} />
+                                {/* {this.renderReviews()} */}
                             </div>
                         </div>
                     </div>

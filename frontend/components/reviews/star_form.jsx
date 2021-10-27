@@ -13,17 +13,18 @@ class StarForm extends React.Component {
     }
 
     componentDidMount() {
-        this.props.getBook(this.props.book_id);
-        const reviews = Object.values(this.props.reviews);
-        console.log(reviews)
-        reviews.forEach(review => {
-            if (review.user_id === this.props.currentUser) {
-                this.setState({
-                    rating: review.rating,
-                    formType: 'edit'
-                })
-            }
-        })   
+        this.props.getBook(this.props.bookId);
+        const review = this.props.getReview({book_id: this.props.bookId, user_id: this.props.currentUser});
+        console.log(review);
+        // const reviews = Object.values(this.props.reviews);
+        // reviews.forEach(review => {
+        //     if (review.user_id === this.props.currentUser) {
+        //         this.setState({
+        //             rating: review.rating,
+        //             formType: 'edit'
+        //         })
+        //     }
+        // })   
     }
 
     updateRating(value) {
