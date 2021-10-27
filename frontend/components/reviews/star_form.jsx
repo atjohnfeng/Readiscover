@@ -8,6 +8,7 @@ class StarForm extends React.Component {
             book_id: this.props.bookId,
             user_id: this.props.currentUser,
             formType: 'create',
+            reviewId: null
         }
         this.updateRating = this.updateRating.bind(this);
     }
@@ -20,7 +21,8 @@ class StarForm extends React.Component {
                 if (review.length > 0) {
                     this.setState({
                         rating: review[0].rating,
-                        formType: 'edit'
+                        formType: 'edit',
+                        reviewId: review[0].id
                     }) 
                 }
             }
@@ -40,7 +42,8 @@ class StarForm extends React.Component {
                 formType: 'edit'
             });
         } else if (this.state.formType === 'edit') {
-            this.props.editReview(review);
+            // console.log(this.state.reviewId)
+            this.props.editReview(review, this.state.reviewId);
             this.setState({ rating: review.rating });
         }
     }
