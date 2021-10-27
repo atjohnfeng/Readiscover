@@ -14,8 +14,7 @@ class StarForm extends React.Component {
 
     componentDidMount() {
         this.props.getBook(this.props.bookId);
-        const review = this.props.getReview({book_id: this.props.bookId, user_id: this.props.currentUser});
-        console.log(review);
+        const review = this.props.getReview(this.props.bookId, this.props.currentUser);
         // const reviews = Object.values(this.props.reviews);
         // reviews.forEach(review => {
         //     if (review.user_id === this.props.currentUser) {
