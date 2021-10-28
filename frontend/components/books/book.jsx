@@ -11,15 +11,16 @@ class Book extends React.Component {
     }
 
     componentDidMount() {
+        window.scrollTo(0, 0);
         this.props.getBook(this.props.match.params.bookId);
-        this.props.getReviews(this.props.match.params.bookId);
+        // this.props.getReviews(this.props.match.params.bookId);
     }
 
-    componentDidUpdate(prevProps) {
-        if (JSON.stringify(this.props.reviews) !== JSON.stringify(prevProps.reviews)) {
-            this.props.getReviews(this.props.match.params.bookId);
-        }
-    }
+    // componentDidUpdate(prevProps) {
+    //     if (JSON.stringify(this.props.reviews) !== JSON.stringify(prevProps.reviews)) {
+    //         this.props.getReviews(this.props.match.params.bookId);
+    //     }
+    // }
     
     renderStarContainer() {
         if (!this.props.currentUser) {
@@ -105,7 +106,7 @@ class Book extends React.Component {
                                 </ul>
                             </div>
                             <div>
-                                <ReviewIndexContainer reviews={this.props.reviews}/>
+                            <ReviewIndexContainer bookId={this.props.match.params.bookId}/>
                                 {/* {this.renderReviews()} */}
                             </div>
                         </div>

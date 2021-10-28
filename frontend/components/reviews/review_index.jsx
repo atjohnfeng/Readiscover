@@ -5,6 +5,16 @@ class ReviewIndex extends React.Component {
         super(props);
     }
 
+    componentDidMount() {
+        this.props.getReviews(this.props.bookId);
+    }
+
+    componentDidUpdate(prevProps) {
+        if (JSON.stringify(this.props.reviews) !== JSON.stringify(prevProps.reviews)) {
+            this.props.getReviews(this.props.bookId);
+        }
+    }
+
     render() {
         let reviews;
 
