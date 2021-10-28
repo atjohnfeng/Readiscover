@@ -18,10 +18,13 @@ class ReviewIndex extends React.Component {
     render() {
         let reviews;
 
-        if (!this.props.reviews) {
+        if (Object.values(this.props.reviews).length === 0) {
             return null;
-        } else {
+        } else if (Object.values(this.props.reviews).length > 0) {
             reviews = Object.values(this.props.reviews);
+            if (reviews[0].book_id != this.props.bookId) {
+                return null;
+            }
         }
 
         return (

@@ -8,7 +8,7 @@ export const DELETE_REVIEW = 'DELETE_REVIEW';
 const receiveReview = review => {
     return {
         type: RECEIVE_REVIEW,
-        review
+        user_review: review
     }
 }
 
