@@ -6,4 +6,8 @@ class Book < ApplicationRecord
     foreign_key: :book_id,
     class_name: :Review
 
+    has_many :reviewers,
+    through: :reviews,
+    source: :reviewer
+
 end

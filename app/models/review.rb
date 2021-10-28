@@ -5,7 +5,7 @@ class Review < ApplicationRecord
     validates :body, presence: true, unless: :rating
     validates :user_id, uniqueness: { scope: :book_id }
 
-    belongs_to :user,
+    belongs_to :reviewer,
     foreign_key: :user_id,
     class_name: :User
 
