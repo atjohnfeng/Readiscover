@@ -4,11 +4,12 @@ export const RECEIVE_REVIEW = 'RECEIVE_REVIEW';
 export const RECEIVE_REVIEWS = 'RECEIVE_REVIEWS';
 export const RECEIVE_REVIEW_ERRORS = 'RECEIVE_REVIEW_ERRORS';
 export const DELETE_REVIEW = 'DELETE_REVIEW';
+export const RESET_REVIEWS = 'RESET_REVIEWS';
 
 const receiveReview = review => {
     return {
         type: RECEIVE_REVIEW,
-        user_review: review
+        review
     }
 }
 
@@ -30,6 +31,12 @@ const destroyReview = review => {
     return {
         type: DELETE_REVIEW,
         review
+    }
+}
+
+const resetReviews = () => {
+    return {
+        type: RESET_REVIEWS
     }
 }
 
@@ -56,4 +63,8 @@ export const editReview = (review, reviewId) => dispatch => (
 export const deleteReview = review => dispatch => (
     ReviewApiUtil.deleteReview(review).then(review => dispatch(destroyReview(review)),
         errors => dispatch(receiveReviewErrors(errors.responseJSON)))
+)
+
+export const reset = () => dispatch => (
+    dispatch(resetReviews())
 )

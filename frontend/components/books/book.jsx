@@ -53,14 +53,21 @@ class Book extends React.Component {
                 <ul className="book-show-reviews">
                     <h1>Community Reviews</h1>
                     {reviews.map((review, i) => {
+                        if (!review || !review.user_id || !review.rating) {
+                            return null;
+                        }
                         return <li key={`review-${i}`}>
                             <h2>Reviewed by: {review.user_id}</h2>
                             <h2>Rating: {review.rating}</h2>
                         </li>
                     })}
-                </ul>
+                </ul>  
             )
         }
+    }
+
+    componentWillUnmount() {
+        this.props.reset();
     }
 
     render() {

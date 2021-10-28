@@ -1,6 +1,7 @@
 import { RECEIVE_REVIEW, 
     RECEIVE_REVIEWS, 
-    DELETE_REVIEW } from '../actions/review_actions'
+    DELETE_REVIEW,
+    RESET_REVIEWS } from '../actions/review_actions'
 
 const reviewsReducer = (state = {}, action) => {
     Object.freeze(state);
@@ -14,6 +15,8 @@ const reviewsReducer = (state = {}, action) => {
             let nextState = Object.assign({}, state);
             delete nextState[action.review.id];
             return nextState;
+        case RESET_REVIEWS:
+            return {};
         default:
             return state;
     }
