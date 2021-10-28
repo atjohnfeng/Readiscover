@@ -13,14 +13,14 @@ class Book extends React.Component {
     componentDidMount() {
         window.scrollTo(0, 0);
         this.props.getBook(this.props.match.params.bookId);
-        // this.props.getReviews(this.props.match.params.bookId);
+        this.props.getReviews(this.props.match.params.bookId);
     }
 
-    // componentDidUpdate(prevProps) {
-    //     if (JSON.stringify(this.props.reviews) !== JSON.stringify(prevProps.reviews)) {
-    //         this.props.getReviews(this.props.match.params.bookId);
-    //     }
-    // }
+    componentDidUpdate(prevProps) {
+        if (JSON.stringify(this.props.reviews) !== JSON.stringify(prevProps.reviews)) {
+            this.props.getReviews(this.props.match.params.bookId);
+        }
+    }
     
     renderStarContainer() {
         if (!this.props.currentUser) {
@@ -46,21 +46,21 @@ class Book extends React.Component {
         }
     }
 
-    // renderReviews() {
-    //     const reviews = Object.values(this.props.reviews);
-    //     if (reviews.length > 0) {
-    //         return (
-    //             <ul className="book-show-reviews">
-    //                 {reviews.map((review, i) => {
-    //                     return <li key={`review-${i}`}>
-    //                         <h2>Reviewed by: {review.user_id}</h2>
-    //                         <h2>Rating: {review.rating}</h2>
-    //                     </li>
-    //                 })}
-    //             </ul>
-    //         )
-    //     }
-    // }
+    renderReviews() {
+        const reviews = Object.values(this.props.reviews);
+        if (reviews.length > 0) {
+            return (
+                <ul className="book-show-reviews">
+                    {reviews.map((review, i) => {
+                        return <li key={`review-${i}`}>
+                            <h2>Reviewed by: {review.user_id}</h2>
+                            <h2>Rating: {review.rating}</h2>
+                        </li>
+                    })}
+                </ul>
+            )
+        }
+    }
 
     render() {
         if (!this.props.book) {
@@ -106,8 +106,8 @@ class Book extends React.Component {
                                 </ul>
                             </div>
                             <div>
-                            <ReviewIndexContainer bookId={this.props.match.params.bookId}/>
-                                {/* {this.renderReviews()} */}
+                            {/* <ReviewIndexContainer bookId={this.props.match.params.bookId}/> */}
+                                {this.renderReviews()}
                             </div>
                         </div>
                     </div>
