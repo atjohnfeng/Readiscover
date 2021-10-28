@@ -105,8 +105,7 @@ class Book extends React.Component {
                                 </ul>
                             </div>
                             <div>
-                                <h1>User Reviews</h1>
-                                <ReviewIndexContainer reviews={this.props.reviews} bookId={this.props.match.params.bookId} />
+                                <ReviewIndexContainer reviews={this.props.reviews}/>
                                 {/* {this.renderReviews()} */}
                             </div>
                         </div>

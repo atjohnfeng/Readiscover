@@ -3,7 +3,7 @@
     justify-content: center;
     height: 100vmax;
     width: 100vmax;
-    background-color: white;
+    background-color: #eeebe4;
     
     .book-show-left {
         display: flex;
@@ -14,8 +14,8 @@
         font-family: 'Montserrat', sans-serif;
 
         .book-show-book-cover {
-            width: 24vh;
-            height: 36vh;
+            width: 18vh;
+            height: 27vh;
             border-top-right-radius: 16px;
             border-bottom-right-radius: 16px;
         }
@@ -25,11 +25,9 @@
             flex-direction: column;
             align-items: center;
             font-size: 14px;
-            margin-top: 10px;
-            margin-bottom: 10px;
-
+            padding-top: 15px;
             h2 {
-                margin-top: 5px;
+                padding-top: 10px;
             }
         }
     }

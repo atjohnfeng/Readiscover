@@ -6,6 +6,7 @@
 .fa-star {
     color: #C0C0C0;
     font-size: 24px;
+    padding-right: 5px;
 
     &:hover {
         color: orange;
@@ -19,4 +20,12 @@
 .star-rating-form > span:hover:before,
 .star-rating-form > span:hover ~ span:before {
     color: orange;
+}
+
+.book-show-reviews {
+    padding-top: 10px;
+
+    h1 {
+        font-weight: bolder;
+    }
 }
