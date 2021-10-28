@@ -34,37 +34,45 @@
 
     .book-show-right {
         margin-top: 2%;
-        margin-left: 4%;
+        margin-left: 2%;
         display: flex;
         flex-direction: column;
         align-items: left;
-        max-width: 50%;
+        max-width: 40%;
         font-family: 'Montserrat', sans-serif;
 
         .book-show-book-info-top {
             font-family: 'Libre Baskerville', serif;
-            margin-bottom: 10px;
+            padding-bottom: 10px;
 
             .book-title {
+                font-weight: bold;
                 font-size: 36px;
-                margin-bottom: 5px;
+                padding-bottom: 5px;
             }
 
             .book-author {
                 font-size: 24px;
-                margin-bottom: 10px;
+                font-weight: lighter;
+                padding-bottom: 5px;
             }
         }
 
         .book-show-book-description {
             font-size: 16px;
-            margin-bottom: 10px;
+            padding-bottom: 10px;
         }
 
         .book-show-book-info-bottom {
-            font-size: 14px;
-            padding-bottom: 10px;
+            font-size: 12px;
+            // padding-bottom: 10px;
             border-bottom: 1px solid lightgrey;
+
+            .book-info-list-bottom {
+                li {
+                    padding-bottom: 10px;
+                }
+            }
         }
     }
 }
