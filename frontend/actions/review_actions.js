@@ -48,8 +48,8 @@ export const createReview = review => dispatch => (
         errors => dispatch(receiveReviewErrors(errors.responseJSON)))
 )
 
-export const editReview = review => dispatch => (
-    ReviewApiUtil.editReview(review).then(review => dispatch(receiveReview(review)),
+export const editReview = (review, reviewId) => dispatch => (
+    ReviewApiUtil.editReview(review, reviewId).then(review => dispatch(receiveReview(review)),
         errors => dispatch(receiveReviewErrors(errors.responseJSON)))
 )
 

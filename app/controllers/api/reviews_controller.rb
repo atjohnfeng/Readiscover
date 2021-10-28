@@ -19,7 +19,7 @@ class Api::ReviewsController < ApplicationController
     end
 
     def update
-        @review = Review.where(book_id: params[:book_id], user_id: params[:user_id])
+        @review = Review.find(params[:id])
         if @review.update(review_params)
             render :show
         else
