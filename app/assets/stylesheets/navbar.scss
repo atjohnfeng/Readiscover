@@ -1,7 +1,7 @@
 .nav-bar {
     position: fixed;
     top: 0;
-    width: 100vmax;
+    width: 100%;
     // background-color: #F4F1EA;
     // border-bottom: 1px solid gainsboro;
 }
@@ -10,7 +10,7 @@
     position: absolute;
     background-color: #F4F1EA;
     border-bottom: 1px solid gainsboro;
-    width: 100vmax;
+    width: 100%;
 
     display: flex;
     flex-direction: row;
@@ -132,13 +132,13 @@
 }
 
 @media only screen and (max-width: 1200px) {
-    .nav-bar {
-        width: 100%;
-    }
+    // .nav-bar {
+    //     width: 50%;
+    // }
 
-    .nav-bar-list {
-        width: 100%;
-    }
+    // .nav-bar-list {
+    //     width: 50%;
+    // }
 
     // .nav-bar-logo {
     //     margin-left: 10px;

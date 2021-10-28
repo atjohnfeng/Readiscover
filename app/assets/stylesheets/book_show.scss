@@ -2,15 +2,15 @@
     display: flex;
     justify-content: center;
     height: 100vmax;
-    width: 100vmax;
+    width: 100%;
     background-color: #eeebe4;
     
     .book-show-left {
         display: flex;
         flex-direction: column;
         align-items: center;
-        margin-top: 2vh;
-        margin-right: 4vh;
+        margin-top: 2%;
+        margin-right: 4%;
         font-family: 'Montserrat', sans-serif;
 
         .book-show-book-cover {
@@ -33,12 +33,12 @@
     }
 
     .book-show-right {
-        margin-top: 2vh;
-        margin-left: 4vh;
+        margin-top: 2%;
+        margin-left: 4%;
         display: flex;
         flex-direction: column;
         align-items: left;
-        max-width: 50vh;
+        max-width: 50%;
         font-family: 'Montserrat', sans-serif;
 
         .book-show-book-info-top {
@@ -69,13 +69,13 @@
     }
 }
 
-@media only screen and (max-width: 1200px) {
+@media only screen and (max-width: 1000px) {
     .book-show {
         flex-direction: column;
-        align-items: center;
+        height: 100%;
 
         .book-show-right {
-            max-width: 90vh;
+            max-width: 100%;
         }
     }
 }
