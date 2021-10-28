@@ -51,7 +51,6 @@ class Book extends React.Component {
         if (reviews.length > 0) {
             return (
                 <ul className="book-show-reviews">
-                    <h1>Community Reviews</h1>
                     {reviews.map((review, i) => {
                         if (!review || !review.user_id || !review.rating) {
                             return null;
@@ -114,8 +113,8 @@ class Book extends React.Component {
                                 </ul>
                             </div>
                             <div>
-                            {/* <ReviewIndexContainer bookId={this.props.match.params.bookId}/> */}
-                                {this.renderReviews()}
+                            <h1>Community Reviews</h1>
+                            {this.renderReviews()}
                             </div>
                         </div>
                     </div>
