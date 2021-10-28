@@ -1,6 +1,9 @@
 .book-show {
     display: flex;
     justify-content: center;
+    height: 100vmax;
+    width: 100vmax;
+    background-color: white;
     
     .book-show-left {
         display: flex;

@@ -80,9 +80,9 @@
     position: absolute;
     background-color: white;
     min-width: 160px;
-    box-shadow: 0px, 8px, 16px, 0px rgba(0,0,0,0.2);
     right: 0px;
-    top: 50px;
+    border-top: 1px solid gainsboro;
+    top: 51px;
 
     .li-dropdown-link {
         padding: 10px;
