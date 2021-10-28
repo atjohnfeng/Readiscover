@@ -68,11 +68,11 @@ class StarForm extends React.Component {
         return (
             <div className="star-rating-form-container">
                 <form className="star-rating-form">
-                    <span onClick={() => this.updateRating(1)} className={this.renderStar(1)} />
-                    <span onClick={() => this.updateRating(2)} className={this.renderStar(2)} />
-                    <span onClick={() => this.updateRating(3)} className={this.renderStar(3)} />
-                    <span onClick={() => this.updateRating(4)} className={this.renderStar(4)} />
                     <span onClick={() => this.updateRating(5)} className={this.renderStar(5)} />
+                    <span onClick={() => this.updateRating(4)} className={this.renderStar(4)} />
+                    <span onClick={() => this.updateRating(3)} className={this.renderStar(3)} />
+                    <span onClick={() => this.updateRating(2)} className={this.renderStar(2)} />
+                    <span onClick={() => this.updateRating(1)} className={this.renderStar(1)} />
                 </form>
             </div>
         )

@@ -1,3 +1,8 @@
+.star-rating-form {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
 .fa-star {
     color: #C0C0C0;
     font-size: 24px;
@@ -8,5 +13,10 @@
 }
 
 .checked {
+    color: orange;
+}
+
+.star-rating-form > span:hover:before,
+.star-rating-form > span:hover ~ span:before {
     color: orange;
 }
