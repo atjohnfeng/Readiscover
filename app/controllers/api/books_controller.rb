@@ -2,6 +2,8 @@ class Api::BooksController < ApplicationController
 
     def show
         @book = Book.find(params[:id])
+        @reviews = @book.reviews
+        @reviewers = @book.reviewers
         render :show
     end
 
