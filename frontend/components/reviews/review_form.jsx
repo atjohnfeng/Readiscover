@@ -41,6 +41,10 @@ class ReviewForm extends React.Component {
         );
     }
 
+    componentWillUnmount() {
+        this.props.reset();
+    }
+
     handleSubmit() {
         const review = {
             rating: this.state.rating,
