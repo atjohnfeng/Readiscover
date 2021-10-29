@@ -32,6 +32,25 @@ h1 {
     padding-top: 10px;
 }
 
-.review-cover {
-    max-width: 50px;
+.review-form-container {
+    display: flex;
+    flex-direction: column;
+
+    .star-rating-form {
+        justify-content: flex-end;
+
+        .fa-star {
+            font-size: 15px;
+            padding-right: 3px;
+        }
+    }
+
+    .book-info {
+        display: flex;
+
+        .review-cover {
+            width: 40px;
+            height: 60x;
+        }
+    }
 }

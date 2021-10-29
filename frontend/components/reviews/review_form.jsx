@@ -65,7 +65,6 @@ class ReviewForm extends React.Component {
     }
 
     updateRating(value) {
-        console.log(this.props.book.title)
         this.setState({
             rating: value
         })
@@ -89,23 +88,32 @@ class ReviewForm extends React.Component {
             <div className="review-form-container">
                 <div className="header-div"><NavbarContainer /></div>
                 <header> 
-                    <Link to={`/books/${this.props.bookId}`}>{title}</Link> &gt; Review &gt; {this.state.formType}
+                    <Link to={`/books/${this.props.bookId}`}>{title}</Link> 
+                    &gt; Review &gt; {this.state.formType}
                 </header>
                 <div className="book-info">
-                    <fig>
+                    <figure>
                         <img src={cover} alt={`${title}-cover`} className="review-cover"/>
-                    </fig>
+                    </figure>
                     <figcaption>
                         <h1>{title}</h1>
                         <h2>by {author}</h2>
                     </figcaption>
                 </div>
                     <div className="star-rating-form">
-                        <span onClick={() => this.updateRating(5)} className={this.renderStar(5)} />
-                        <span onClick={() => this.updateRating(4)} className={this.renderStar(4)} />
-                        <span onClick={() => this.updateRating(3)} className={this.renderStar(3)} />
-                        <span onClick={() => this.updateRating(2)} className={this.renderStar(2)} />
-                        <span onClick={() => this.updateRating(1)} className={this.renderStar(1)} />
+                        <button className="clear-button" 
+                            onClick={() => this.updateRating('')}>
+                                Clear</button>
+                        <span onClick={() => this.updateRating(5)} 
+                            className={this.renderStar(5)} />
+                        <span onClick={() => this.updateRating(4)} 
+                            className={this.renderStar(4)} />
+                        <span onClick={() => this.updateRating(3)} 
+                            className={this.renderStar(3)} />
+                        <span onClick={() => this.updateRating(2)} 
+                            className={this.renderStar(2)} />
+                        <span onClick={() => this.updateRating(1)} 
+                            className={this.renderStar(1)} />
                         My rating:
                     </div>
             </div>
