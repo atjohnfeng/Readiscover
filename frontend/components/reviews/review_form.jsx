@@ -11,7 +11,7 @@ class ReviewForm extends React.Component {
             body: '',
             book_id: this.props.bookId,
             user_id: this.props.currentUser,
-            formType: 'Create',
+            formType: null,
             reviewId: null
         }
     }
@@ -28,6 +28,10 @@ class ReviewForm extends React.Component {
                         body: review[0].body,
                         reviewId: review[0].id
                     })
+                } else {
+                    this.setState({
+                        formType: 'Create'
+                    })
                 }
             }
         );
@@ -41,7 +45,7 @@ class ReviewForm extends React.Component {
             title: this.state.title,
             body: this.state.body
         }
-        if (this.state.formType === 'create') {
+        if (this.state.formType === 'Create') {
             this.props.createReview(review);
         } else {
             this.props.editReview(review, this.state.reviewId);
@@ -75,7 +79,7 @@ class ReviewForm extends React.Component {
             <div>
                 <div className="header-div"><NavbarContainer /></div>
                 <header> 
-                    <Link to={`/books/${this.props.bookId}`}>Link</Link> > Review > {this.state.formType}
+                    <Link to={`/books/${this.props.bookId}`}>Back to Book Show Page</Link> &gt; Review &gt; {this.state.formType}
                 </header>
                     <div className="star-rating-form">
                         <span onClick={() => this.updateRating(5)} className={this.renderStar(5)} />

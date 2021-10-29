@@ -1,7 +1,6 @@
 import React from 'react';
 import NavbarContainer from '../navbar/navbar_container';
 import StarContainer from '../reviews/star_container';
-// import ReviewIndexContainer from '../reviews/review_index_container';
 import { Link } from 'react-router-dom';
 
 class Book extends React.Component {
@@ -69,6 +68,12 @@ class Book extends React.Component {
         this.props.reset();
     }
 
+    renderReviewLink() {
+        if (this.props.currentUser) {
+            return <Link to={`${this.props.bookId}/review`}>Add a Review</Link>
+        }
+    }
+
     render() {
         if (!this.props.book) {
             return null;
@@ -113,8 +118,11 @@ class Book extends React.Component {
                                 </ul>
                             </div>
                             <div>
-                            <h1>Community Reviews</h1>
-                            {this.renderReviews()}
+                                {this.renderReviewLink()}
+                            </div>
+                            <div>
+                                <h1>Community Reviews</h1>
+                                {this.renderReviews()}
                             </div>
                         </div>
                     </div>
