@@ -7,7 +7,7 @@ class ReviewForm extends React.Component {
         super(props);
         this.state = {
             rating: '',
-            title: '',
+            spoilerFlag: false,
             body: '',
             book_id: this.props.bookId,
             user_id: this.props.currentUser,
@@ -24,7 +24,7 @@ class ReviewForm extends React.Component {
                     this.setState({
                         rating: review[0].rating,
                         formType: 'Edit',
-                        title: review[0].title,
+                        title: review[0].spoilerFlag,
                         body: review[0].body,
                         reviewId: review[0].id
                     })
@@ -76,6 +76,21 @@ class ReviewForm extends React.Component {
         }
     }
 
+    renderCheckbox() {
+        if (!this.state.spoilerFlag) {
+            return <input type="checkbox"
+                onChange={() => this.updateSpoilerTag()}
+            />
+        } else if (this.state.spoilerFlag) {
+            return <input type="checkbox"
+                onChange={() => this.updateSpoilerTag()} checked
+            />
+        }
+    }
+
+    updateSpoilerTag() {
+
+    }
 
     render() {
         let title;
@@ -133,6 +148,10 @@ class ReviewForm extends React.Component {
                             value={this.state.body}
                             onChange={this.update('body')}>
                             </textarea>
+                    </div>
+                    <div className="spoiler-box">
+                        {this.renderCheckbox()}
+                        <h3>Hide entire review because of spoilers</h3>
                     </div>
             </div>
         )
