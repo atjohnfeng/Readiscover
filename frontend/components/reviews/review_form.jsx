@@ -12,7 +12,7 @@ class ReviewForm extends React.Component {
             book_id: this.props.bookId,
             user_id: this.props.currentUser,
             formType: null,
-            reviewId: null
+            reviewId: null,
         }
     }
 
@@ -65,22 +65,41 @@ class ReviewForm extends React.Component {
     }
 
     updateRating(value) {
+        console.log(this.props.book.title)
         this.setState({
             rating: value
         })
     }
 
     render() {
-        if (!this.props.bookId) {
-            return null;
+        let title;
+        let cover;
+        let author;
+        if (!this.props.book) {
+            title = '';
+            cover = '';
+            author = '';
+        } else {
+            title = this.props.book.title;
+            cover = this.props.book.cover_img_url;
+            author = this.props.book.author;
         }
 
         return (
-            <div>
+            <div className="review-form-container">
                 <div className="header-div"><NavbarContainer /></div>
                 <header> 
-                    <Link to={`/books/${this.props.bookId}`}>Back to Book Show Page</Link> &gt; Review &gt; {this.state.formType}
+                    <Link to={`/books/${this.props.bookId}`}>{title}</Link> &gt; Review &gt; {this.state.formType}
                 </header>
+                <div className="book-info">
+                    <fig>
+                        <img src={cover} alt={`${title}-cover`} className="review-cover"/>
+                    </fig>
+                    <figcaption>
+                        <h1>{title}</h1>
+                        <h2>by {author}</h2>
+                    </figcaption>
+                </div>
                     <div className="star-rating-form">
                         <span onClick={() => this.updateRating(5)} className={this.renderStar(5)} />
                         <span onClick={() => this.updateRating(4)} className={this.renderStar(4)} />

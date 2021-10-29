@@ -8,11 +8,12 @@ const mapStateToProps = (state, ownProps) => ({
     errors: state.errors.reviewErrors,
     bookId: ownProps.match.params.bookId,
     books: state.entities.books,
-    reviews: state.entities.reviews
+    reviews: state.entities.reviews,
+    book: state.entities.books[ownProps.match.params.bookId]
 })
 
 const mapDispatchToProps = dispatch => ({
-    getBook: bookId => dispatch(getBook(bookId)),
+    // getBook: bookId => dispatch(getBook(bookId)),
     createReview: review => dispatch(createReview(review)),
     editReview: (review, reviewId) => dispatch(editReview(review, reviewId)),
     getReview: (book_id, user_id) => dispatch(getReview(book_id, user_id))
