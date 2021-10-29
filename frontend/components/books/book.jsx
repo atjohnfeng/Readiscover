@@ -70,7 +70,17 @@ class Book extends React.Component {
 
     renderReviewLink() {
         if (this.props.currentUser) {
-            return <Link to={`${this.props.bookId}/review`}>Add a Review</Link>
+            return (
+                <div className="divider">
+                    <Link to={`${this.props.bookId}/review`}>Add a Review</Link>
+                </div>
+            )
+        } else {
+            return (
+                <div className="divider">
+                    <Link to={`/login`}>Log in to Add a Review</Link>
+                </div>
+            )
         }
     }
 

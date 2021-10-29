@@ -77,6 +77,12 @@
     }
 }
 
+.divider {
+    border-bottom: 1px solid lightgrey;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
 @media only screen and (max-width: 600px) {
     .book-show {
         flex-direction: column;
