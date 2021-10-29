@@ -114,7 +114,16 @@ class ReviewForm extends React.Component {
                             className={this.renderStar(2)} />
                         <span onClick={() => this.updateRating(1)} 
                             className={this.renderStar(1)} />
-                        My rating:
+                        <h3>My rating:</h3>
+                    </div>
+                    <div>
+                        <h3>Bookshelves/Tags: Under Construction</h3>
+                    </div>
+                    <div>
+                        <h3>What did you think?</h3>
+                        <textarea value={this.state.body === '' ? 
+                            'Enter your review (optional)' : this.state.body}>
+                            </textarea>
                     </div>
             </div>
         )
