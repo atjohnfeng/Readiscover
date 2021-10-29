@@ -7,6 +7,7 @@ const mapStateToProps = (state, ownProps) => ({
     currentUser: state.session.id,
     errors: state.errors.reviewErrors,
     bookId: ownProps.match.params.bookId,
+    books: state.entities.books,
     reviews: state.entities.reviews
 })
 

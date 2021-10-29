@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import NavbarContainer from '../navbar/navbar_container';
 
 class ReviewForm extends React.Component {
@@ -10,7 +11,7 @@ class ReviewForm extends React.Component {
             body: '',
             book_id: this.props.bookId,
             user_id: this.props.currentUser,
-            formType: 'create',
+            formType: 'Create',
             reviewId: null
         }
     }
@@ -22,7 +23,7 @@ class ReviewForm extends React.Component {
                 if (review.length > 0) {
                     this.setState({
                         rating: review[0].rating,
-                        formType: 'edit',
+                        formType: 'Edit',
                         title: review[0].title,
                         body: review[0].body,
                         reviewId: review[0].id
@@ -73,15 +74,17 @@ class ReviewForm extends React.Component {
         return (
             <div>
                 <div className="header-div"><NavbarContainer /></div>
-                <div className="review-rating-stars-container">
-                    <form className="star-rating-form">
+                <header> 
+                    <Link to={`/books/${this.props.bookId}`}>Link</Link> > Review > {this.state.formType}
+                </header>
+                    <div className="star-rating-form">
                         <span onClick={() => this.updateRating(5)} className={this.renderStar(5)} />
                         <span onClick={() => this.updateRating(4)} className={this.renderStar(4)} />
                         <span onClick={() => this.updateRating(3)} className={this.renderStar(3)} />
                         <span onClick={() => this.updateRating(2)} className={this.renderStar(2)} />
                         <span onClick={() => this.updateRating(1)} className={this.renderStar(1)} />
-                    </form>
-                </div>
+                        My rating:
+                    </div>
             </div>
         )
     }
