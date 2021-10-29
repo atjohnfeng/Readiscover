@@ -94,10 +94,12 @@ class ReviewForm extends React.Component {
 
     updateSpoilerTag() {
         if (this.state.spoilerFlag) {
+            console.log(this.state.spoilerFlag)
             this.setState({
                 spoilerFlag: false
             });
         } else {
+            console.log(this.state.spoilerFlag)
             this.setState({
                 spoilerFlag: true
             });
@@ -119,65 +121,69 @@ class ReviewForm extends React.Component {
         }
 
         return (
-            <div className="review-form-container">
+            <div>
                 <div className="header-div"><NavbarContainer /></div>
-                <header> 
-                    <Link to={`/books/${this.props.bookId}`}>{title}</Link> 
-                    &gt; Review &gt; {this.state.formType}
-                </header>
-                <div className="book-info">
-                    <figure>
-                        <img src={cover} alt={`${title}-cover`} className="review-cover"/>
-                    </figure>
-                    <figcaption>
-                        <h1>{title}</h1>
-                        <h2>by {author}</h2>
-                    </figcaption>
+                <div className="review-form-container">
+                    <header> 
+                        <Link to={`/books/${this.props.bookId}`}>{title}
+                        </Link> &gt; Review &gt; {this.state.formType}
+                    </header>
+                    <div className="book-info">
+                        <figure>
+                            <img src={cover} alt={`${title}-cover`} 
+                                className="review-cover"/>
+                        </figure>
+                        <figcaption>
+                            <h1>{title}</h1>
+                            <h2>by {author}</h2>
+                        </figcaption>
+                    </div>
+                        <div className="star-rating-form">
+                            <button className="clear-button" 
+                                onClick={() => this.updateRating('')}>
+                                    Clear</button>
+                            <span onClick={() => this.updateRating(5)} 
+                                className={this.renderStar(5)} />
+                            <span onClick={() => this.updateRating(4)} 
+                                className={this.renderStar(4)} />
+                            <span onClick={() => this.updateRating(3)} 
+                                className={this.renderStar(3)} />
+                            <span onClick={() => this.updateRating(2)} 
+                                className={this.renderStar(2)} />
+                            <span onClick={() => this.updateRating(1)} 
+                                className={this.renderStar(1)} />
+                            <h3>My rating:</h3>
+                        </div>
+                        <div>
+                            <h3>Bookshelves/Tags: Under Construction</h3>
+                        </div>
+                        <div>
+                            <h3>What did you think?</h3>
+                            <textarea placeholder={this.state.body === '' ? 
+                                'Enter your review (optional)' : 
+                                this.state.body}
+                                value={this.state.body}
+                                onChange={this.update('body')}>
+                                </textarea>
+                        </div>
+                        <div className="spoiler-box">
+                            {/* {this.renderCheckbox()} */}
+                            <input type="checkbox"
+                                onChange={() => this.updateSpoilerTag()}
+                                checked={this.state.spoilerFlag ? 
+                                    this.state.spoilerFlag : false} />
+                            <h3>Hide entire review because of spoilers</h3>
+                        </div>
+                        <div>
+                            <button onClick={() => this.handleSubmit()}>
+                                Post</button>
+                        </div>
+                        <div>
+                            <button className="remove-button" disabled>
+                                Remove from my books
+                            </button>
+                        </div>
                 </div>
-                    <div className="star-rating-form">
-                        <button className="clear-button" 
-                            onClick={() => this.updateRating('')}>
-                                Clear</button>
-                        <span onClick={() => this.updateRating(5)} 
-                            className={this.renderStar(5)} />
-                        <span onClick={() => this.updateRating(4)} 
-                            className={this.renderStar(4)} />
-                        <span onClick={() => this.updateRating(3)} 
-                            className={this.renderStar(3)} />
-                        <span onClick={() => this.updateRating(2)} 
-                            className={this.renderStar(2)} />
-                        <span onClick={() => this.updateRating(1)} 
-                            className={this.renderStar(1)} />
-                        <h3>My rating:</h3>
-                    </div>
-                    <div>
-                        <h3>Bookshelves/Tags: Under Construction</h3>
-                    </div>
-                    <div>
-                        <h3>What did you think?</h3>
-                        <textarea placeholder={this.state.body === '' ? 
-                            'Enter your review (optional)' : this.state.body}
-                            value={this.state.body}
-                            onChange={this.update('body')}>
-                            </textarea>
-                    </div>
-                    <div className="spoiler-box">
-                        {/* {this.renderCheckbox()} */}
-                        <input type="checkbox"
-                            onChange={() => this.updateSpoilerTag()}
-                            checked={this.state.spoilerFlag ? 
-                                this.state.spoilerFlag : false} />
-                        <h3>Hide entire review because of spoilers</h3>
-                    </div>
-                    <div>
-                        <button onClick={() => this.handleSubmit()}>
-                            Post</button>
-                    </div>
-                    <div>
-                        <button className="remove-button">
-                            Remove from my books (Under Construction)
-                        </button>
-                    </div>
             </div>
         )
     }

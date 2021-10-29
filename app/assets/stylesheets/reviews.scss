@@ -35,6 +35,27 @@ h1 {
 .review-form-container {
     display: flex;
     flex-direction: column;
+    padding-left: 25%;
+    padding-top: 1%;
+
+    h1 {
+
+    }
+
+    h2 {
+
+    }
+
+    h3, textarea, button {
+        font-family: "Lato", "Helvetica Neue", Helvetica, sans-serif;
+        font-size: 14px;
+        font-weight: 600;
+    }
+
+    button {
+        border: 1px solid lightgrey;
+        border-radius: 4px;
+    }
 
     .star-rating-form {
         justify-content: flex-end;
@@ -52,6 +73,12 @@ h1 {
             width: 40px;
             height: 60x;
         }
+    }
+
+    textarea {
+        width: 60%;
+        height: 25vh;
+        border: 1px solid lightgrey;
     }
 
     .spoiler-box {
