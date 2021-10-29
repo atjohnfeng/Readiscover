@@ -12,12 +12,38 @@ class LoginForm extends React.Component {
         this.loginDemoUser = this.loginDemoUser.bind(this);
     }
 
-    loginDemoUser() {
-        const user = {
-            username: 'demo',
-            password: 'demolicious'
-        }
-        this.props.login(user);
+    loginDemoUser(e) {
+        // const user = {
+        //     username: 'demo',
+        //     password: 'demolicious'
+        // }
+        // this.props.login(user);
+        e.preventDefault();
+        const demo = { username: "demo", password: "demolicious" };
+
+        const usernameAnimate = setInterval(() => {
+            if (this.state.username !== demo.username) {
+                const temp = 
+                    demo.username.slice(0, this.state.username.length + 1);
+                this.setState({ username: temp });
+            } else {
+                clearInterval(usernameAnimate);
+                passwordAnimate();
+            }
+        }, 50);
+
+        const passwordAnimate = () => {
+            const processLogin = setInterval(() => {
+                if (this.state.password !== demo.password) {
+                    const temp = 
+                        demo.password.slice(0, this.state.password.length + 1);
+                    this.setState({ password: temp });
+                } else {
+                    clearInterval(processLogin);
+                    this.props.login(demo);
+                }
+            }, 50);
+        };
     }
 
     handleSubmit(e) {
