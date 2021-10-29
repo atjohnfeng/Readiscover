@@ -85,4 +85,14 @@
      max-height: 75px;
      max-width: auto;
      overflow: hidden;
- }
+}
+
+@media only screen and (max-width: 600px) {
+    .form-container {
+        margin-top: 0;
+    }
+
+    .form {
+        width: 95%;
+    }
+}
