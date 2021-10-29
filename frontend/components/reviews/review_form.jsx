@@ -25,9 +25,13 @@ class ReviewForm extends React.Component {
                         rating: review[0].rating,
                         formType: 'Edit',
                         spoilerFlag: review[0].spoiler_flag,
-                        body: review[0].body,
                         reviewId: review[0].id
                     })
+                    if (review[0].body) {
+                        this.setState({
+                            body: review[0].body,
+                        })
+                    }
                 } else {
                     this.setState({
                         formType: 'Create'
