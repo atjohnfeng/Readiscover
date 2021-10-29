@@ -24,7 +24,7 @@ class ReviewForm extends React.Component {
                     this.setState({
                         rating: review[0].rating,
                         formType: 'Edit',
-                        title: review[0].spoilerFlag,
+                        spoilerFlag: review[0].spoiler_flag,
                         body: review[0].body,
                         reviewId: review[0].id
                     })
@@ -42,7 +42,7 @@ class ReviewForm extends React.Component {
             rating: this.state.rating,
             book_id: this.props.bookId,
             user_id: this.props.currentUser,
-            title: this.state.title,
+            spoiler_flag: this.state.spoilerFlag,
             body: this.state.body
         }
         if (this.state.formType === 'Create') {
@@ -76,20 +76,28 @@ class ReviewForm extends React.Component {
         }
     }
 
-    renderCheckbox() {
-        if (!this.state.spoilerFlag) {
-            return <input type="checkbox"
-                onChange={() => this.updateSpoilerTag()}
-            />
-        } else if (this.state.spoilerFlag) {
-            return <input type="checkbox"
-                onChange={() => this.updateSpoilerTag()} checked
-            />
-        }
-    }
+    // renderCheckbox() {
+    //     if (!this.state.spoilerFlag) {
+    //         return <input type="checkbox"
+    //             onChange={() => this.updateSpoilerTag()}
+    //         />
+    //     } else if (this.state.spoilerFlag) {
+    //         return <input type="checkbox"
+    //             onChange={() => this.updateSpoilerTag()} checked
+    //         />
+    //     }
+    // }
 
     updateSpoilerTag() {
-
+        if (this.state.spoilerFlag) {
+            this.setState({
+                spoilerFlag: false
+            });
+        } else {
+            this.setState({
+                spoilerFlag: true
+            });
+        }
     }
 
     render() {
@@ -150,8 +158,21 @@ class ReviewForm extends React.Component {
                             </textarea>
                     </div>
                     <div className="spoiler-box">
-                        {this.renderCheckbox()}
+                        {/* {this.renderCheckbox()} */}
+                        <input type="checkbox"
+                            onChange={() => this.updateSpoilerTag()}
+                            checked={this.state.spoilerFlag ? 
+                                this.state.spoilerFlag : false} />
                         <h3>Hide entire review because of spoilers</h3>
+                    </div>
+                    <div>
+                        <button onClick={() => this.handleSubmit()}>
+                            Post</button>
+                    </div>
+                    <div>
+                        <button className="remove-button">
+                            Remove from my books (Under Construction)
+                        </button>
                     </div>
             </div>
         )
