@@ -121,8 +121,9 @@ class ReviewForm extends React.Component {
                     </div>
                     <div>
                         <h3>What did you think?</h3>
-                        <textarea value={this.state.body === '' ? 
-                            'Enter your review (optional)' : this.state.body}>
+                        <textarea placeholder={this.state.body === '' ? 
+                            'Enter your review (optional)' : this.state.body}
+                            value={this.state.body}>
                             </textarea>
                     </div>
             </div>
