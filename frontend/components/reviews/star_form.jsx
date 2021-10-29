@@ -14,7 +14,7 @@ class StarForm extends React.Component {
     }
 
     componentDidMount() {
-        this.props.getBook(this.props.bookId);
+        // this.props.getBook(this.props.bookId);
         this.props.getReview(this.props.bookId, this.props.currentUser).then(
             payload => { 
                 let review = Object.values(payload.review);
