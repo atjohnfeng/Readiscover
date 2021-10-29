@@ -70,6 +70,13 @@ class ReviewForm extends React.Component {
         })
     }
 
+    update(field) {
+        return e => {
+            this.setState({ [field]: e.target.value })
+        }
+    }
+
+
     render() {
         let title;
         let cover;
@@ -123,7 +130,8 @@ class ReviewForm extends React.Component {
                         <h3>What did you think?</h3>
                         <textarea placeholder={this.state.body === '' ? 
                             'Enter your review (optional)' : this.state.body}
-                            value={this.state.body}>
+                            value={this.state.body}
+                            onChange={this.update('body')}>
                             </textarea>
                     </div>
             </div>
