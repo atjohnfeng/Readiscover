@@ -43,6 +43,7 @@ class ReviewForm extends React.Component {
 
     componentWillUnmount() {
         this.props.reset();
+        this.props.resetErrors();
     }
 
     handleSubmit() {
@@ -56,7 +57,11 @@ class ReviewForm extends React.Component {
         if (this.state.formType === 'Create') {
             this.props.createReview(review);
         } else {
-            this.props.editReview(review, this.state.reviewId);
+            this.props.editReview(review, this.state.reviewId).then(payload => {
+                if (payload.type === 'RECEIVE_REVIEW') {
+                    console.log("SUCCESS!")
+                }
+            });
         }
     }
 
@@ -84,17 +89,15 @@ class ReviewForm extends React.Component {
         }
     }
 
-    // renderCheckbox() {
-    //     if (!this.state.spoilerFlag) {
-    //         return <input type="checkbox"
-    //             onChange={() => this.updateSpoilerTag()}
-    //         />
-    //     } else if (this.state.spoilerFlag) {
-    //         return <input type="checkbox"
-    //             onChange={() => this.updateSpoilerTag()} checked
-    //         />
-    //     }
-    // }
+    renderErrors() {
+        return (
+            <ul className="error-list">
+                {this.props.errors.map((error, i) =>
+                    <li className="form-error" 
+                        key={`error-${i}`}>{error}</li>)}
+            </ul>
+        )
+    }
 
     updateSpoilerTag() {
         if (this.state.spoilerFlag) {
@@ -171,7 +174,6 @@ class ReviewForm extends React.Component {
                                 </textarea>
                         </div>
                         <div className="spoiler-box">
-                            {/* {this.renderCheckbox()} */}
                             <input type="checkbox"
                                 onChange={() => this.updateSpoilerTag()}
                                 checked={this.state.spoilerFlag ? 
@@ -182,6 +184,7 @@ class ReviewForm extends React.Component {
                             <button onClick={() => this.handleSubmit()}>
                                 Post</button>
                         </div>
+                        {this.renderErrors()}
                         <div>
                             <button className="remove-button" disabled>
                                 Remove from my books

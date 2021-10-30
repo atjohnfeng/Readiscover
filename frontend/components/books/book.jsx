@@ -16,7 +16,8 @@ class Book extends React.Component {
     }
 
     componentDidUpdate(prevProps) {
-        if (JSON.stringify(this.props.reviews) !== JSON.stringify(prevProps.reviews)) {
+        if (JSON.stringify(this.props.reviews) 
+            !== JSON.stringify(prevProps.reviews)) {
             this.props.getReviews(this.props.match.params.bookId);
         }
     }
