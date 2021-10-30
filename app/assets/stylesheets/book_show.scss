@@ -87,8 +87,7 @@
     display: flex;
     padding-top: 10px;
     padding-bottom: 10px;
-    max-height: 20vh;
-    overflow: scroll;
+    max-height: 30vh;
 
     .review-icon {
         border-radius: 50%;
@@ -100,7 +99,6 @@
         font-size: 12px;
         width: 35%;
         max-width: 35%;
-        overflow: auto;
     }
 
     .fa-star {

@@ -138,7 +138,8 @@ class Book extends React.Component {
         if (this.props.currentUser) {
             return (
                 <div className="divider">
-                    <Link to={`${this.props.bookId}/review`}>Review this Book</Link>
+                    <Link to={`${this.props.bookId}/review`}>Review this Book
+                    </Link>
                 </div>
             )
         } else {
