@@ -53,14 +53,14 @@
         }
 
         .user-review {
-            padding: 5px;
+            padding: 10px;
             border-radius: 2px;
 
             &:hover {
                 background-color: #F4F1EA;
-                &:hover {
-                    cursor: pointer;
-                }
+                cursor: pointer;
+                box-shadow: 0 3px 10px 0px #382110;
+                transition: box-shadow .4s ease-in-out;
             }
         }
 
