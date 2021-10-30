@@ -131,7 +131,7 @@ class Book extends React.Component {
                             <div>
                                 {this.renderReviewLink()}
                             </div>
-                            <div>
+                            <div className="reviews-container">
                                 <h1>Community Reviews</h1>
                                 {this.renderReviews()}
                             </div>
