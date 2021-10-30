@@ -1,3 +1,17 @@
+.header-div {
+    margin-bottom: 1%;
+}
+
 .home-content-container {
     display: flex;
+    justify-content: center;
+
+    .users-reviews {
+        background-color: #fffefb;
+        border-radius: 2px;
+        width: 50%;
+        height: 85vh;
+        max-height: 85vh;
+        overflow: auto;
+    }
 }
