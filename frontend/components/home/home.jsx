@@ -9,6 +9,7 @@ class Home extends React.Component {
     }
 
     componentDidMount() {
+        window.scrollTo(0, 0);
         this.props.getUser(Object.values(this.props.currentUser)[0]);
         console.log(Object.values(this.props.currentUser)[0])
     }

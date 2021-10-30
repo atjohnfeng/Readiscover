@@ -17,6 +17,7 @@ class ReviewForm extends React.Component {
     }
 
     componentDidMount() {
+        window.scrollTo(0, 0);
         let userReview = null;
         this.props.getReviews(this.props.bookId).then(reviews => {
             let reviewArray = Object.values(Object.values(reviews)[1]);
