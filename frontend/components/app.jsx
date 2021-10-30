@@ -8,6 +8,7 @@ import SignupContainer from './signup/signup_container';
 import LoginContainer from './login/login_container';
 import BookIndexContainer from './books/book_index_container';
 import BookContainer from './books/book_container';
+import ReviewFormContainer from './reviews/review_form_container';
 
 const App = () => {
     return (
@@ -18,6 +19,7 @@ const App = () => {
                     <AuthRoute exact path="/signup" component={SignupContainer} />
                     <AuthRoute exact path="/login" component={LoginContainer} />
                     <ProtRoute exact path="/home" component={HomeContainer} />
+                    <ProtRoute path="/books/:bookId/review" component={ReviewFormContainer} />
                     <Route exact path="/books" component={BookIndexContainer} />
                     <Route path="/books/:bookId" component={BookContainer} />
                     <Route path="/*" component={NotFound} />

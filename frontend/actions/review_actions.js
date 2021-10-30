@@ -5,6 +5,7 @@ export const RECEIVE_REVIEWS = 'RECEIVE_REVIEWS';
 export const RECEIVE_REVIEW_ERRORS = 'RECEIVE_REVIEW_ERRORS';
 export const DELETE_REVIEW = 'DELETE_REVIEW';
 export const RESET_REVIEWS = 'RESET_REVIEWS';
+export const RESET_REVIEW_ERRORS = 'RESET_REVIEW_ERRORS';
 
 const receiveReview = review => {
     return {
@@ -40,6 +41,12 @@ const resetReviews = () => {
     }
 }
 
+const resetErrors = () => {
+    return {
+        type: RESET_REVIEW_ERRORS
+    }
+}
+
 export const getReviews = bookId => dispatch => (
     ReviewApiUtil.getReviews(bookId).then(reviews => dispatch(receiveReviews(reviews)),
         errors => dispatch(receiveReviewErrors(errors.responseJSON)))
@@ -67,4 +74,8 @@ export const deleteReview = review => dispatch => (
 
 export const reset = () => dispatch => (
     dispatch(resetReviews())
+)
+
+export const resetReviewErrors = () => dispatch => (
+    dispatch(resetErrors())
 )

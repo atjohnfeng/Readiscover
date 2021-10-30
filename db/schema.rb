@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_05_172615) do
+ActiveRecord::Schema.define(version: 2021_10_29_234950) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,10 +32,10 @@ ActiveRecord::Schema.define(version: 2021_10_05_172615) do
     t.integer "book_id", null: false
     t.integer "user_id", null: false
     t.integer "rating"
-    t.string "title"
     t.text "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "spoiler_flag", default: false
     t.index ["book_id"], name: "index_reviews_on_book_id"
     t.index ["user_id"], name: "index_reviews_on_user_id"
   end

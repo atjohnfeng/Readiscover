@@ -1,7 +1,6 @@
 import React from 'react';
 import NavbarContainer from '../navbar/navbar_container';
 import StarContainer from '../reviews/star_container';
-// import ReviewIndexContainer from '../reviews/review_index_container';
 import { Link } from 'react-router-dom';
 
 class Book extends React.Component {
@@ -17,7 +16,8 @@ class Book extends React.Component {
     }
 
     componentDidUpdate(prevProps) {
-        if (JSON.stringify(this.props.reviews) !== JSON.stringify(prevProps.reviews)) {
+        if (JSON.stringify(this.props.reviews) 
+            !== JSON.stringify(prevProps.reviews)) {
             this.props.getReviews(this.props.match.params.bookId);
         }
     }
@@ -52,11 +52,11 @@ class Book extends React.Component {
             return (
                 <ul className="book-show-reviews">
                     {reviews.map((review, i) => {
-                        if (!review || !review.user_id || !review.rating) {
+                        if (!review || !review.author) {
                             return null;
                         }
                         return <li key={`review-${i}`}>
-                            <h2>Reviewed by: {review.user_id}</h2>
+                            <h2>Reviewed by: {review.author}</h2>
                             <h2>Rating: {review.rating}</h2>
                         </li>
                     })}
@@ -67,6 +67,22 @@ class Book extends React.Component {
 
     componentWillUnmount() {
         this.props.reset();
+    }
+
+    renderReviewLink() {
+        if (this.props.currentUser) {
+            return (
+                <div className="divider">
+                    <Link to={`${this.props.bookId}/review`}>Add a Review</Link>
+                </div>
+            )
+        } else {
+            return (
+                <div className="divider">
+                    <Link to={`/login`}>Log in to Add a Review</Link>
+                </div>
+            )
+        }
     }
 
     render() {
@@ -113,8 +129,11 @@ class Book extends React.Component {
                                 </ul>
                             </div>
                             <div>
-                            <h1>Community Reviews</h1>
-                            {this.renderReviews()}
+                                {this.renderReviewLink()}
+                            </div>
+                            <div>
+                                <h1>Community Reviews</h1>
+                                {this.renderReviews()}
                             </div>
                         </div>
                     </div>

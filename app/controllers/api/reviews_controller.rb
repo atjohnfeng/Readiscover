@@ -14,7 +14,7 @@ class Api::ReviewsController < ApplicationController
         if @review.save
             render :show
         else
-            render json: @review.errors.full_messages, status: 422
+            render json: ['Review requires a body or rating.'], status: 422
         end
     end
 
@@ -23,7 +23,7 @@ class Api::ReviewsController < ApplicationController
         if @review.update(review_params)
             render :show
         else
-            render json: ['Failed to update review.'], status: 422
+            render json: ['Review requires a body or rating.'], status: 422
         end
     end
 
@@ -39,7 +39,7 @@ class Api::ReviewsController < ApplicationController
     private
 
     def review_params
-        params.require(:review).permit(:title, :body, :rating, :user_id, :book_id)
+        params.require(:review).permit(:body, :rating, :user_id, :book_id, :spoiler_flag)
     end
 
 end

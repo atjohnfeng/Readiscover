@@ -14,7 +14,7 @@ class StarForm extends React.Component {
     }
 
     componentDidMount() {
-        this.props.getBook(this.props.bookId);
+        // this.props.getBook(this.props.bookId);
         this.props.getReview(this.props.bookId, this.props.currentUser).then(
             payload => { 
                 let review = Object.values(payload.review);
@@ -33,14 +33,18 @@ class StarForm extends React.Component {
         const review = {
             rating: value,
             book_id: this.props.bookId,
-            user_id: this.props.currentUser
+            user_id: this.props.currentUser,
         }
         if (this.state.formType === 'create') {
-            this.props.createReview(review);
-            this.setState({ 
-                rating: review.rating,
-                formType: 'edit'
-            });
+            this.props.createReview(review).then(
+                payload => {
+                    this.setState({
+                        reviewId: payload.review.id,
+                        rating: payload.review.rating,
+                        formType: 'edit'
+                    })
+                }
+            );
         } else if (this.state.formType === 'edit') {
             // console.log(this.state.reviewId)
             this.props.editReview(review, this.state.reviewId);

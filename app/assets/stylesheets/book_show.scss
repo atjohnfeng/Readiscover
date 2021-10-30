@@ -1,7 +1,7 @@
 .book-show {
     display: flex;
     justify-content: center;
-    height: 100vmax;
+    height: 100vh;
     width: 100%;
     background-color: #eeebe4;
     
@@ -75,6 +75,12 @@
             }
         }
     }
+}
+
+.divider {
+    border-bottom: 1px solid lightgrey;
+    padding-bottom: 10px;
+    padding-top: 10px;
 }
 
 @media only screen and (max-width: 600px) {
