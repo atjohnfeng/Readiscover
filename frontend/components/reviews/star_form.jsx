@@ -25,7 +25,7 @@ class StarForm extends React.Component {
             })
         }
         if (JSON.stringify(userReview) !== '[]' && userReview) {
-            console.log(userReview)
+            // console.log(userReview)
             if (prevState.reviewId === null && userReview[0].id) {
                 this.setState({
                     rating: userReview[0].rating,

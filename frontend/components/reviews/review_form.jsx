@@ -17,28 +17,54 @@ class ReviewForm extends React.Component {
     }
 
     componentDidMount() {
-        this.props.getReview(this.props.bookId, this.props.currentUser).then(
-            payload => {
-                let review = Object.values(payload.review);
-                if (review.length > 0) {
+        let userReview = null;
+        this.props.getReviews(this.props.bookId).then(reviews => {
+            let reviewArray = Object.values(Object.values(reviews)[1]);
+            userReview = reviewArray.filter(review => {
+                if (review) {
+                    return review.user_id === this.props.currentUser
+                }
+            })
+            if (JSON.stringify(userReview) !== '[]' && userReview) {
+                this.setState({
+                    rating: userReview[0].rating,
+                    formType: 'Edit',
+                    spoilerFlag: userReview[0].spoiler_flag,
+                    reviewId: userReview[0].id
+                })
+                if (userReview[0].body) {
                     this.setState({
-                        rating: review[0].rating,
-                        formType: 'Edit',
-                        spoilerFlag: review[0].spoiler_flag,
-                        reviewId: review[0].id
-                    })
-                    if (review[0].body) {
-                        this.setState({
-                            body: review[0].body,
-                        })
-                    }
-                } else {
-                    this.setState({
-                        formType: 'Create'
+                        body: userReview[0].body,
                     })
                 }
+            } else {
+                this.setState({
+                    formType: 'Create'
+                })
             }
-        );
+        }) 
+        // this.props.getReview(this.props.bookId, this.props.currentUser).then(
+        //     payload => {
+        //         let review = Object.values(payload.review);
+        //         if (review.length > 0) {
+        //             this.setState({
+        //                 rating: review[0].rating,
+        //                 formType: 'Edit',
+        //                 spoilerFlag: review[0].spoiler_flag,
+        //                 reviewId: review[0].id
+        //             })
+        //             if (review[0].body) {
+        //                 this.setState({
+        //                     body: review[0].body,
+        //                 })
+        //             }
+        //         } else {
+        //             this.setState({
+        //                 formType: 'Create'
+        //             })
+        //         }
+        //     }
+        // );
     }
 
     componentWillUnmount() {
@@ -101,12 +127,10 @@ class ReviewForm extends React.Component {
 
     updateSpoilerTag() {
         if (this.state.spoilerFlag) {
-            console.log(this.state.spoilerFlag)
             this.setState({
                 spoilerFlag: false
             });
         } else {
-            console.log(this.state.spoilerFlag)
             this.setState({
                 spoilerFlag: true
             });
