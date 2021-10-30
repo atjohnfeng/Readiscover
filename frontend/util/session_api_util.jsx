@@ -20,3 +20,11 @@ export const signup = user => (
         data: { user }
     })
 )
+
+export const refresh = user => (
+    $.ajax({
+        url: `/api/users/${user}`,
+        method: 'get',
+        data: { user }
+    })
+)

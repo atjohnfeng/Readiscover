@@ -8,6 +8,11 @@ class Home extends React.Component {
         super(props);
     }
 
+    componentDidMount() {
+        this.props.getUser(Object.values(this.props.currentUser)[0]);
+        console.log(Object.values(this.props.currentUser)[0])
+    }
+
     renderStars(rating) {
         if (rating > 0) {
             return (
