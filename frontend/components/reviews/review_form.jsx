@@ -81,7 +81,11 @@ class ReviewForm extends React.Component {
             body: this.state.body
         }
         if (this.state.formType === 'Create') {
-            this.props.createReview(review);
+            this.props.createReview(review).then(payload => {
+                if (payload.type === 'RECEIVE_REVIEW') {
+                    this.props.history.push(`/books/${this.props.bookId}`)
+                }
+            });
         } else {
             this.props.editReview(review, this.state.reviewId).then(payload => {
                 if (payload.type === 'RECEIVE_REVIEW') {
