@@ -43,9 +43,9 @@ class Home extends React.Component {
             return (
                 <ul className="book-show-reviews">
                     {reviews.slice(0).reverse().map((review, i) => {
-                        // if (!review || !review.author) {
-                        //     return null;
-                        // }
+                        if (!review) {
+                            return null;
+                        }
                         return (
                             <li key={`review-${i}`}
                                 className={`user-review review-${review.id}`}>
