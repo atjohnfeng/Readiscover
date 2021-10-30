@@ -51,18 +51,83 @@ class Book extends React.Component {
         if (reviews.length > 0) {
             return (
                 <ul className="book-show-reviews">
-                    {reviews.map((review, i) => {
+                    {reviews.slice(0).reverse().map((review, i) => {
                         if (!review || !review.author) {
                             return null;
                         }
-                        return <li key={`review-${i}`}>
-                            <h2>Reviewed by: {review.author}</h2>
-                            <h2>Rating: {review.rating}</h2>
-                        </li>
+                        return (
+                            <li key={`review-${i}`}
+                                className={`user-review review-${review.id}`}>
+                                <div className="user-info">
+                                    <img src={window.navProfileDefault}
+                                        alt="profile-default-nav"
+                                        className="review-icon" />
+                                    <h2>{review.author}</h2>
+                                    <h3>{review.review_count} reviews</h3>
+                                </div>
+                                <div className="review-info">
+                                    <div className="rating-info">
+                                        <h4>{this.renderStars(review.rating)}</h4>
+                                        {review.created_at === review.updated_at ? 
+                                            this.renderDate(review.created_at) : 
+                                            'Edited ' 
+                                            + this.renderDate(review.updated_at)}
+                                    </div>
+                                    <div>{this.renderBody(review)}</div>
+                                </div>
+                            </li>
+                        )
                     })}
                 </ul>  
             )
         }
+    }
+
+    renderStars(rating) {
+       if (rating > 0) {
+           return (
+                <div>
+                    <span className={1 <= rating ? "fa fa-star checked" 
+                        : "fa fa-star" } />
+                   <span className={2 <= rating ? "fa fa-star checked"
+                       : "fa fa-star"} />
+                   <span className={3 <= rating ? "fa fa-star checked"
+                       : "fa fa-star"} />
+                   <span className={4 <= rating ? "fa fa-star checked"
+                       : "fa fa-star"} />
+                   <span className={5 <= rating ? "fa fa-star checked"
+                       : "fa fa-star"} />
+                </div>
+            )
+        }
+    }
+
+    renderDate(date) {
+        let months = ['January', 'February', 'March', 'April', 'May', 'June',
+            'July', 'August', 'September', 'October', 'November', 'December'];
+        const year = date.slice(0, 4);
+        const month = date.slice(5, 7);
+        const day = date.slice(8, 10);
+        return months[month-1] + ' ' + day + ', ' + year + ' UTC';
+    }
+
+    renderBody(review) {
+        if (!review.spoiler_flag) {
+            return review.body ? review.body : '' 
+        } else {
+            return (
+                <div className={`hidden-review ${review.id}`}>
+                    <h6>This entire review has been hidden because of spoilers.
+                        </h6>
+                    <p onClick={() => this.showReview(review)}>Show full review
+                        </p>
+                </div>
+                )
+        }
+    }
+
+    showReview(review) {
+        // insert dom manipulation here
     }
 
     componentWillUnmount() {
@@ -73,7 +138,7 @@ class Book extends React.Component {
         if (this.props.currentUser) {
             return (
                 <div className="divider">
-                    <Link to={`${this.props.bookId}/review`}>Add a Review</Link>
+                    <Link to={`${this.props.bookId}/review`}>Review this Book</Link>
                 </div>
             )
         } else {
