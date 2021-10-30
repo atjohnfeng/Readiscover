@@ -1,6 +1,6 @@
 import React from 'react';
 import NavbarContainer from '../navbar/navbar_container';
-import { Redirect } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 class Home extends React.Component {
     
