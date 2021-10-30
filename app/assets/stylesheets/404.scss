@@ -40,3 +40,14 @@
         z-index: -2;
     }
 }
+
+@media only screen and (max-width: 600px) {
+    .not-found {
+        flex-direction: column;
+        margin-left: 1%;
+    }
+
+    button {
+        margin-bottom: 10px;
+    }
+}
