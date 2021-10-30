@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import NavbarContainer from '../navbar/navbar_container';
 
 class ReviewForm extends React.Component {
@@ -59,7 +59,7 @@ class ReviewForm extends React.Component {
         } else {
             this.props.editReview(review, this.state.reviewId).then(payload => {
                 if (payload.type === 'RECEIVE_REVIEW') {
-                    console.log("SUCCESS!")
+                    this.props.history.push(`/books/${this.props.bookId}`)
                 }
             });
         }
