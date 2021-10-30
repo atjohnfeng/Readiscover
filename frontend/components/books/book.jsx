@@ -21,17 +21,21 @@ class Book extends React.Component {
             this.props.getReviews(this.props.match.params.bookId);
         }
     }
+
+    redirect() {
+        this.props.history.push('/login')
+    }
     
     renderStarContainer() {
         if (!this.props.currentUser) {
             return (
                 <div className="star-rating-container">
                     <form className="star-rating-form">
-                        <Link to="/login"><span className="fa fa-star" /></Link>
-                        <Link to="/login"><span className="fa fa-star" /></Link>
-                        <Link to="/login"><span className="fa fa-star" /></Link>
-                        <Link to="/login"><span className="fa fa-star" /></Link>
-                        <Link to="/login"><span className="fa fa-star" /></Link>
+                        <span className="fa fa-star" onClick={() => this.redirect()}/>
+                        <span className="fa fa-star" onClick={() => this.redirect()}/>
+                        <span className="fa fa-star" onClick={() => this.redirect()}/>
+                        <span className="fa fa-star" onClick={() => this.redirect()}/>
+                        <span className="fa fa-star" onClick={() => this.redirect()}/>
                     </form>
                     <h2>Rate this book</h2>
                 </div>
