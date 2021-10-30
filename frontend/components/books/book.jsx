@@ -51,7 +51,7 @@ class Book extends React.Component {
             return (
                 <ul className="book-show-reviews">
                     {reviews.map((review, i) => {
-                        if (!review || !review.author || !review.rating) {
+                        if (!review || !review.author) {
                             return null;
                         }
                         return <li key={`review-${i}`}>
