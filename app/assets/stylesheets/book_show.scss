@@ -1,7 +1,7 @@
 .book-show {
     display: flex;
     justify-content: center;
-    height: 100vh;
+    min-height: 90vh;
     width: 100%;
     background-color: #fffefb;
     
@@ -78,6 +78,7 @@
 
         .no-reviews {
             padding-top: 10px;
+            padding-bottom: 10px;
         }
     }
 }
@@ -148,8 +149,8 @@
 @media only screen and (max-width: 600px) {
     .book-show {
         flex-direction: column;
+        justify-content: flex-start;
         align-items: center;
-        height: 100%;
 
         .book-show-left {
             margin-right: 0;
