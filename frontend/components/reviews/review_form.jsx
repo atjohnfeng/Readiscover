@@ -162,10 +162,10 @@ class ReviewForm extends React.Component {
                                 className={this.renderStar(1)} />
                             <h3>My rating:</h3>
                         </div>
-                        <div>
+                        <div className="bookshelves-div">
                             <h3>Bookshelves/Tags: Under Construction</h3>
                         </div>
-                        <div>
+                        <div className="body-div">
                             <h3>What did you think?</h3>
                             <textarea placeholder={this.state.body === '' ? 
                                 'Enter your review (optional)' : 
@@ -182,13 +182,14 @@ class ReviewForm extends React.Component {
                             <h3>Hide entire review because of spoilers</h3>
                         </div>
                         <div>
-                            <button onClick={() => this.handleSubmit()}>
+                            <button className="submit-button"
+                                onClick={() => this.handleSubmit()}>
                                 Post</button>
                         </div>
                         {this.renderErrors()}
                         <div>
                             <button className="remove-button" disabled>
-                                Remove from my books
+                                Remove from my books (Under construction)
                             </button>
                         </div>
                 </div>

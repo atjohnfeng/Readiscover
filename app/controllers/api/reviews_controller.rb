@@ -14,7 +14,7 @@ class Api::ReviewsController < ApplicationController
         if @review.save
             render :show
         else
-            render json: ['Review requires a body or rating.'], status: 422
+            render json: ['Your review is empty and requires either a body or rating.'], status: 422
         end
     end
 
@@ -23,7 +23,7 @@ class Api::ReviewsController < ApplicationController
         if @review.update(review_params)
             render :show
         else
-            render json: ['Review requires a body or rating.'], status: 422
+            render json: ['Your review is empty and requires either a body or rating.'], status: 422
         end
     end
 
