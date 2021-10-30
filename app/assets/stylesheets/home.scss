@@ -2,6 +2,39 @@
     margin-top: 1%;
     display: flex;
     justify-content: center;
+    
+    h1 {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 18px;
+    }
+
+    .home-left {
+        background-color: #fffefb;
+        border: 1px solid gainsboro;
+        border-radius: 2px;
+        width: 15%;
+        height: 85vh;
+        overflow: auto;
+        padding: 10px;
+        margin-right: 20px;
+        font-family: "Lato", "Helvetica Neue", Helvetica, sans-serif;
+    }
+
+    .home-right {
+        background-color: #fffefb;
+        border: 1px solid gainsboro;
+        border-radius: 2px;
+        width: 15%;
+        height: 85vh;
+        overflow: auto;
+        padding: 10px;
+        margin-left: 20px;
+        font-family: "Lato", "Helvetica Neue", Helvetica, sans-serif;
+
+        .article-link {
+
+        }
+    }
 
     .users-reviews {
         background-color: #fffefb;
@@ -13,10 +46,6 @@
         padding: 10px;
         font-family: "Lato", "Helvetica Neue", Helvetica, sans-serif;
 
-        h1 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 18px;
-        }
 
         h2 {
             font-family: 'Montserrat', sans-serif;
@@ -55,6 +84,34 @@
 
         .no-reviews {
             padding-top: 10px;
+        }
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .home-content-container {
+        flex-direction: column;
+        align-items: center;
+        align-content: center;
+
+        .home-left {
+            order: 1;
+            width: 80%;
+            height: 100%;
+            margin: 0;
+        }
+
+        .users-reviews {
+            order: 3;
+            width: 80%;
+            max-height: 50vh;
+        }
+
+        .home-right {
+            order: 2;
+            width: 80%;
+            height: 100%;
+            margin: 0;
         }
     }
 }

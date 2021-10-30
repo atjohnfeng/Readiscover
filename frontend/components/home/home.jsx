@@ -104,14 +104,26 @@ class Home extends React.Component {
                     <div className="home">
                         <div className="home-content-container">
                             <div className="home-left">
-
+                                <div className="currently-reading">
+                                    <h1>Currently Reading</h1>
+                                    <br />
+                                    Bookshelves Under Construction
+                                </div>
                             </div>
                             <div className="users-reviews">
                                 <h1>Your Recent Reviews &amp; Ratings</h1>
                                 {this.renderReviews()}
                             </div>
                             <div className="home-right">
-
+                                <div className="articles">
+                                    <h1>News &amp; Interviews</h1><br />
+                                    <article>
+                                        <Link
+                                            className="article-link">
+                                            Top 5 Books to Add to Your List
+                                        </Link>
+                                    </article>
+                                </div>
                             </div>
                         </div>
                     </div>
