@@ -84,6 +84,13 @@ class Book extends React.Component {
                     })}
                 </ul>  
             )
+        } else {
+            return (
+                <div className="no-reviews">
+                    There are no reviews yet for this book.<br/>
+                    {!this.props.currentUser ? <Link to="/signup">Sign up and write your own!</Link> : <Link to={`${this.props.bookId}/review`}>Write your own!</Link>}
+                </div>
+            )
         }
     }
 
