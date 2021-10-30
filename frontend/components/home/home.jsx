@@ -11,17 +11,13 @@ class Home extends React.Component {
     render() {
         return (
             <div>
-                <Redirect to="/books" />
+                {/* <Redirect to="/books" /> */}
                 <div className="header-div"><NavbarContainer /></div>
                     <div className="home">
                         <div className="home-content-container">
-                            <br />
-                            Welcome to your home page, {this.props.currentUser.username}!
-                            <br />
-                            Visit 'All Books' to view all books in our database.
-                            <br />
-                            Under Construction.
-                            <br />
+                            <div className="users-reviews">
+                                
+                            </div>
                         </div>
                     </div>
                 <div className="footer-div"></div>
