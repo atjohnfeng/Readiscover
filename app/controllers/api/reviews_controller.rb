@@ -20,6 +20,10 @@ class Api::ReviewsController < ApplicationController
 
     def update
         @review = Review.find(params[:id])
+        if @review.user_id != current_user.id
+            render json: ['You are not the owner of this review.'], status: 422
+            return
+        end
         if @review.update(review_params)
             render :show
         else
