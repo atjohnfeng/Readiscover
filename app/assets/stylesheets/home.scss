@@ -1,17 +1,34 @@
-.header-div {
-    margin-bottom: 1%;
-}
-
 .home-content-container {
+    margin-top: 1%;
     display: flex;
     justify-content: center;
 
     .users-reviews {
         background-color: #fffefb;
+        border: 1px solid gainsboro;
         border-radius: 2px;
-        width: 50%;
+        width: 35%;
         height: 85vh;
-        max-height: 85vh;
         overflow: auto;
+        padding: 10px;
+        font-family: "Lato", "Helvetica Neue", Helvetica, sans-serif;
+
+        .review-cover {
+            width: 66px;
+            height: 100px;
+            padding-right: 10px;
+        }
+
+        .fa-star {
+            &:hover {
+                color: #C0C0C0;
+            }
+        }
+
+        .checked {
+            &:hover {
+                color: orange;
+            }
+        }
     }
 }

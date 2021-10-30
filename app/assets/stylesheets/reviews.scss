@@ -34,6 +34,18 @@
         font-weight: bold;
         padding-top: 10px;
     }
+
+      .fa-star {
+            &:hover {
+                color: #C0C0C0;
+            }
+        }
+
+        .checked {
+            &:hover {
+                color: orange;
+            }
+        }
 }
 
 .review-form-container {

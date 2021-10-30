@@ -38,7 +38,7 @@ class Home extends React.Component {
 
     renderReviews() {
         const reviews = Object.values(this.props.currentUser.users_reviews);
-        console.log(reviews)
+        const books = this.props.books;
         if (reviews.length > 0) {
             return (
                 <ul className="book-show-reviews">
@@ -46,15 +46,20 @@ class Home extends React.Component {
                         if (!review) {
                             return null;
                         }
+                        const book = books[review.book_id];
+                        let cover;
+                        let title;
+                        if (book) {
+                            title = book.title;
+                            cover = book.cover_img_url;
+                        }
                         return (
                             <li key={`review-${i}`}
                                 className={`user-review review-${review.id}`}>
-                                <div className="user-info">
-                                    <img src={window.navProfileDefault}
+                                <div className="book-info">
+                                    <img src={cover}
                                         alt="profile-default-nav"
-                                        className="review-icon" />
-                                    <h2>{review.author}</h2>
-                                    <h3>{review.review_count} reviews</h3>
+                                        className="review-cover" />
                                 </div>
                                 <div className="review-info">
                                     <div className="rating-info">
@@ -74,8 +79,8 @@ class Home extends React.Component {
         } else {
             return (
                 <div className="no-reviews">
-                    There are no reviews yet for this book.<br />
-                    {!this.props.currentUser ? <Link to="/signup">Sign up and write your own!</Link> : <Link to={`${this.props.bookId}/review`}>Write your own!</Link>}
+                    You have no reviews!<br />
+                    <Link to="/books">Find your next read.</Link>
                 </div>
             )
         }
@@ -91,7 +96,7 @@ class Home extends React.Component {
 
                             </div>
                             <div className="users-reviews">
-                                <h1>Your Recent Activity</h1>
+                                <h1>Your Recent Reviews</h1>
                                 {this.renderReviews()}
                             </div>
                             <div className="home-right">
