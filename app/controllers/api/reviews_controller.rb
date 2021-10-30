@@ -5,7 +5,7 @@ class Api::ReviewsController < ApplicationController
     end
 
     def show
-        @review = Review.where(book_id: params[:book_id], user_id: params[:user_id])
+        @review = Review.where(book_id: params[:book_id], user_id: current_user.id)
         render :show
     end
 
