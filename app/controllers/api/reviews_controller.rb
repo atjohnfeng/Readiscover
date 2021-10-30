@@ -5,12 +5,16 @@ class Api::ReviewsController < ApplicationController
     end
 
     def show
-        @review = Review.where(book_id: params[:book_id], user_id: current_user.id)
+        @review = Review.where(book_id: params[:book_id], user_id: params[:user_id])
         render :show
     end
 
     def create
         @review = Review.new(review_params)
+        if @review.user_id != current_user.id
+            render json: ['Please log in to the correct account you are trying to post a review for.'], status: 422
+            return
+        end
         if @review.save
             render :show
         else

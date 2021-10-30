@@ -13,21 +13,43 @@ class StarForm extends React.Component {
         this.updateRating = this.updateRating.bind(this);
     }
 
-    componentDidMount() {
-        // this.props.getBook(this.props.bookId);
-        this.props.getReview(this.props.bookId, this.props.currentUser).then(
-            payload => { 
-                let review = Object.values(payload.review);
-                if (review.length > 0) {
-                    this.setState({
-                        rating: review[0].rating,
-                        formType: 'edit',
-                        reviewId: review[0].id
-                    }) 
+    componentDidUpdate(prevProps, prevState) {
+        let userReview = null;
+        let reviews = Object.values(this.props.reviews);
+        if (JSON.stringify(this.props.reviews)
+            !== JSON.stringify(prevProps.reviews)) {
+            userReview = reviews.filter(review => {
+                if (review) {
+                    return review.user_id === this.props.currentUser
                 }
+            })
+        }
+        if (JSON.stringify(userReview) !== '[]' && userReview) {
+            console.log(userReview)
+            if (prevState.reviewId === null && userReview[0].id) {
+                this.setState({
+                    rating: userReview[0].rating,
+                    formType: 'edit',
+                    reviewId: userReview[0].id
+                }) 
             }
-        );
+        }
     }
+
+    // componentDidMount() {
+    //     this.props.getReview(this.props.bookId, this.props.currentUser).then(
+    //         payload => { 
+    //             let review = Object.values(payload.review);
+    //             if (review.length > 0) {
+    //                 this.setState({
+    //                     rating: review[0].rating,
+    //                     formType: 'edit',
+    //                     reviewId: review[0].id
+    //                 }) 
+    //             }
+    //         }
+    //     );
+    // }
 
     updateRating(value) {
         const review = {
