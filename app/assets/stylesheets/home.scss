@@ -13,6 +13,28 @@
         padding: 10px;
         font-family: "Lato", "Helvetica Neue", Helvetica, sans-serif;
 
+        h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 18px;
+        }
+
+        h2 {
+            font-family: 'Montserrat', sans-serif;
+            padding-bottom: 10px;
+        }
+
+        .user-review {
+            padding: 5px;
+            border-radius: 2px;
+
+            &:hover {
+                background-color: #F4F1EA;
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+        }
+
         .review-cover {
             width: 66px;
             height: 100px;

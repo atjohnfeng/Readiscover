@@ -55,13 +55,15 @@ class Home extends React.Component {
                         }
                         return (
                             <li key={`review-${i}`}
-                                className={`user-review review-${review.id}`}>
+                                className={`user-review review-${review.id}`}
+                                onClick={() => this.redirect(book.id)}>
                                 <div className="book-info">
                                     <img src={cover}
                                         alt="profile-default-nav"
                                         className="review-cover" />
                                 </div>
                                 <div className="review-info">
+                                    <h2>{title}</h2>
                                     <div className="rating-info">
                                         <h4>{this.renderStars(review.rating)}</h4>
                                         {review.created_at === review.updated_at ?
@@ -86,6 +88,10 @@ class Home extends React.Component {
         }
     }
 
+    redirect(book) {
+        this.props.history.push(`/books/${book}`)
+    }
+
     render() {
         return (
             <div>
@@ -96,7 +102,7 @@ class Home extends React.Component {
 
                             </div>
                             <div className="users-reviews">
-                                <h1>Your Recent Reviews</h1>
+                                <h1>Your Recent Reviews &amp; Ratings</h1>
                                 {this.renderReviews()}
                             </div>
                             <div className="home-right">
