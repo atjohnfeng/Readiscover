@@ -42,17 +42,40 @@ h1 {
     background-color: #eeebe4;
 
     h1 {
-
+        font-family: 'Libre Baskerville', serif;
+        font-weight: bold;
+        font-size: 16px;
+        padding-bottom: 5px;
+        padding-left: 5px;
     }
 
     h2 {
-
+        font-family: 'Libre Baskerville', serif;
+        font-size: 16px;
+        padding-bottom: 5px;
+        padding-left: 5px;
     }
 
     h3, textarea, button, .form-error {
         font-family: "Lato", "Helvetica Neue", Helvetica, sans-serif;
         font-size: 14px;
         font-weight: 600;
+    }
+
+    header {
+        font-family: 'Libre Baskerville', serif;
+        font-weight: bold;
+        font-size: 22px;
+        padding-bottom: 20px;
+
+        .title-link {
+            color: #00635d;
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
     }
 
     button {

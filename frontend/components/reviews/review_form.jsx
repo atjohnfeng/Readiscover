@@ -132,7 +132,8 @@ class ReviewForm extends React.Component {
                 <div className="header-div"><NavbarContainer /></div>
                 <div className="review-form-container">
                     <header> 
-                        <Link to={`/books/${this.props.bookId}`}>{title}
+                        <Link to={`/books/${this.props.bookId}`
+                            } className="title-link">{title}
                         </Link> &gt; Review &gt; {this.state.formType}
                     </header>
                     <div className="book-info">
