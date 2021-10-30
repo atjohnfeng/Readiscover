@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import Book from './book';
+import Book from './book_show';
 import { getBook } from '../../actions/book_actions';
 import { getReviews, reset } from '../../actions/review_actions';
 
