@@ -119,9 +119,9 @@ class Home extends React.Component {
                                 <div className="articles">
                                     <h1>News &amp; Interviews</h1><br />
                                     <article>
-                                        <Link
+                                        <Link to="/articleone"
                                             className="article-link">
-                                            Top 5 Books to Add to Your List
+                                            Five Books You Should Read Next
                                         </Link>
                                     </article>
                                 </div>
