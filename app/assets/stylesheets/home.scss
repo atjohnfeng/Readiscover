@@ -55,19 +55,24 @@
         .user-review {
             padding: 10px;
             border-radius: 2px;
+            img {
+                padding: 5px;
+            }
 
             &:hover {
                 background-color: #F4F1EA;
                 cursor: pointer;
-                box-shadow: 0 3px 10px 0px #382110;
-                transition: box-shadow .4s ease-in-out;
+                img {
+                    box-shadow: 0px 3px 10px 0px #382110;
+                    transition: box-shadow .4s ease-in-out;
+                }
             }
         }
 
         .review-cover {
             width: 66px;
             height: 100px;
-            padding-right: 10px;
+            margin-right: 10px;
         }
 
         .fa-star {
