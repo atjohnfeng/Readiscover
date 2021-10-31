@@ -44,28 +44,6 @@ class ReviewForm extends React.Component {
                 })
             }
         }) 
-        // this.props.getReview(this.props.bookId, this.props.currentUser).then(
-        //     payload => {
-        //         let review = Object.values(payload.review);
-        //         if (review.length > 0) {
-        //             this.setState({
-        //                 rating: review[0].rating,
-        //                 formType: 'Edit',
-        //                 spoilerFlag: review[0].spoiler_flag,
-        //                 reviewId: review[0].id
-        //             })
-        //             if (review[0].body) {
-        //                 this.setState({
-        //                     body: review[0].body,
-        //                 })
-        //             }
-        //         } else {
-        //             this.setState({
-        //                 formType: 'Create'
-        //             })
-        //         }
-        //     }
-        // );
     }
 
     componentWillUnmount() {
@@ -219,6 +197,10 @@ class ReviewForm extends React.Component {
                         <div>
                             <button className="remove-button" disabled>
                                 Remove from my books (Under construction)
+                            </button>
+                            <div></div>
+                            <button className="remove-button" disabled>
+                                Delete review (Under construction)
                             </button>
                         </div>
                 </div>
