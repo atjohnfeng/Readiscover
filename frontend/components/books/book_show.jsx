@@ -88,7 +88,7 @@ class Book extends React.Component {
             return (
                 <div className="no-reviews">
                     There are no reviews yet for this book.<br/>
-                    {!this.props.currentUser ? <Link to="/signup">Sign up and write your own!</Link> : <Link to={`${this.props.bookId}/review`}>Write your own!</Link>}
+                    {!this.props.currentUser ? <div><Link to={`/signup`}>Sign up</Link> or <Link to={`/login`}>Log in</Link> to be the first!</div> : <Link to={`${this.props.bookId}/review`}>Be the first!</Link>}
                 </div>
             )
         }
@@ -146,17 +146,48 @@ class Book extends React.Component {
     }
 
     renderReviewLink() {
+        let review;
         if (this.props.currentUser) {
-            return (
-                <div className="divider">
-                    <Link to={`${this.props.bookId}/review`}>Review this Book
-                    </Link>
-                </div>
-            )
+            const reviews = Object.values(this.props.reviews);
+            review = reviews.filter(review => {
+                if (review) {
+                    return review.user_id === this.props.currentUser
+                }
+            })
+            if (JSON.stringify(review) !== '[]') {
+                return (
+                    <div className="divider user-review my-review">
+                        <div className="user-info">
+                            <h1>My Review</h1>
+                            <img src={window.navProfileDefault}
+                                alt="profile-default-nav"
+                                className="review-icon" />
+                            <h2>{review[0].author}</h2>
+                            <h3>{review[0].review_count} reviews</h3>
+                        </div>
+                        <div className="review-info">
+                            <div className="rating-info">
+                                <h4>{this.renderStars(review[0].rating)}</h4>
+                            </div>
+                            <div>{review[0].body}</div>
+                        </div>
+                        <Link to={`${this.props.bookId}/review`}>Edit</Link>
+                    </div>
+                )
+            } else {
+                return (
+                    <div className="divider">
+                        <span>What do <i>you</i> think?</span><br />
+                        <Link to={`${this.props.bookId}/review`}>Review this Book
+                        </Link>
+                    </div>
+                )
+            }
         } else {
             return (
                 <div className="divider">
-                    <Link to={`/login`}>Log in to Add a Review</Link>
+                    <span>What do <i>you</i> think?</span><br />
+                    <Link to={`/signup`}>Sign up</Link> or <Link to={`/login`}>Log in</Link> to Add a Review
                 </div>
             )
         }
