@@ -120,6 +120,24 @@ class ReviewForm extends React.Component {
         }
     }
 
+    deleteReview(bookId, reviewId) {
+        this.props.deleteReview(bookId, reviewId).then(payload => {
+            if (payload.type === 'DELETE_REVIEW') {
+                this.props.history.push(`/books/${this.props.bookId}`)}
+        })
+    }
+
+    renderDelete() {
+        if (this.state.formType === "Edit") {
+            return (
+                <button className="remove-button" onClick={() => 
+                    this.deleteReview(this.state.book_id, this.state.reviewId)}>
+                    Delete review
+                </button>
+            )
+        }
+    }
+
     render() {
         let title;
         let cover;
@@ -199,9 +217,7 @@ class ReviewForm extends React.Component {
                                 Remove from my books (Under construction)
                             </button>
                             <div></div>
-                            <button className="remove-button" disabled>
-                                Delete review (Under construction)
-                            </button>
+                            {this.renderDelete()}
                         </div>
                 </div>
             </div>

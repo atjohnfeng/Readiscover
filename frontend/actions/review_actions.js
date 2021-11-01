@@ -67,8 +67,8 @@ export const editReview = (review, reviewId) => dispatch => (
         errors => dispatch(receiveReviewErrors(errors.responseJSON)))
 )
 
-export const deleteReview = review => dispatch => (
-    ReviewApiUtil.deleteReview(review).then(review => dispatch(destroyReview(review)),
+export const deleteReview = (bookId, reviewId) => dispatch => (
+    ReviewApiUtil.deleteReview(bookId, reviewId).then(review => dispatch(destroyReview(review)),
         errors => dispatch(receiveReviewErrors(errors.responseJSON)))
 )
 
