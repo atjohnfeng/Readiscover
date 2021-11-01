@@ -154,10 +154,6 @@
         .hidden {
             display: none;
         }
-
-        .unhidden > .hidden {
-            display: block;
-        }
     }
 }
 
@@ -173,6 +169,18 @@
 
     .review-info {
         border-bottom: none;
+    }
+
+    .fa-star {
+        &:hover {
+            color: #C0C0C0;
+        }
+    }
+
+    .checked {
+        &:hover {
+            color: orange;
+        }
     }
 }
 
