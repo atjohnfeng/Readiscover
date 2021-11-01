@@ -3,7 +3,7 @@
     position: relative;
     margin-top: -3.5px;
     margin-right: 20px;
-    width: 290px;
+    min-width: 290px;
     z-index: 2;
 
     .search-results {
@@ -13,7 +13,7 @@
         background-color: #F4F1EA;
         position: relative;
         width: 320px;
-        max-height: 50vmax;
+        max-height: 75vh;
         overflow: auto;
 
         .search-result-img {
