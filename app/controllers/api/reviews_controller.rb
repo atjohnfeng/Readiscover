@@ -37,6 +37,10 @@ class Api::ReviewsController < ApplicationController
 
     def destroy
         @review = Review.where(book_id: params[:book_id], user_id: params[:user_id])
+        if @review.user_id != current_user.id
+            render json: ['You cannot delete a review you do not own.'], status: 422
+            return
+        end
         if @review.destroy
             render :show
         else
