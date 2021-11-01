@@ -6,50 +6,113 @@ class ArticleOne extends React.Component {
 
     constructor(props) {
         super(props);
-
-        this.state = {
-            book_one: null,
-            book_two: null,
-            book_three: null,
-            book_four: null,
-            book_five: null
-        }
     }
 
     componentDidMount() {
-        console.log(this.props.books)
+        this.props.getBooks();
     }
 
     render() {
+        if (Object.values(this.props.books).length < 1) {
+            return null;
+        }
+
+        const books = Object.values(this.props.books);
+        const lfe = books.filter(book => {
+            return book.title === 'Little Fires Everywhere'
+        })[0];
+        const nm = books.filter(book => {
+            return book.title === 'Norse Mythology'
+        })[0];
+        const mg = books.filter(book => {
+            return book.title === 'Mexican Gothic'
+        })[0];
+        const kd = books.filter(book => {
+            return book.title === 'Kindred'
+        })[0];
+        const ti = books.filter(book => {
+            return book.title === 'The Institute'
+        })[0];
+
         return (
             <div>
                 <div className="header-div">
                     <NavbarContainer />
                 </div>
-                <div className="article-one">
-                    {/* <h1>Five Books You Should Read Next</h1>
-                    <h2>Posted by John Feng on October 31, 2021</h2>
-                    <img src="" alt="john-profile"/> */}
+                <div className="article-container">
+                    <div className="article-one">
+                        <h1>Five Books You Should Read Next</h1>
+                        <h2>Posted by John Feng on November 1, 2021</h2>
+                        {/* <img src="" alt="john-profile"/> */}
 
-                    <article>
-                        {/* Little Fires Everywhere by Celeste Ng */}
-                    </article>
+                        <h2>{lfe.title} by {lfe.author}</h2>
+                        <article>
+                            <div className="book-info">
+                                <img src={`${lfe.cover_img_url}`} alt="lfe" />
+                            </div>
+                            <div className="book-review">
 
-                    <article>
+                            </div>
+                        </article>
+                            
+                        <h2>{nm.title} by {nm.author}</h2>
+                        <article className="even">
+                            <div className="book-review">
 
-                    </article>
+                            </div>
+                            <div className="book-info">
+                                <img src={`${nm.cover_img_url}`} alt="nm" />
+                            </div>
+                        </article>
+                            
+                        <h2>{mg.title} by {mg.author}</h2>
+                        <article>
+                            <div className="book-info">
+                                <img src={`${mg.cover_img_url}`} alt="mg" />
+                            </div>
+                            <div className="book-review">
+                                Enter Noemí.
+                                <br /><br />
+                                She's a socialite who aspires to study anthropology (automatic plus for Noemí as someone who studied anthropology in undergrad) and her father offers an opportunity to do just that at a prestigious university - an offer not to be taken lightly as a woman in 1950s Mexico. Her goal: to check up on her cousin Catalina after her father receives an ominous letter regarding Catalina's dire situation. Catalina had married a man named Virgil and moved into his family home called High Place, a house full of history. Noemí agrees to travel to High Place in order to checkup on Catalina, and she slowly unravels a haunting mystery filled with horror and unspeakable things.
+                                <br /><br />
+                                This is a slow-burn so it won't be for everyone. A majority of the book is setting up the atmosphere of High Place and developing character relations. Moreno-Garcia sprinkles many hints here and there and sets everything up meticulously for the book's final act.
+                                <br /><br />
+                                This book felt like a mash-up of two of my favorite horror-thriller movies in recent years: (view spoiler), so if you want something in a similar vein Mexican Gothic is definitely something to put on your reading list.
+                            </div>
+                        </article>
 
-                    <article>
+                        <h2>{kd.title} by {kd.author}</h2>
+                        <article className="even">
+                            <div className="book-review">
+                                Kindred is a landmark toted as the "first science fiction written by a black woman." At its core, Kindred is an examination on complacency and how easy it is to accept the status quo.
+                                <br /><br />
+                                The time-travel is used as a vehicle to examine the themes and ideas Butler wanted to convey. This book isn’t so much science fiction as it is a blend of different genres such as historical fiction and slave narratives. In my opinion, explaining the time travel would have distracted and taken focus away from the message Butler intended.
+                                <br /><br />
+                                There’s a lot of significance in the prologue of the novel when we link back to it during the ultimate conclusion of Dana’s journey. How does someone who has traveled back to antebellum South change after returning? After everything they experienced, could they ever be “whole” again? Butler draws many parallels between Kevin, Dana’s husband, and Rufus, Dana’s ancestor, in order to contrast Kevin’s journey with Dana’s. It really makes you examine each character and their role in society, both present and past.
+                                <br /><br />
+                                As for what I disliked about the novel, I felt the writing at times could have been more descriptive. The prose was straightforward and cut to the point. I believe this may have been a stylistic choice, but I believe there were areas that could have been improved, particularly when it came to the descriptions and dialogue. The bright side to this is that Kindred is a very quick and easy read and I highly recommend it.
+                            </div>
+                            <div className="book-info">
+                                <img src={`${kd.cover_img_url}`} alt="kd" />
+                            </div>
+                        </article>
 
-                    </article>
-
-                    <article>
-
-                    </article>
-
-                    <article>
-
-                    </article>
+                        <h2>{ti.title} by {ti.author}</h2>
+                        <article>
+                            <div className="book-info">
+                                <img src={`${ti.cover_img_url}`} alt="ti" />
+                            </div>
+                            <div className="book-review">
+                                I went into <i>The Institute</i> expecting a horror book given that this was a King novel (and 2020 Goodreads users at the time of this review shelved this as horror - can't trust ya'll), but this is not a horror novel... at least not in a traditional sense. This is also the second King book I've read (the first being <i>Joyland</i> which I also expected to be a horror novel but ended up being a nice coming-of-age tale). I guess you can say that The Institute is about horrific things: kidnapped children, abused children, abusive adults, murder, etc. You won't find ghosts, killer clowns, or creepy cemeteries here. Instead, you'll be thrust into the real world (there are many, many references to the world we know), and meet many adults that you would never want to meet in the real world, and many more children than you could ever possibly want to meet in the real world.
+                                <br /><br />
+                                King manages to weave varying viewpoints together to craft a satisfying tale. The story is told in a fairly linear fashion, but you may jump around from one character to another. It's done well and contributes to the story, showcasing various events from different viewpoints without feeling overly padded. Much of the novel spends time with the main character Luke Ellis; however, <i>The Institute</i> begins with a man named Tim Jamieson, our kind-of-bland-somewhat-vanilla deuteragonist. You end up wondering how the two worlds eventually collide, but King manages to set-up the plot and carry it through convincingly.
+                                <br /><br />
+                                There's a bit of philosophical discussion throughout the book, but most of it is surface level and we don't ever really dive deep into the Institute and its history. The third act devolves into an okay action movie. And in the end, we receive an exposition dump that provides enough answers, but leaves you thinking. Still, King has managed to tell a story that kept my attention throughout and wrapped it up in a way that left me satisfied.
+                                <br /><br />
+                                If <i>Stranger Things</i> meets <i>The New Mutants</i> (or at least the trailer because the movie has been delayed to hell and back) interests you, then you will probably enjoy this book.
+                            </div>
+                        </article>
+                    </div>
                 </div>
                 <div className="footer-div"></div>
             </div>

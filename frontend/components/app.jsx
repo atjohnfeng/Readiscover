@@ -9,7 +9,7 @@ import LoginContainer from './login/login_container';
 import BookIndexContainer from './books/book_index_container';
 import BookShowContainer from './books/book_show_container';
 import ReviewFormContainer from './reviews/review_form_container';
-import ArticleOne from './articles/article_one';
+import ArticleOneContainer from './articles/article_one_container';
 
 const App = () => {
     return (
@@ -23,7 +23,7 @@ const App = () => {
                     <ProtRoute path="/books/:bookId/review" component={ReviewFormContainer} />
                     <Route exact path="/books" component={BookIndexContainer} />
                     <Route path="/books/:bookId" component={BookShowContainer} />
-                    <Route path="/articleone" component={ArticleOne} />
+                    <Route path="/articleone" component={ArticleOneContainer} />
                     <Route path="/*" component={NotFound} />
                 </Switch>
             </header>

@@ -1,0 +1,58 @@
+.article-container {
+    display: flex;
+    justify-content: center;
+}
+
+.article-one {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1%;
+    max-width: 50%;
+    background-color: #fffefb;
+    border: 1px solid gainsboro;
+    border-radius: 2px;
+    height: 100%;
+    overflow: auto;
+    padding-top: 15px;
+
+    article {
+        // margin-top: 25px;
+        display: flex;
+        padding: 10px;
+
+        .book-info {
+            padding-bottom: 10px;
+            padding-left: 10px;
+            padding-right: 10px;
+
+            i {
+                font-style: italic;
+            }
+    
+            img {
+                padding: 10px;
+                width: 18vh;
+                height: 27vh;
+                border-top-right-radius: 16px;
+                border-bottom-right-radius: 16px;
+            }
+        }
+
+        .book-review {
+            font-family: "Lato", "Helvetica Neue", Helvetica, sans-serif;
+        }
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    article {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .even {
+        flex-direction: column-reverse;
+    }
+}
