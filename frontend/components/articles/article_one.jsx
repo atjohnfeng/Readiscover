@@ -1,6 +1,5 @@
 import React from 'react';
 import NavbarContainer from '../navbar/navbar_container';
-import { getBooks } from '../../actions/book_actions';
 import { Link } from 'react-router-dom';
 
 class ArticleOne extends React.Component {
@@ -18,9 +17,7 @@ class ArticleOne extends React.Component {
     }
 
     componentDidMount() {
-        getBooks();
-        const books = this.props
-        console.log(books)
+        console.log(this.props.books)
     }
 
     render() {
