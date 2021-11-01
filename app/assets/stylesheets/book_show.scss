@@ -94,7 +94,8 @@
     display: flex;
     padding-top: 10px;
     padding-bottom: 10px;
-    max-height: 30vh;
+    // max-height: 30vh;
+    overflow: auto;
 
     .review-icon {
         border-radius: 50%;
@@ -116,6 +117,11 @@
         border-bottom: 1px solid lightgray;
         padding-bottom: 10px;
         width: 100%;
+
+        .unhidden > h6,
+        .unhidden > p {
+            display: none;
+        }
     }
 
     .rating-info {
@@ -143,6 +149,14 @@
                 text-decoration: underline;
                 cursor: pointer;
             }
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .unhidden > .hidden {
+            display: block;
         }
     }
 }

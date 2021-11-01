@@ -123,22 +123,26 @@ class Book extends React.Component {
     }
 
     renderBody(review) {
-        if (!review.spoiler_flag) {
+        if (!review.spoiler_flag || !review.body) {
             return review.body ? review.body : '' 
         } else {
             return (
-                <div className={`hidden-review ${review.id}`}>
+                <div className="hidden-review"
+                    id={`${review.id}`}>
                     <h6>This entire review has been hidden because of spoilers.
                         </h6>
-                    <p onClick={() => this.showReview(review)}>Show full review
+                    <p onClick={() => this.showReview(review.id)}>Show full review
                         </p>
+                    <span className="hidden">{review.body}</span>
                 </div>
                 )
         }
     }
 
-    showReview(review) {
-        // insert dom manipulation here
+    showReview(reviewId) {
+        let review = document.getElementById(`${reviewId}`);
+        console.log(review)
+        review.className = "unhidden";
     }
 
     componentWillUnmount() {
