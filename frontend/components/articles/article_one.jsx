@@ -12,6 +12,10 @@ class ArticleOne extends React.Component {
         this.props.getBooks();
     }
 
+    redirect(bookId) {
+        this.props.history.push(`/books/${bookId}`);
+    }
+
     render() {
         if (Object.values(this.props.books).length < 1) {
             return null;
@@ -46,7 +50,7 @@ class ArticleOne extends React.Component {
                         {/* <img src="" alt="john-profile"/> */}
 
                         <h2>{lfe.title} by {lfe.author}</h2>
-                        <article>
+                        <article onClick={() => this.redirect(lfe.id)}>
                             <div className="book-info">
                                 <img src={`${lfe.cover_img_url}`} alt="lfe" />
                             </div>
@@ -56,7 +60,7 @@ class ArticleOne extends React.Component {
                         </article>
                             
                         <h2>{nm.title} by {nm.author}</h2>
-                        <article className="even">
+                        <article className="even" onClick={() => this.redirect(nm.id)}>
                             <div className="book-review">
 
                             </div>
@@ -66,7 +70,7 @@ class ArticleOne extends React.Component {
                         </article>
                             
                         <h2>{mg.title} by {mg.author}</h2>
-                        <article>
+                        <article onClick={() => this.redirect(mg.id)}>
                             <div className="book-info">
                                 <img src={`${mg.cover_img_url}`} alt="mg" />
                             </div>
@@ -82,7 +86,7 @@ class ArticleOne extends React.Component {
                         </article>
 
                         <h2>{kd.title} by {kd.author}</h2>
-                        <article className="even">
+                        <article className="even" onClick={() => this.redirect(kd.id)}>
                             <div className="book-review">
                                 Kindred is a landmark toted as the "first science fiction written by a black woman." At its core, Kindred is an examination on complacency and how easy it is to accept the status quo.
                                 <br /><br />
@@ -98,7 +102,7 @@ class ArticleOne extends React.Component {
                         </article>
 
                         <h2>{ti.title} by {ti.author}</h2>
-                        <article>
+                        <article onClick={() => this.redirect(ti.id)}>
                             <div className="book-info">
                                 <img src={`${ti.cover_img_url}`} alt="ti" />
                             </div>
