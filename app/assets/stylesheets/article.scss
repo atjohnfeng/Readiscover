@@ -27,9 +27,7 @@
     h3 {
         font-family: "Lato", "Helvetica Neue", Helvetica, sans-serif;
         font-size: 16px;
-        font-weight: lighter;
         padding: 10px;
-        margin-bottom: 20px;
         align-self: flex-start;
         width: 95%;
     }
@@ -41,6 +39,12 @@
         border-radius: 2px;
         border: 1px solid gainsboro;
         width: 95%;
+    }
+
+    .body {
+        font-family: "Lato", "Helvetica Neue", Helvetica, sans-serif;
+        font-size: 16px;
+        padding: 10px;
     }
 
     article {
