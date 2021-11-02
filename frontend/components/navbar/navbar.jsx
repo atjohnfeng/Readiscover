@@ -119,22 +119,28 @@ class Navbar extends React.Component {
         return (
             <div className="nav-bar">
                 <ul className="nav-bar-list">
-                    <li className="nav-bar-logo">
-                        <Link to="/">
-                            <img className="logo"
-                                src={window.logoURL}
-                                alt="readiscover-logo-image" />
-                        </Link>
-                    </li>
-                    <li className="nav-bar-link">
-                        <Link to='/home' className="nav-link">Home</Link>
-                    </li>
-                    <li className="nav-bar-link">
-                        <Link to='/books' className="nav-link">allBooks</Link>
-                    </li>
-                    <li className="nav-bar-link">
-                        <Link to='/mybooks' className="nav-link">myBooks</Link>
-                    </li>
+                    <Link to="/">
+                        <li className="nav-bar-logo">
+                                <img className="logo"
+                                    src={window.logoURL}
+                                    alt="readiscover-logo-image" />
+                        </li>
+                    </Link>
+                    <Link to='/home' className="nav-link">
+                        <li className="nav-bar-link">
+                            Home
+                        </li>
+                    </Link>
+                    <Link to='/books' className="nav-link">
+                        <li className="nav-bar-link">
+                                allBooks
+                        </li>
+                    </Link>
+                    <Link to='/mybooks' className="nav-link">
+                        <li className="nav-bar-link">
+                            myBooks
+                        </li>
+                    </Link>
                     <li className="search-bar">
                         <input type="text" placeholder="Search books"
                             value={this.state.searchString}
@@ -144,24 +150,26 @@ class Navbar extends React.Component {
                     <button type="submit" className="search-icon">
                         <i className="fa fa-search"></i>
                     </button>
-                    <li className="nav-image-link">
-                        <a href="https://github.com/atjohnfeng/"
-                            target="_blank"
-                            rel="noopener noreferrer">
-                            <img src={window.githubLogo}
-                                alt="github-logo-link"
-                                className="nav-bar-icon" />
-                        </a>
-                    </li>
-                    <li className="nav-image-link">
-                        <a href="https://www.linkedin.com/in/atjohnfeng/"
-                            target="_blank"
-                            rel="noopener noreferrer">
-                            <img src={window.linkedLogo}
-                                alt="linkedin-logo-link" 
-                                className="nav-bar-icon" />
-                        </a>
-                    </li>
+                    <a href="https://github.com/atjohnfeng/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="nav-image-link">
+                        <li className="nav-image-link">
+                                <img src={window.githubLogo}
+                                    alt="github-logo-link"
+                                    className="nav-bar-icon" />
+                        </li>
+                    </a>
+                    <a href="https://www.linkedin.com/in/atjohnfeng/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="nav-image-link">
+                        <li className="nav-image-link">
+                                <img src={window.linkedLogo}
+                                    alt="linkedin-logo-link" 
+                                    className="nav-bar-icon" />
+                        </li>
+                    </a>
                     <li className="dropdown">
                         <button id="dropdown">
                             <img src={window.navProfileDefault}

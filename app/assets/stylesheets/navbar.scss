@@ -31,15 +31,15 @@
     color: #382110;
 }
 
-.nav-bar-link:hover .nav-link {
+.nav-link:hover .nav-bar-link {
     color: white;
 }
 
-.nav-bar-link:hover {
+.nav-link:hover {
     background-color: #382110;
 }
 
-.nav-bar-list > li {
+.nav-bar-list > a, .nav-bar-list > li, .nav-bar-list > .nav-link {
     font-family: "Lato", "Helvetica Neue", Helvetica, sans-serif;
     font-size: 16px;
     color: #382110;
