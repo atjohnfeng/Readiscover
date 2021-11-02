@@ -20,6 +20,8 @@
 
     .article-header {
         display: flex;
+        justify-content: space-between;
+        width: 95%;
     }
 
     .author-pic {
@@ -31,6 +33,7 @@
     h1 {
         font-size: 26px;
         padding: 10px;
+        padding-left: 0;
         align-self: flex-start;
     }
 
@@ -41,6 +44,7 @@
         padding-bottom: 0;
         align-self: flex-start;
         width: 95%;
+        padding-left: 0;
     }
 
     h2 {
