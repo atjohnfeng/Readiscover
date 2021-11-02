@@ -127,14 +127,14 @@ class Home extends React.Component {
                                         <h6>posted by John Feng</h6>
                                     </article>
                                     <article>
-                                        <a href="https://librarytechnology.org/libraries/" 
+                                        <a href="https://www.worldcat.org/libraries"
                                             className="article-link"
                                             target="_blank"
                                             rel="noopener noreferrer">
                                             <h5>Find a Library Near You</h5>
                                             <img src={window.libraryPhoto}
                                                 alt="article-one"/>
-                                            <h6>librarytechnology.org</h6>
+                                            <h6>worldcat.org</h6>
                                         </a>
                                     </article>
                                     <article className="last">
