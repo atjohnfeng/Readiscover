@@ -146,7 +146,8 @@ class Navbar extends React.Component {
                     </button>
                     <li className="nav-image-link">
                         <a href="https://github.com/atjohnfeng/"
-                            target="_blank ">
+                            target="_blank"
+                            rel="noopener noreferrer">
                             <img src={window.githubLogo}
                                 alt="github-logo-link"
                                 className="nav-bar-icon" />
@@ -154,7 +155,8 @@ class Navbar extends React.Component {
                     </li>
                     <li className="nav-image-link">
                         <a href="https://www.linkedin.com/in/atjohnfeng/"
-                            target="_blank">
+                            target="_blank"
+                            rel="noopener noreferrer">
                             <img src={window.linkedLogo}
                                 alt="linkedin-logo-link" 
                                 className="nav-bar-icon" />
