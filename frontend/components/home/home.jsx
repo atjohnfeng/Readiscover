@@ -134,7 +134,7 @@ class Home extends React.Component {
                                             <h5>Find a Library Near You</h5>
                                             <img src={window.libraryPhoto}
                                                 alt="article-one"/>
-                                            <h6>https://librarytechnology.org/libraries/</h6>
+                                            <h6>librarytechnology.org</h6>
                                         </a>
                                     </article>
                                     <article className="last">
@@ -145,7 +145,7 @@ class Home extends React.Component {
                                             <h5>Support a Local Bookstore</h5>
                                             <img src={window.indieBookstore}
                                                 alt="article-one" />
-                                            <h6>https://www.indiebound.org/indie-store-finder</h6>
+                                            <h6>indiebound.org</h6>
                                         </a>
                                     </article>
                                 </div>
