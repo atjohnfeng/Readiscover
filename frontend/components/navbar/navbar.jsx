@@ -90,7 +90,7 @@ class Navbar extends React.Component {
                         <li className="li-dropdown-link" onClick={this.props.logout}>
                             Sign Out
                         </li>
-                    </div>test
+                    </div>
                 </ul>
             )
         } else {
