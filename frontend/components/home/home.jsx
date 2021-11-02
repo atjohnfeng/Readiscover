@@ -120,7 +120,7 @@ class Home extends React.Component {
                                     <article>
                                         <Link to="/articleone"
                                             className="article-link">
-                                            Five Books You Should Read Next
+                                            <h5>Five Books You Should Read Next</h5>
                                             <img src={window.articleOne} 
                                                 alt="five-books"/>
                                         </Link>
@@ -131,9 +131,10 @@ class Home extends React.Component {
                                             className="article-link"
                                             target="_blank"
                                             rel="noopener noreferrer">
-                                            Find a Library Near You
+                                            <h5>Find a Library Near You</h5>
                                             <img src={window.libraryPhoto}
                                                 alt="article-one"/>
+                                            <h6>https://librarytechnology.org/libraries/</h6>
                                         </a>
                                     </article>
                                     <article className="last">
@@ -141,9 +142,10 @@ class Home extends React.Component {
                                             className="article-link"
                                             target="_blank"
                                             rel="noopener noreferrer">
-                                            Support a Local Bookstore
+                                            <h5>Support a Local Bookstore</h5>
                                             <img src={window.indieBookstore}
                                                 alt="article-one" />
+                                            <h6>https://www.indiebound.org/indie-store-finder</h6>
                                         </a>
                                     </article>
                                 </div>
