@@ -101,11 +101,21 @@
 }
 
 @media only screen and (max-width: 900px) {
-    article {
-        flex-direction: column;
+    .article-one {
+        max-width: 100%;
+
+        article {
+            flex-direction: column;
+        }
     }
 
     .even {
         flex-direction: column-reverse;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .article-one {
+        max-width: 70%;
     }
 }

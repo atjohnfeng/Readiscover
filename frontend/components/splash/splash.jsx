@@ -6,7 +6,7 @@ class Splash extends React.Component {
     render() {
         return (
             <div>
-                <Redirect to="/books" />
+                <Redirect to="/login" />
                 <Link to="/">
                     <img className="logo"
                         src={window.logoURL}
