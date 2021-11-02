@@ -48,7 +48,8 @@ class ArticleOne extends React.Component {
                         <div className="article-header">
                             <div>
                                 <h1>Five Books You Should Read Next</h1>
-                                <h3>Posted by John Feng on November 1, 2021</h3>
+                                <h3>Posted by John Feng</h3>
+                                <h3>November 1, 2021</h3>
                             </div>
                             <img src={window.authorPic} alt="john-profile"
                                 className="author-pic"/>
