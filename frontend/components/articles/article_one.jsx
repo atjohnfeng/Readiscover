@@ -45,14 +45,18 @@ class ArticleOne extends React.Component {
                 </div>
                 <div className="article-container">
                     <div className="article-one">
-                        <h1>Five Books You Should Read Next</h1>
-                        <h3>Posted by John Feng on November 1, 2021</h3>
-                        {/* <img src="" alt="john-profile"/> */}
-                        
+                        <div className="article-header">
+                            <div>
+                                <h1>Five Books You Should Read Next</h1>
+                                <h3>Posted by John Feng on November 1, 2021</h3>
+                            </div>
+                            <img src={window.authorPic} alt="john-profile"
+                                className="author-pic"/>
+                        </div>
                         <p className="body">
-                            Below is a selection of five books that I think any reader should add to their tbr (to-be-read) shelf! 
+                            Below is a selection of five books that I think any reader should add to their tbr (to-be-read) shelf. 
                             Each book is accompanied with a short description written by yours truly. 
-                            I hope you'll take a look.
+                            I hope you'll take a look!
                         </p>
 
                         <h2>{lfe.title} by {lfe.author}</h2>
@@ -61,14 +65,14 @@ class ArticleOne extends React.Component {
                                 <img src={`${lfe.cover_img_url}`} alt="lfe" />
                             </div>
                             <div className="book-review">
-
+                                Description pending.
                             </div>
                         </article>
                             
                         <h2>{nm.title} by {nm.author}</h2>
                         <article className="even" onClick={() => this.redirect(nm.id)}>
                             <div className="book-review">
-
+                                Description pending.
                             </div>
                             <div className="book-info">
                                 <img src={`${nm.cover_img_url}`} alt="nm" />
