@@ -71,45 +71,46 @@ class Navbar extends React.Component {
                     <li className="welcome-greeting">
                         {this.props.currentUser.username}
                     </li>
-                    <li className="li-dropdown-link">
-                        <Link to="/books" className="dropdown-link">
-                            All Books
-                        </Link>
-                    </li>
-                    <li className="li-dropdown-link">
-                        <Link to="/mybooks" className="dropdown-link">
-                            My Books
-                        </Link>
-                    </li>
-                    <li className="li-dropdown-link">
-                        <Link to="/theend" className="dropdown-link">
-                            Take a Trip to The End of the Sidewalk
-                        </Link>
-                    </li>
-                    <li className="li-dropdown-link">
-                        <button onClick={this.props.logout}
-                        className="dropdown-button">Sign Out</button>
-                    </li>
+                    <Link to="/books" className="dropdown-link">
+                        <li className="li-dropdown-link">
+                                All Books
+                        </li>
+                    </Link>
+                    <Link to="/mybooks" className="dropdown-link">
+                        <li className="li-dropdown-link">
+                                My Books
+                        </li>
+                    </Link>
+                    <Link to="/theend" className="dropdown-link">
+                        <li className="li-dropdown-link">
+                                Take a Trip to The End of the Sidewalk
+                        </li>
+                    </Link>
+                    <div className="dropdown-link">
+                        <li className="li-dropdown-link" onClick={this.props.logout}>
+                            Sign Out
+                        </li>
+                    </div>
                 </ul>
             )
         } else {
             return (
                 <ul className="dropdown-content">
-                    <li className="li-dropdown-link">
-                        <Link to="/login" className="dropdown-link">
-                            Log in
-                        </Link>
-                    </li>
-                    <li className="li-dropdown-link">
-                        <Link to="/signup" className="dropdown-link">
+                    <Link to="/login" className="dropdown-link">
+                        <li className="li-dropdown-link">
+                                Log in
+                        </li>
+                    </Link>
+                    <Link to="/signup" className="dropdown-link">
+                        <li className="li-dropdown-link">
                             Sign up
-                        </Link>
-                    </li>
-                    <li className="li-dropdown-link">
-                        <Link to="/theend" className="dropdown-link">
+                        </li>
+                    </Link>
+                    <Link to="/theend" className="dropdown-link">
+                        <li className="li-dropdown-link">
                             Take a Trip to The End of the Sidewalk
-                        </Link>
-                    </li>
+                        </li>
+                    </Link>
                 </ul>
             )
         }

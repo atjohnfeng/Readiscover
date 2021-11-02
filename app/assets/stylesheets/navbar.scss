@@ -75,6 +75,19 @@
     margin-top: -1px;
 }
 
+.dropdown-link {
+    text-decoration: none;
+    color: #382110;
+
+    &:hover {
+        .li-dropdown-link {
+            background-color: #382110;
+            color: white;
+            cursor: pointer;
+        }
+    }
+}
+
 .dropdown-content {
     display: none;
     position: absolute;
@@ -87,34 +100,6 @@
     .li-dropdown-link {
         padding: 10px;
         font-size: 16px;
-
-        &:hover {
-            background-color: #382110;
-
-            .dropdown-link {
-                color: white;
-            }
-
-            .dropdown-button {
-                color: white;
-            }
-        }
-
-        .dropdown-link {
-            text-decoration: none;
-            color: #382110;
-        }
-
-        .dropdown-button {
-            background: none;
-            border: none;
-            padding: 0;
-            margin: 0;
-            font-family: "Lato", "Helvetica Neue", Helvetica, sans-serif;
-            font-size: 16px;
-            color: #382110;
-            cursor: pointer;
-        }
     }
 }
 
