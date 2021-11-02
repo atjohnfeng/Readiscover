@@ -127,11 +127,12 @@
         .body {
             max-width: 90%;
         }
+        
+        .even {
+            flex-direction: column-reverse;
+        }
     }
 
-    .even {
-        flex-direction: column-reverse;
-    }
 }
 
 @media only screen and (max-width: 1200px) {
