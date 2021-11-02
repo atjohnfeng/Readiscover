@@ -18,10 +18,36 @@
     padding-top: 15px;
     font-family: 'Libre Baskerville', serif;
 
+    h1 {
+        font-size: 26px;
+        padding: 10px;
+        align-self: flex-start;
+    }
+
+    h3 {
+        font-family: "Lato", "Helvetica Neue", Helvetica, sans-serif;
+        font-size: 16px;
+        font-weight: lighter;
+        padding: 10px;
+        margin-bottom: 20px;
+        align-self: flex-start;
+        width: 95%;
+    }
+
+    h2 {
+        font-size: 24px;
+        padding: 10px;
+        background-color: #F4F1EA;
+        border-radius: 2px;
+        border: 1px solid gainsboro;
+        width: 95%;
+    }
+
     article {
-        // margin-top: 25px;
         display: flex;
         padding: 10px;
+        align-items: center;
+        max-width: 95%;
 
         .book-info {
             padding-bottom: 10px;
@@ -59,7 +85,6 @@
 @media only screen and (max-width: 900px) {
     article {
         flex-direction: column;
-        align-items: center;
     }
 
     .even {

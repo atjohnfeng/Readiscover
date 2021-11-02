@@ -46,7 +46,7 @@ class ArticleOne extends React.Component {
                 <div className="article-container">
                     <div className="article-one">
                         <h1>Five Books You Should Read Next</h1>
-                        <h2>Posted by John Feng on November 1, 2021</h2>
+                        <h3>Posted by John Feng on November 1, 2021</h3>
                         {/* <img src="" alt="john-profile"/> */}
 
                         <h2>{lfe.title} by {lfe.author}</h2>
@@ -77,11 +77,11 @@ class ArticleOne extends React.Component {
                             <div className="book-review">
                                 Enter Noemí.
                                 <br /><br />
-                                She's a socialite who aspires to study anthropology (automatic plus for Noemí as someone who studied anthropology in undergrad) and her father offers an opportunity to do just that at a prestigious university - an offer not to be taken lightly as a woman in 1950s Mexico. Her goal: to check up on her cousin Catalina after her father receives an ominous letter regarding Catalina's dire situation. Catalina had married a man named Virgil and moved into his family home called High Place, a house full of history. Noemí agrees to travel to High Place in order to checkup on Catalina, and she slowly unravels a haunting mystery filled with horror and unspeakable things.
+                                She's a socialite who aspires to study anthropology (automatic plus for Noemí as I also studied anthropology in undergrad!) and her father offers an opportunity to do just that at a prestigious university - an offer not to be taken lightly as a woman in 1950s Mexico. Her goal: to check up on her cousin Catalina after her father receives an ominous letter regarding Catalina's dire situation. Catalina had married a man named Virgil and moved into his family home called High Place, a house full of history. Noemí agrees to travel to High Place in order to checkup on Catalina, and she slowly unravels a haunting mystery filled with horror and unspeakable things.
                                 <br /><br />
-                                This is a slow-burn so it won't be for everyone. A majority of the book is setting up the atmosphere of High Place and developing character relations. Moreno-Garcia sprinkles many hints here and there and sets everything up meticulously for the book's final act.
+                                This is a slow-burn so it won't be for everyone. A majority of the book is spent setting up the atmosphere of High Place and developing character relations. Moreno-Garcia sprinkles many hints here and there and sets everything up meticulously for the book's final act.
                                 <br /><br />
-                                This book felt like a mash-up of two of my favorite horror-thriller movies in recent years: (view spoiler), so if you want something in a similar vein Mexican Gothic is definitely something to put on your reading list.
+                                Mexican Gothic is definitely a book to put on your reading list for fans of gothic horror, or anyone looking for an interesting read.
                             </div>
                         </article>
 
@@ -90,11 +90,11 @@ class ArticleOne extends React.Component {
                             <div className="book-review">
                                 Kindred is a landmark toted as the "first science fiction written by a black woman." At its core, Kindred is an examination on complacency and how easy it is to accept the status quo.
                                 <br /><br />
-                                The time-travel is used as a vehicle to examine the themes and ideas Butler wanted to convey. This book isn’t so much science fiction as it is a blend of different genres such as historical fiction and slave narratives. In my opinion, explaining the time travel would have distracted and taken focus away from the message Butler intended.
+                                Time-travel is used as a vehicle to examine the themes and ideas surrounding the novel's setting. This book isn’t so much science fiction as it is a blend of different genres. 
                                 <br /><br />
                                 There’s a lot of significance in the prologue of the novel when we link back to it during the ultimate conclusion of Dana’s journey. How does someone who has traveled back to antebellum South change after returning? After everything they experienced, could they ever be “whole” again? Butler draws many parallels between Kevin, Dana’s husband, and Rufus, Dana’s ancestor, in order to contrast Kevin’s journey with Dana’s. It really makes you examine each character and their role in society, both present and past.
                                 <br /><br />
-                                As for what I disliked about the novel, I felt the writing at times could have been more descriptive. The prose was straightforward and cut to the point. I believe this may have been a stylistic choice, but I believe there were areas that could have been improved, particularly when it came to the descriptions and dialogue. The bright side to this is that Kindred is a very quick and easy read and I highly recommend it.
+                                The prose is straightforward and cuts to the point. Kindred is a very quick and easy read and recommended for fans of history with a touch of sci-fi.
                             </div>
                             <div className="book-info">
                                 <img src={`${kd.cover_img_url}`} alt="kd" />
