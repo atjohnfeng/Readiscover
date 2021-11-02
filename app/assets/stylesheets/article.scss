@@ -107,6 +107,14 @@
         article {
             flex-direction: column;
         }
+
+        h2 {
+            max-width: 90%;
+        }
+
+        .body {
+            max-width: 90%;
+        }
     }
 
     .even {
