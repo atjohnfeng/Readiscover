@@ -75,7 +75,7 @@ class ArticleOne extends React.Component {
                                 <br /><br />
                                 Elena and Mia find themselves on opposing sides of the argument, while they both juggle with their own attempts at motherhood, learning more about themselves and their children in the process.
                                 <br /><br />
-                                <i>Little Fires Everywhere</i> is a read that manages to weave together a multitude of themes effortlessly.
+                                <i>Little Fires Everywhere</i> is a read that manages to entwine a multitude of themes together effortlessly.
                              </div>
                         </article>
                             
@@ -138,7 +138,7 @@ class ArticleOne extends React.Component {
                                 This is not a horror novel... at least not in a traditional sense; however, 
                                 <i>The Institute</i> is about horrific things: kidnapped children and abused children, abusive adults, and murder. You won't find ghosts, killer clowns, or creepy cemeteries here. 
                                 <br /><br />
-                                King manages to weave varying viewpoints together to craft a satisfying tale. The story is told in a fairly linear fashion, but may jump around from one character to another. It is done well and contributes to the story, showcasing various events from different viewpoints without feeling overly padded. 
+                                King manages to combine varying viewpoints together to craft a satisfying tale. The story is told in a fairly linear fashion, but may jump around from one character to another. It is done well and contributes to the story, showcasing various events from different viewpoints without feeling overly padded. 
                                 Much of the novel spends time with the main character Luke Ellis; however, <i>The Institute</i> begins with a man named Tim Jamieson, our kind-of-bland-somewhat-vanilla deuteragonist. 
                                 You end up wondering how the two worlds eventually collide, but King manages to set-up the plot and carry it through convincingly.
                                 <br /><br />
