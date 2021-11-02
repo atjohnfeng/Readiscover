@@ -116,7 +116,7 @@ class Home extends React.Component {
                             </div>
                             <div className="home-right">
                                 <div className="articles">
-                                    <h1>News &amp; Resources</h1><br />
+                                    <h1>Articles &amp; Resources</h1><br />
                                     <article>
                                         <Link to="/articleone"
                                             className="article-link">
