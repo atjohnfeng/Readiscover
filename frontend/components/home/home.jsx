@@ -116,12 +116,35 @@ class Home extends React.Component {
                             </div>
                             <div className="home-right">
                                 <div className="articles">
-                                    <h1>News &amp; Interviews</h1><br />
+                                    <h1>News &amp; Resources</h1><br />
                                     <article>
                                         <Link to="/articleone"
                                             className="article-link">
                                             Five Books You Should Read Next
+                                            <img src={window.articleOne} 
+                                                alt="five-books"/>
                                         </Link>
+                                        <h6>posted by John Feng</h6>
+                                    </article>
+                                    <article>
+                                        <a href="https://librarytechnology.org/libraries/" 
+                                            className="article-link"
+                                            target="_blank"
+                                            rel="noopener noreferrer">
+                                            Find a Library Near You
+                                            <img src={window.libraryPhoto}
+                                                alt="article-one"/>
+                                        </a>
+                                    </article>
+                                    <article className="last">
+                                        <a href="https://www.indiebound.org/indie-store-finder" 
+                                            className="article-link"
+                                            target="_blank"
+                                            rel="noopener noreferrer">
+                                            Support a Local Bookstore
+                                            <img src={window.indieBookstore}
+                                                alt="article-one" />
+                                        </a>
                                     </article>
                                 </div>
                             </div>
