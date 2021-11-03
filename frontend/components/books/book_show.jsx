@@ -142,7 +142,6 @@ class Book extends React.Component {
 
     showReview(reviewId) {
         let review = document.getElementById(`${reviewId}`);
-        console.log(review)
         review.className = "unhidden";
     }
 

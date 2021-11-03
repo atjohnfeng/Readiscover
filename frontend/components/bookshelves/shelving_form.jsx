@@ -15,6 +15,10 @@ class ShelvingForm extends React.Component {
     }
 
     updateShelving(status) {
+        if (!this.props.currentUser) {
+
+        }
+
         const shelving = {
             userId,
             bookId,
@@ -23,10 +27,19 @@ class ShelvingForm extends React.Component {
         }
     }
 
+    handleDropdown() {
+        const dropdown = document.getElementsByClassName('shelving-menu');
+        const revealed = document.getElementsByClassName('revealed-menu');
+
+        if (!revealed) {
+            
+        }
+    }
+
     renderDefault() {
         if (!this.state.shelf) {
             return (
-                <span>
+                <span className="default-shelving" onClick={() => this.handleDropdown()}>
                     Want to Read
                     <button class="fa fa-caret-down"></button>
                 </span>
@@ -40,11 +53,11 @@ class ShelvingForm extends React.Component {
         }
 
         return (
-            <div>
+            <div className="shelving-form">
                 <div>
                     {this.renderDefault()}
                 </div>
-                <div>
+                <div className="shelving-menu">
                     <span>Read</span>
                     <span>Current Reading</span>
                     <span>Want to Read</span>
