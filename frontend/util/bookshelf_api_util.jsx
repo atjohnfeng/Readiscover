@@ -12,3 +12,27 @@ export const deleteShelving = (userId, shelvingId) => (
         url: `/api/users/${userId}/bookshelves/${shelvingId}`
     })
 )
+
+export const getShelf = userId => (
+    $.ajax({
+        method: 'get',
+        url: `/api/users/${userId}`,
+        data: { shelf }
+    })
+)
+
+export const getShelving = (userId, shelvingId) => (
+    $.ajax({
+        method: 'get',
+        url: `/api/users/${userId}/bookshelves/${shelvingId}`,
+        data: { shelving }
+    })
+)
+
+export const reshelve = (userId, shelvingId) => (
+    $.ajax({
+        method: 'patch',
+        url: `/api/users/${userId}/bookshelves/${shelvingId}`,
+        data: { shelving }
+    })
+)
