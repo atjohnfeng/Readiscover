@@ -21,7 +21,7 @@ export const getShelf = userId => (
     })
 )
 
-export const getShelving = (userId, shelvingId) => (
+export const getBookshelf = (userId, shelvingId) => (
     $.ajax({
         method: 'get',
         url: `/api/users/${userId}/bookshelves/${shelvingId}`,
@@ -29,7 +29,7 @@ export const getShelving = (userId, shelvingId) => (
     })
 )
 
-export const reshelve = (userId, shelvingId) => (
+export const reshelveBook = (userId, shelvingId) => (
     $.ajax({
         method: 'patch',
         url: `/api/users/${userId}/bookshelves/${shelvingId}`,
