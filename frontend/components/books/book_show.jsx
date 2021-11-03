@@ -1,6 +1,7 @@
 import React from 'react';
 import NavbarContainer from '../navbar/navbar_container';
 import StarContainer from '../reviews/star_container';
+import ShelvingFormContainer from '../bookshelves/shelving_form_container';
 import { Link } from 'react-router-dom';
 
 class Book extends React.Component {
@@ -214,6 +215,7 @@ class Book extends React.Component {
                                     src={book.cover_img_url}
                                     alt={book.title} />
                             </div>
+                            <ShelvingFormContainer />
                             {this.renderStarContainer()}
                         </div>
                         <div className="book-show-right">
