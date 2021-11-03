@@ -30,9 +30,6 @@ class ShelvingForm extends React.Component {
 
     handleDropdown() {
         const dropdown = document.getElementById('dropdown-menu');
-
-        console.log(dropdown);
-
         if (!this.state.dropdown) {
             dropdown.className = "revealed-menu";
             this.setState({
@@ -44,9 +41,6 @@ class ShelvingForm extends React.Component {
                 dropdown: false
             });
         }
-
-        console.log(dropdown);
-
     }
 
     renderDefault() {
@@ -57,7 +51,18 @@ class ShelvingForm extends React.Component {
                     <button className="fa fa-caret-down"></button>
                 </span>
             )
+        } else {
+            return (
+                <span className="default-shelving" onClick={() => this.handleDropdown()}>
+                    {this.state.shelf}
+                    <button className="fa fa-caret-down"></button>
+                </span>
+            )
         }
+    }
+
+    componentWillUnmount() {
+        this.props.reset();
     }
 
     render() {
