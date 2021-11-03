@@ -1,7 +1,7 @@
-export const createShelving = () => (
+export const createShelving = shelving => (
     $.ajax({
         method: 'post',
-        url: ``,
-        data: { review }
+        url: `/api/users/${shelving.user_id}/bookshelves`,
+        data: { shelving }
     })
 )
