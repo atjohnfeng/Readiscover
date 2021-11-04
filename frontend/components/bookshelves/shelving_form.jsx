@@ -14,13 +14,18 @@ class ShelvingForm extends React.Component {
     componentDidMount() {
         let shelving;
         if (!!this.props.currentUser) {
-            this.props.getBookshelf(this.props.currentUser).then(bookshelf => (
-                shelving = Object.values(bookshelf).filter(shelving => {
-                    return this.props.bookId === shelving.book_id
+            this.props.getBookshelf(this.props.currentUser).then(bookshelf => {
+                shelving = Object.values(bookshelf.bookshelf).filter(shelving => {
+                    return this.props.bookId == shelving.book_id
                 })
-            ))
+                console.log(shelving[0].id)
+                console.log(shelving)
+                this.setState({
+                    shelvingId: shelving[0].id,
+                    shelf: shelving[0].shelf
+                })
+            })
         }
-        console.log(shelving);
     }
 
     updateShelving(status) {
@@ -34,7 +39,19 @@ class ShelvingForm extends React.Component {
             shelf: status
         }
 
-        this.props.createShelving(shelving);
+        if (!this.state.shelvingId) {
+            this.props.createShelving(shelving);
+            this.setState({
+                shelf: shelving.shelf,
+                dropdown: false
+            })
+        } else {
+            this.props.reshelveBook(shelving, this.state.shelvingId);
+            this.setState({
+                shelf: shelving.shelf,
+                dropdown: false
+            })
+        }
     }
 
     handleDropdown() {
