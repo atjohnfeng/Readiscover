@@ -12,13 +12,20 @@
         border: 1px solid gray;
         border-radius: 4px;
         padding-right: 0;
+        -webkit-touch-callout: none; /* iOS Safari */
+        -webkit-user-select: none; /* Safari */
+        -khtml-user-select: none; /* Konqueror HTML */
+        -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+        user-select: none; /* Non-prefixed version, currently
+                            supported by Chrome, Edge, Opera and Firefox */
 
         &:hover {
             cursor: pointer;
         }
 
         span {
-            border-right: 1px solid black;
+            margin-right: 5px;
         }
 
         button {
@@ -45,13 +52,21 @@
     .revealed-menu {
         display: block;
         position: absolute;
-        margin-top: 25px;
+        margin-top: 30px;
         background-color: gainsboro;
         border: 1px solid gainsboro;
         border-radius: 4px;
         border-right: 1px solid black;
         border-top: 1px solid black;
         border-left: 1px solid black;
+        width: 148px;
+        -webkit-touch-callout: none; /* iOS Safari */
+        -webkit-user-select: none; /* Safari */
+        -khtml-user-select: none; /* Konqueror HTML */
+        -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+        user-select: none; /* Non-prefixed version, currently
+                            supported by Chrome, Edge, Opera and Firefox */
 
         &:hover {
             cursor: pointer;
