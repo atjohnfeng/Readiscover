@@ -8,6 +8,13 @@
     .default-shelving {
         background-color: green;
         padding: 5px;
+        border: 1px solid gray;
+        border-radius: 4px;
+
+        button {
+            border: 1px solid gray;
+            background-color: green;
+        }
     }
 
     .shelving-menu {
@@ -15,7 +22,19 @@
     }
 
     .revealed-menu {
-        display: flex;
-        flex-direction: column;
+        display: block;
+        position: absolute;
+        margin-top: 25px;
+        background-color: gainsboro;
+        border: 1px solid gainsboro;
+        border-radius: 4px;
+        border-right: 1px solid black;
+        border-top: 1px solid black;
+        border-left: 1px solid black;
+
+        li {
+            padding: 5px;
+            border-bottom: 1px solid black;
+        }
     }
 }

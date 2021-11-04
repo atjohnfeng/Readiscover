@@ -76,9 +76,11 @@ class ShelvingForm extends React.Component {
                     {this.renderDefault()}
                 </div>
                 <div className="shelving-menu" id="dropdown-menu">
-                    <span>Read</span>
-                    <span>Current Reading</span>
-                    <span>Want to Read</span>
+                    <ul>
+                        <li>Read</li>
+                        <li>Current Reading</li>
+                        <li>Want to Read</li>
+                    </ul>
                 </div>
             </div>
         )

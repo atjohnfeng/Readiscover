@@ -214,7 +214,7 @@ class Book extends React.Component {
                                     src={book.cover_img_url}
                                     alt={book.title} />
                             </div>
-                            <ShelvingFormContainer />
+                            <ShelvingFormContainer bookId={this.props.match.params.bookId}/>
                             {this.renderStarContainer()}
                         </div>
                         <div className="book-show-right">

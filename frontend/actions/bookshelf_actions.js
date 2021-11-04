@@ -48,6 +48,6 @@ export const deleteShelving = (userId, id) => dispatch => (
     BookshelfApiUtil.destroyShelving(userId, id).then(shelving => dispatch(destroyShelving(shelving)))
 )
 
-export const resetShelving = () => dispatch => (
+export const reset = () => dispatch => (
     dispatch(resetShelving())
 )
