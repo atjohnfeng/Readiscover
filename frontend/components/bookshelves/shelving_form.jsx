@@ -18,8 +18,9 @@ class ShelvingForm extends React.Component {
                 shelving = Object.values(bookshelf.bookshelf).filter(shelving => {
                     return this.props.bookId == shelving.book_id
                 })
-                console.log(shelving[0].id)
-                console.log(shelving)
+                if (!shelving.length) {
+                    return null;
+                }
                 this.setState({
                     shelvingId: shelving[0].id,
                     shelf: shelving[0].shelf
