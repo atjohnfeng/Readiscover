@@ -45,12 +45,14 @@ class ShelvingForm extends React.Component {
                 shelf: shelving.shelf,
                 dropdown: false
             })
+            this.handleDropdown();
         } else {
             this.props.reshelveBook(shelving, this.state.shelvingId);
             this.setState({
                 shelf: shelving.shelf,
                 dropdown: false
             })
+            this.handleDropdown();
         }
     }
 
