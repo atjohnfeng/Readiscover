@@ -1,7 +1,7 @@
 class Bookshelf < ApplicationRecord
 
     validates :user_id, :book_id, :shelf, presence: true
-    validates :shelf, inclusion: { in: ['currently_reading', 'read', 'to_be_read'] }
+    validates :shelf, inclusion: { in: ["Currently Reading", "Read", "Want to Read"] }
     validates :book_id, uniqueness: { scope: :user_id }
 
     belongs_to :user,

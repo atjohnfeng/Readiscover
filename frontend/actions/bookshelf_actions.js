@@ -45,9 +45,13 @@ export const reshelveBook = (userId, id) => dispatch => (
 )
 
 export const deleteShelving = (userId, id) => dispatch => (
-    BookshelfApiUtil.destroyShelving(userId, id).then(shelving => dispatch(destroyShelving(shelving)))
+    BookshelfApiUtil.deleteShelving(userId, id).then(shelving => dispatch(destroyShelving(shelving)))
 )
 
 export const reset = () => dispatch => (
     dispatch(resetShelving())
+)
+
+export const createShelving = shelving => dispatch => (
+    BookshelfApiUtil.createShelving(shelving).then(shelving => dispatch(receiveShelving(shelving)))
 )

@@ -52,7 +52,7 @@ class Api::BookshelvesController < ApplicationController
     private
 
     def book_to_shelve_params
-        params.require(:bookshelf).permit(:user_id, :book_id, :shelf)
+        params.require(:shelving).permit(:user_id, :book_id, :shelf)
     end
 
 end
