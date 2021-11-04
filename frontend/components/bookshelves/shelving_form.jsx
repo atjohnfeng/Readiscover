@@ -46,9 +46,9 @@ class ShelvingForm extends React.Component {
     renderDefault() {
         if (!this.state.shelf) {
             return (
-                <span className="default-shelving" onClick={() => this.handleDropdown()}>
+                <span className="default-shelving" >
                     Want to Read
-                    <button className="fa fa-caret-down"></button>
+                    <button className="fa fa-caret-down" onClick={() => this.handleDropdown()}></button>
                 </span>
             )
         } else {
