@@ -10,4 +10,8 @@ class Book < ApplicationRecord
     through: :reviews,
     source: :reviewer
 
+    has_many :shelvings,
+    foreign_key: :book_id,
+    class_name: :Bookshelf
+
 end

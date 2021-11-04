@@ -1,12 +1,12 @@
 class BookshelvesController < ApplicationController
 
     def show
-        @shelved_book = Bookshelf.find(params[:id])
+        @shelving = Bookshelf.find(params[:id])
         render :show
     end
 
     def index
-        @shelved_books = Bookshelf.where(user_id: params[:user_id])
+        @bookshelf = Bookshelf.where(user_id: params[:user_id])
         render :index
     end
 
