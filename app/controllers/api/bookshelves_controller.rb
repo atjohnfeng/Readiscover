@@ -1,4 +1,4 @@
-class BookshelvesController < ApplicationController
+class Api::BookshelvesController < ApplicationController
 
     def show
         @shelving = Bookshelf.find(params[:id])

@@ -13,15 +13,15 @@ export const deleteShelving = (userId, shelvingId) => (
     })
 )
 
-export const getShelf = userId => (
+export const getBookshelf = userId => (
     $.ajax({
         method: 'get',
-        url: `/api/users/${userId}`,
-        data: { shelf }
+        url: `/api/users/${userId}/bookshelves`,
+        // data: { bookshelf }
     })
 )
 
-export const getBookshelf = (userId, shelvingId) => (
+export const getShelving = (userId, shelvingId) => (
     $.ajax({
         method: 'get',
         url: `/api/users/${userId}/bookshelves/${shelvingId}`,

@@ -11,21 +11,23 @@ class ShelvingForm extends React.Component {
         }
     }
 
-    componentDidUpdate() {
-
+    componentDidMount() {
+        if (!!this.props.currentUser) {
+            this.props.getBookshelf(this.props.currentUser)
+        }
     }
 
     updateShelving(status) {
         if (!this.props.currentUser) {
-
+            this.props.history.push(`/login`)
         }
 
-        const shelving = {
-            userId,
-            bookId,
-            shelvingId,
-            shelf: status
-        }
+        // const shelving = {
+        //     userId: this.props.currentUser,
+        //     bookId,
+        //     shelvingId,
+        //     shelf: status
+        // }
     }
 
     handleDropdown() {
@@ -47,14 +49,14 @@ class ShelvingForm extends React.Component {
         if (!this.state.shelf) {
             return (
                 <span className="default-shelving" >
-                    <span>Want to Read</span>
+                    <span onClick={() => this.updateShelving('Want to Read')}>Want to Read</span>
                     <button className="fa fa-caret-down" onClick={() => this.handleDropdown()}></button>
                 </span>
             )
         } else {
             return (
                 <span className="default-shelving" onClick={() => this.handleDropdown()}>
-                    <span>{this.state.shelf}</span>
+                    <span onClick={() => this.updateShelving(this.state.shelf)}>{this.state.shelf}</span>
                     <button className="fa fa-caret-down"></button>
                 </span>
             )
@@ -66,10 +68,6 @@ class ShelvingForm extends React.Component {
     }
 
     render() {
-        if (!this.props.currentUser) {
-            return null;
-        }
-
         return (
             <div className="shelving-form">
                 <div>
@@ -77,9 +75,9 @@ class ShelvingForm extends React.Component {
                 </div>
                 <div className="shelving-menu" id="dropdown-menu">
                     <ul>
-                        <li>Read</li>
-                        <li>Current Reading</li>
-                        <li>Want to Read</li>
+                        <li onClick={() => this.updateShelving('Read')}>Read</li>
+                        <li onClick={() => this.updateShelving('Currently Reading')}>Currently Reading</li>
+                        <li onClick={() => this.updateShelving('Want to Read')}>Want to Read</li>
                     </ul>
                 </div>
             </div>

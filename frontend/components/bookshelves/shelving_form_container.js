@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
-import { createShelving, reshelveBook, getShelving, reset } from '../../actions/bookshelf_actions';
+import { createShelving, reshelveBook, getBookshelf, reset, deleteShelving } from '../../actions/bookshelf_actions';
 import ShelvingForm from './shelving_form';
+import { withRouter } from 'react-router';
 
 const mapStateToProps = (state, ownProps) => ({
     currentUser: state.session.id,
@@ -10,8 +11,9 @@ const mapStateToProps = (state, ownProps) => ({
 const mapDispatchToProps = dispatch => ({
     createShelving: shelving => dispatch(createShelving(shelving)),
     reshelveBook: (userId, shelvingId) => dispatch(reshelveBook(userId, shelvingId)),
-    getShelving: (userId, shelvingId) => dispatch(getShelving(userId, shelvingId)),
-    reset: () => dispatch(reset())
+    getBookshelf: (userId) => dispatch(getBookshelf(userId)),
+    reset: () => dispatch(reset()),
+    deleteShelving: (userId, shelvingId) => dispatch(deleteShelving(userId, shelvingId))
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(ShelvingForm);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(ShelvingForm));
