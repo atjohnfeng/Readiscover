@@ -10,9 +10,9 @@ const bookshelvesReducer = (state = {}, action) => {
 
     switch (action.type) {
         case RECEIVE_SHELVING:
-            return action.shelving;
+            return Object.assign({}, state, action.shelving);
         case RECEIVE_BOOKSHELF:
-            return Object.assign({}, state, action.bookshelf);
+            return action.bookshelf;
         case DELETE_SHELVING:
             let nextState = Object.assign({}, state);
             delete nextState[action.shelving.id];

@@ -7,7 +7,7 @@ class ShelvingForm extends React.Component {
         this.state = {
             shelvingId: null,
             shelf: null,
-            dropdown: false
+            dropdown: false,
         }
     }
 
@@ -32,6 +32,7 @@ class ShelvingForm extends React.Component {
     updateShelving(status) {
         if (!this.props.currentUser) {
             this.props.history.push(`/login`)
+            return
         }
 
         const shelving = {
@@ -41,7 +42,9 @@ class ShelvingForm extends React.Component {
         }
 
         if (!this.state.shelvingId) {
-            this.props.createShelving(shelving);
+            this.props.createShelving(shelving).then(shelving => {
+                console.log(shelving.shelving)
+            });
             this.setState({
                 shelf: shelving.shelf,
                 dropdown: false
@@ -77,7 +80,7 @@ class ShelvingForm extends React.Component {
     }
 
     renderDefault() {
-        if (!this.state.shelf) {
+        if (!this.state.shelf || !this.props.currentUser) {
             return (
                 <span className="default-shelving" >
                     <span onClick={() => this.updateShelving('Want to Read')}>Want to Read</span>
@@ -95,6 +98,11 @@ class ShelvingForm extends React.Component {
     }
 
     deleteShelving() {
+        if (!this.props.currentUser) {
+            this.props.history.push(`/login`)
+            return
+        }
+
         this.props.deleteShelving(this.state.currentUser, this.state.shelvingId);
         this.setState({
             shelf: null,
@@ -107,6 +115,7 @@ class ShelvingForm extends React.Component {
     }
 
     render() {
+
         return (
             <div className="shelving-form">
                 <div>

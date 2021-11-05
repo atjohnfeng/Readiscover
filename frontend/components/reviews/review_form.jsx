@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import NavbarContainer from '../navbar/navbar_container';
+import ShelvingFormContainer from '../bookshelves/shelving_form_container';
 
 class ReviewForm extends React.Component {
     constructor(props) {
@@ -187,9 +188,9 @@ class ReviewForm extends React.Component {
                                 className={this.renderStar(1)} />
                             <h3>My rating:</h3>
                         </div>
-                        <div className="bookshelves-div">
-                            <h3>Bookshelves/Tags: Under Construction</h3>
-                        </div>
+                        {/* <div className="bookshelves-div"> */}
+                            {/* <h3>Bookshelves/Tags: <ShelvingFormContainer bookId={this.props.bookId} /></h3> */}
+                        {/* </div> */}
                         <div className="body-div">
                             <h3>What did you think?</h3>
                             <textarea placeholder={this.state.body === '' ? 
