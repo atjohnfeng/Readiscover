@@ -21,7 +21,6 @@
 
     .my-books-div {
         display: flex;
-        flex-direction: row;
     }
 
     .my-books-filters {
@@ -66,5 +65,15 @@
             font-family: 'Montserrat', sans-serif;
             font-size: 18px;
         }
+    }
+}
+
+@media only screen and (max-width: 1015px) {
+    .my-books-div {
+        flex-direction: column;
+    }
+
+    .my-books-filters {
+        width: 60vw;
     }
 }
