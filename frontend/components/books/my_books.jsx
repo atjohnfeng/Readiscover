@@ -16,15 +16,33 @@ class MyBooks extends React.Component {
     }
 
     renderBooks() {
-        // const filteredBooks = this.props.bookshelf;
-        // console.log(filteredBooks);
+        const shelved = this.props.bookshelf;
+        let filteredBooks;
+        if (!this.state.filter) {
+            filteredBooks = shelved
+        } else {
+            filteredBooks = shelved.filter(book => {
+                return book.shelf === this.state.filter;
+            })
+        }
+
+        if (!filteredBooks) {
+            return <h1>{this.state.filter ? this.state.filter : 'All'}</h1>;
+        }
 
         return (
             <div>
                 <h1>{this.state.filter ? this.state.filter : 'All'}</h1>
-                <div className="books">
-                    Under Construction
-                </div>
+                <ul className="book-index-list">
+                    {filteredBooks.map((book, i) =>
+                        <li key={`book-${i}`}>
+                            <Link to={`/books/${book.book_id}`}>
+                                <img className="book-index-book-cover"
+                                    src={book.book_cover}
+                                    alt={book.book_title} />
+                            </Link>
+                        </li>)}
+                </ul>
             </div>
         )
     }

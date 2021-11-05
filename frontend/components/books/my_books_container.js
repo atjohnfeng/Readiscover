@@ -4,7 +4,7 @@ import MyBooks from './my_books';
 
 const mapStateToProps = state => ({
     currentUser: state.session.id,
-    bookshelf: state.entities.bookshelf
+    bookshelf: Object.values(state.entities.bookshelf)
 });
 
 const mapDispatchToProps = dispatch => ({
