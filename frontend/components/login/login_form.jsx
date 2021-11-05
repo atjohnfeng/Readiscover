@@ -14,7 +14,7 @@ class LoginForm extends React.Component {
 
     loginDemoUser(e) {
         e.preventDefault();
-        const demo = { username: "demo", password: "demolicious" };
+        const demo = { username: "Demogorgon", password: "demolicious" };
 
         const usernameAnimate = setInterval(() => {
             if (this.state.username !== demo.username) {
