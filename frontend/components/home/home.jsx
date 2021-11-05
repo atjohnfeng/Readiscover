@@ -11,6 +11,7 @@ class Home extends React.Component {
     componentDidMount() {
         window.scrollTo(0, 0);
         this.props.getUser(Object.values(this.props.currentUser)[0]);
+        this.props.getBookshelf(Object.values(this.props.currentUser)[0]);
     }
 
     renderStars(rating) {
@@ -97,6 +98,37 @@ class Home extends React.Component {
         this.props.history.push(`/books/${book}`)
     }
 
+    renderCurrentlyReading() {
+        let currentlyReading;
+        if (Object.values(this.props.bookshelf).length > 0) {
+            currentlyReading = Object.values(this.props.bookshelf).slice(0).reverse().filter(book => {
+                return book.shelf === 'Currently Reading'
+            })
+        }
+        if (!currentlyReading) {
+            return
+        }
+        return (
+            <div className="currently-reading">
+                <ul>
+                    { currentlyReading.map((book, i) => (
+                        <Link to={`/books/${book.book_id}`} className="cr-link" key={`cr-${i}`}>
+                            <li key={`cr-${i}`} className="cr-book">
+                                <div>
+                                    <img src={book.book_cover} className="review-cover"/>
+                                </div>
+                                <div>
+                                    <h2>{book.book_title}</h2>
+                                    <h2>by {book.book_author}</h2>
+                                </div>
+                            </li>
+                        </Link>
+                    ))}
+                </ul>
+            </div>
+        )
+    }
+
     render() {
         return (
             <div>
@@ -107,7 +139,7 @@ class Home extends React.Component {
                                 <div className="currently-reading">
                                     <h1>Currently Reading</h1>
                                     <br />
-                                    Bookshelves Under Construction
+                                    { this.renderCurrentlyReading() }
                                 </div>
                             </div>
                             <div className="users-reviews">
@@ -115,8 +147,8 @@ class Home extends React.Component {
                                 {this.renderReviews()}
                             </div>
                             <div className="home-right">
+                                    <h1>Articles &amp; Resources</h1><br />
                                 <div className="articles">
-                                    <h1>News &amp; Resources</h1><br />
                                     <article>
                                         <Link to="/articleone"
                                             className="article-link">

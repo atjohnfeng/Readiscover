@@ -14,6 +14,10 @@ class User < ApplicationRecord
     foreign_key: :user_id,
     class_name: :Review
 
+    has_many :shelved_books,
+    foreign_key: :user_id,
+    class_name: :Bookshelf
+
     def self.find_by_credentials(username, password)
         user = User.find_by(username: username)
         if user && user.is_password?(password)

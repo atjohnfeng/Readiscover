@@ -1,6 +1,6 @@
 import React from 'react';
 import { AuthRoute, ProtRoute } from '../util/route_util';
-import { Route, Redirect, Switch, Link } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import SplashContainer from './splash/splash_container';
 import HomeContainer from './home/home_container';
 import NotFound from './home/not_found';
@@ -10,6 +10,7 @@ import BookIndexContainer from './books/book_index_container';
 import BookShowContainer from './books/book_show_container';
 import ReviewFormContainer from './reviews/review_form_container';
 import ArticleOneContainer from './articles/article_one_container';
+import MyBooksContainer from './books/my_books_container';
 
 const App = () => {
     return (
@@ -20,7 +21,7 @@ const App = () => {
                     <AuthRoute exact path="/signup" component={SignupContainer} />
                     <AuthRoute exact path="/login" component={LoginContainer} />
                     <ProtRoute exact path="/home" component={HomeContainer} />
-                    {/* <ProtRoute exact path="/mybooks" component={MyBooksContainer}/> */}
+                    <ProtRoute exact path="/mybooks" component={MyBooksContainer}/>
                     <ProtRoute path="/books/:bookId/review" component={ReviewFormContainer} />
                     <Route exact path="/books" component={BookIndexContainer} />
                     <Route path="/books/:bookId" component={BookShowContainer} />

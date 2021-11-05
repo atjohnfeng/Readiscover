@@ -12,7 +12,7 @@ class Api::ReviewsController < ApplicationController
     def create
         @review = Review.new(review_params)
         if @review.user_id != current_user.id
-            render json: ['Please log in to the correct account you are trying to post a review for.'], status: 422
+            render json: ['Please log into the correct account you are trying to post a review for.'], status: 422
             return
         end
         if @review.save

@@ -8,7 +8,7 @@ const mapStateToProps = (state, ownProps) => ({
     errors: state.errors.reviewErrors,
     bookId: ownProps.bookId,
     reviews: state.entities.reviews
-})
+});
 
 const mapDispatchToProps = dispatch => ({
     // getBook: bookId => dispatch(getBook(bookId)),
