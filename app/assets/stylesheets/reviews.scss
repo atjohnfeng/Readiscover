@@ -51,9 +51,10 @@
 .review-form-container {
     display: flex;
     flex-direction: column;
+    justify-content: flex-start;
     padding-left: 25%;
     padding-top: 1%;
-    width: 100vmax;
+    width: 100%;
     height: 90vh;
     background-color: #fffefb;
 
@@ -114,13 +115,29 @@
         padding-bottom: 10px;
         border-bottom: 1px solid lightgrey;
         max-width: 600px;
+
+        .shelving {
+            display: flex;
+            align-items: center;
+
+            .shelving-form {
+                font-family: 'Montserrat', sans-serif;
+                font-weight: lighter;
+                padding: 0 0 0 5px;
+                margin: 0;
+
+                button {
+                    padding-bottom: 6px;
+                }
+            }
+        }
     }
 
     .body-div {
 
         h3 {
             padding-bottom: 10px;
-            // padding-top: 5px;
+            padding-top: 10px;
         }
     }
 
@@ -194,12 +211,12 @@
 
 }
 
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 600px) {
     .review-form-container {
         display: flex;
         flex-direction: column;
         align-items: center;
-        padding-left: 5%;
+        padding-left: 0;
         padding-top: 5%;
         width: 100%;
 

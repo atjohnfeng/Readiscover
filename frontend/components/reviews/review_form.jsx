@@ -188,9 +188,9 @@ class ReviewForm extends React.Component {
                                 className={this.renderStar(1)} />
                             <h3>My rating:</h3>
                         </div>
-                        {/* <div className="bookshelves-div"> */}
-                            {/* <h3>Bookshelves/Tags: <ShelvingFormContainer bookId={this.props.bookId} /></h3> */}
-                        {/* </div> */}
+                        <div className="bookshelves-div">
+                            <h3 className="shelving">Bookshelves/Tags: <ShelvingFormContainer bookId={this.props.bookId} /></h3>
+                        </div>
                         <div className="body-div">
                             <h3>What did you think?</h3>
                             <textarea placeholder={this.state.body === '' ? 
