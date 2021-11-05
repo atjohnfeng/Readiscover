@@ -16,7 +16,29 @@ class MyBooks extends React.Component {
     }
 
     renderBooks() {
+        // const filteredBooks = this.props.bookshelf;
+        // console.log(filteredBooks);
 
+        return (
+            <div>
+                <h1>{this.state.filter ? this.state.filter : 'All'}</h1>
+                <div className="books">
+                    Under Construction
+                </div>
+            </div>
+        )
+    }
+
+    setFilter(filter) {
+        if (filter === 'All') {
+            this.setState({
+                filter: null
+            })
+        } else {
+            this.setState({
+                filter: filter
+            })
+        }
     }
 
     render() {
@@ -30,13 +52,12 @@ class MyBooks extends React.Component {
                             <ul>
                                 <h2>Bookshelves</h2>
                                 <li onClick={() => this.setFilter('All')}>All</li>
-                                <li>Read</li>
-                                <li>Currently Reading</li>
-                                <li>Want to Read</li>
+                                <li onClick={() => this.setFilter('Read')}>Read</li>
+                                <li onClick={() => this.setFilter('Currently Reading')}>Currently Reading</li>
+                                <li onClick={() => this.setFilter('Want to Read')}>Want to Read</li>
                             </ul>
                         </div>
                         <div className="my-books">
-                            wahwah
                             {this.renderBooks()}
                         </div>
                     </div>

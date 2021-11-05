@@ -3,7 +3,7 @@ import { getBookshelf } from '../../actions/bookshelf_actions';
 import MyBooks from './my_books';
 
 const mapStateToProps = state => ({
-    currentUser: state.entities.users[state.session.id],
+    currentUser: state.session.id,
     bookshelf: state.entities.bookshelf
 });
 

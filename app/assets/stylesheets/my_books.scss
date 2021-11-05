@@ -37,8 +37,9 @@
             padding-bottom: 2px;
 
             &:hover {
+                // color: 
                 cursor: pointer;
-                
+                text-decoration: underline;
             }
         }
         
@@ -57,5 +58,11 @@
         border-radius: 2px;
         padding: 10px;
         font-family: "Lato", "Helvetica Neue", Helvetica, sans-serif;
+
+        h1 {
+            margin-bottom: 10px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 18px;
+        }
     }
 }
