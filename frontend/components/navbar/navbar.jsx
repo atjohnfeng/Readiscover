@@ -122,6 +122,11 @@ class Navbar extends React.Component {
     }
 
     render() {
+        if ($(window).width() <= 1200) {
+            const footer = document.getElementById('footer');
+            footer.innerHTML = '<a href="/">hello</a>'
+        }
+
         return (
             <div className="nav-bar">
                 <ul className="nav-bar-list">
