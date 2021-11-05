@@ -7,13 +7,26 @@ class Navbar extends React.Component {
 
         this.state = {
             searchString: '',
+            WindowSize: window.innerWidth
         }
 
+        this.handleResize = this.handleResize.bind(this);
         this.resetNavbar = this.resetNavbar.bind(this);
     }
 
     componentDidMount() {
         this.props.getBooks();
+        window.addEventListener("resize", this.handleResize);
+    }
+
+    componentWillUnmount() {
+        window.addEventListener("resize", null);
+    }
+
+    handleResize(WindowSize, event) {
+        this.setState({
+            WindowSize: window.innerWidth
+        })
     }
 
     update() {
@@ -122,9 +135,11 @@ class Navbar extends React.Component {
     }
 
     render() {
-        if ($(window).width() <= 1200) {
+        if (this.state.WindowSize <= 1200) {
             const footer = document.getElementById('footer');
-            // footer.innerHTML = '<a href="/">hello</a>'
+            footer.innerHTML = '<a href="/">hello</a>'
+        } else {
+            footer.innerHTML = '';
         }
 
         return (
