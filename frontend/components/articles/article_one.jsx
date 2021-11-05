@@ -110,7 +110,7 @@ class ArticleOne extends React.Component {
                                 <br /><br />
                                 This book is a slow-burn so it might not be for everyone. A majority of the book is spent setting up the atmosphere of High Place and developing character relations. Moreno-Garcia sprinkles many hints here and there and sets everything up meticulously for the book's final act.
                                 <br /><br />
-                                Mexican Gothic is definitely a book to put on your reading list for fans of gothic horror, or anyone looking for an interesting read.
+                                <i>Mexican Gothic</i> is definitely a book to put on your reading list for fans of gothic horror, or anyone looking for an interesting read.
                             </div>
                         </article>
 
@@ -119,11 +119,11 @@ class ArticleOne extends React.Component {
                             <div className="book-review">
                                 At its core, <i>Kindred</i> is an examination on complacency and how easy it is to accept the status quo.
                                 <br /><br />
-                                Kindred is about Dana, a black woman living in 1970s California, who finds herself in a precarious situation when she is unwillingly portaled back to her past. Why is this happening to her? How is she linked to the past? 
+                                <i>Kindred</i> is about Dana, a black woman living in 1970s California, who finds herself in a precarious situation when she is unwillingly portaled back to her past. Why is this happening to her? How is she linked to the past? 
                                 <br /><br />
                                 Time-travel is used as a vehicle to examine the themes and ideas surrounding the novel's setting. This book isn’t so much science fiction as it is a blend of different genres. If you're expecting hard science-fiction, you won't find it here. Instead, you will find a gripping, immersive novel that will tug at your emotions and challenge your preconceptions.
                                 <br /><br />
-                                Butler's prose is straightforward and cuts to the point. Kindred is a very quick and easy read and recommended for fans of history with a touch of sci-fi.
+                                Butler's prose is straightforward and cuts to the point. <i>Kindred</i> is a very quick and easy read and recommended for fans of history with a touch of sci-fi.
                             </div>
                             <div className="book-info">
                                 <img src={`${kd.cover_img_url}`} alt="kd" />
