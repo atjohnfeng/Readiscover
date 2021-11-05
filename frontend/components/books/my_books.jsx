@@ -5,10 +5,18 @@ import { Link } from 'react-router-dom';
 class MyBooks extends React.Component {
     constructor(props) {
         super(props)
+
+        this.state = {
+            filter: null
+        }
     }
 
     componentDidMount() {
         this.props.getBookshelf(this.props.currentUser)
+    }
+
+    renderBooks() {
+        
     }
 
     render() {
@@ -28,7 +36,7 @@ class MyBooks extends React.Component {
                             </ul>
                         </div>
                         <div className="my-books">
-
+                            {this.renderBooks()}
                         </div>
                     </div>
                 </div>
