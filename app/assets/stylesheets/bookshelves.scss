@@ -5,6 +5,8 @@
     align-content: center;
     margin-top: 15px;
     padding-top: 5px;
+    font-size: 15px;
+
 
     .default-shelving {
         // padding: 5px;
@@ -23,10 +25,11 @@
         }
 
         span {
+            box-shadow: inset;
+            min-width: 160px;
             // height: 30px;
             // margin-right: 5px;
             padding: 5px;
-            padding-top: 6px;
             padding-bottom: 4px;
             // border: 1px solid gray;
             border-top-left-radius: 4px;
@@ -65,10 +68,10 @@
     .revealed-menu {
         display: block;
         position: absolute;
-        margin-top: 29px;
+        margin-top: 28px;
         background-color: #fffefb;
         border: 1px solid gray;
-        border-radius: 4px;
+        // border-radius: 4px;
         width: 147px;
         -webkit-touch-callout: none; /* iOS Safari */
         -webkit-user-select: none; /* Safari */

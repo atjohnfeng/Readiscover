@@ -46,14 +46,18 @@ class ShelvingForm extends React.Component {
                 shelf: shelving.shelf,
                 dropdown: false
             })
-            this.handleDropdown();
+            if (this.state.dropdown) {
+                this.handleDropdown();
+            }
         } else {
             this.props.reshelveBook(shelving, this.state.shelvingId);
             this.setState({
                 shelf: shelving.shelf,
                 dropdown: false
             })
-            this.handleDropdown();
+            if (this.state.dropdown) {
+                this.handleDropdown();
+            }        
         }
     }
 
@@ -82,9 +86,9 @@ class ShelvingForm extends React.Component {
             )
         } else {
             return (
-                <span className="default-shelving" onClick={() => this.handleDropdown()}>
+                <span className="default-shelving">
                     <span onClick={() => this.updateShelving(this.state.shelf)}>{this.state.shelf}</span>
-                    <button className="fa fa-caret-down"></button>
+                    <button className="fa fa-caret-down" onClick={() => this.handleDropdown()}></button>
                 </span>
             )
         }
