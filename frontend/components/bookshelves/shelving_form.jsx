@@ -87,11 +87,19 @@ class ShelvingForm extends React.Component {
         } else {
             return (
                 <span className="default-shelving">
-                    <span onClick={() => this.updateShelving(this.state.shelf)}>{this.state.shelf}</span>
-                    <button className="fa fa-caret-down" onClick={() => this.handleDropdown()}></button>
+                    <span id="shelved-span" onClick={() => this.deleteShelving()}>{this.state.shelf}</span>
+                    <button id="shelved-span" className="fa fa-caret-down" onClick={() => this.handleDropdown()}></button>
                 </span>
             )
         }
+    }
+
+    deleteShelving() {
+        this.props.deleteShelving(this.state.currentUser, this.state.shelvingId);
+        this.setState({
+            shelf: null,
+            shelvingId: null
+        })
     }
 
     componentWillUnmount() {

@@ -213,10 +213,10 @@ class ReviewForm extends React.Component {
                         </div>
                         {this.renderErrors()}
                         <div>
-                            <button className="remove-button" disabled>
+                            {/* <button className="remove-button" disabled>
                                 Remove from my books (Under construction)
                             </button>
-                            <div></div>
+                            <div></div> */}
                             {this.renderDelete()}
                         </div>
                 </div>
