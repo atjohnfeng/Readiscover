@@ -1,7 +1,7 @@
 class Api::BookshelvesController < ApplicationController
 
     def show
-        @shelving = Bookshelf.find(params[:id])
+        @shelving = Bookshelf.find_by(book_id: params[:book_id])
         render :show
     end
 

@@ -10,7 +10,7 @@ const bookshelvesReducer = (state = {}, action) => {
 
     switch (action.type) {
         case RECEIVE_SHELVING:
-            return Object.assign({}, state, action.shelving);
+            return Object.assign({}, action.shelving);
         case RECEIVE_BOOKSHELF:
             return action.bookshelf;
         case DELETE_SHELVING:

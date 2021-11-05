@@ -5,7 +5,8 @@ import { withRouter } from 'react-router';
 
 const mapStateToProps = (state, ownProps) => ({
     currentUser: state.session.id,
-    bookId: ownProps.bookId
+    bookId: ownProps.bookId,
+    bookshelf: state.entities.bookshelf,
 });
 
 const mapDispatchToProps = dispatch => ({
