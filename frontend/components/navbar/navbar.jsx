@@ -71,19 +71,24 @@ class Navbar extends React.Component {
                     <li className="welcome-greeting">
                         {this.props.currentUser.username}
                     </li>
+                    <Link to="/home" className="dropdown-link">
+                        <li className="li-dropdown-link">
+                            Home
+                        </li>
+                    </Link>
                     <Link to="/books" className="dropdown-link">
                         <li className="li-dropdown-link">
-                                All Books
+                            All Books
                         </li>
                     </Link>
                     <Link to="/mybooks" className="dropdown-link">
                         <li className="li-dropdown-link">
-                                My Books
+                            My Books
                         </li>
                     </Link>
                     <Link to="/theend" className="dropdown-link">
                         <li className="li-dropdown-link">
-                                Take a Trip to The End of the Sidewalk
+                            Take a Trip to The End of the Sidewalk
                         </li>
                     </Link>
                     <div className="dropdown-link">
@@ -98,7 +103,7 @@ class Navbar extends React.Component {
                 <ul className="dropdown-content">
                     <Link to="/login" className="dropdown-link">
                         <li className="li-dropdown-link">
-                                Log in
+                            Log in
                         </li>
                     </Link>
                     <Link to="/signup" className="dropdown-link">
@@ -134,7 +139,7 @@ class Navbar extends React.Component {
                     </Link>
                     <Link to='/books' className="nav-link">
                         <li className="nav-bar-link">
-                                allBooks
+                            allBooks
                         </li>
                     </Link>
                     <Link to='/mybooks' className="nav-link">

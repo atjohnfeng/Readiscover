@@ -147,8 +147,8 @@ class Home extends React.Component {
                                 {this.renderReviews()}
                             </div>
                             <div className="home-right">
-                                <div className="articles">
                                     <h1>Articles &amp; Resources</h1><br />
+                                <div className="articles">
                                     <article>
                                         <Link to="/articleone"
                                             className="article-link">

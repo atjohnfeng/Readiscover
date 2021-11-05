@@ -16,7 +16,7 @@ class MyBooks extends React.Component {
     }
 
     renderBooks() {
-        
+
     }
 
     render() {
@@ -24,18 +24,19 @@ class MyBooks extends React.Component {
             <div>
                 <div className="header-div"><NavbarContainer /></div>
                 <div className="my-books-container">
-                    <Link to='/mybooks' className="my-books-link">My Books</Link>
-                    <div>
+                        <Link to='/mybooks' className="my-books-link">My Books</Link>
+                    <div className="my-books-div">
                         <div className="my-books-filters">
                             <ul>
                                 <h2>Bookshelves</h2>
-                                <li>All</li>
+                                <li onClick={() => this.setFilter('All')}>All</li>
                                 <li>Read</li>
                                 <li>Currently Reading</li>
                                 <li>Want to Read</li>
                             </ul>
                         </div>
                         <div className="my-books">
+                            wahwah
                             {this.renderBooks()}
                         </div>
                     </div>

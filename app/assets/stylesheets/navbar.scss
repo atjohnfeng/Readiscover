@@ -116,20 +116,17 @@
     border-bottom: 1px solid gainsboro;
 }
 
-// @media only screen and (max-width: 1200px) {
+@media only screen and (max-width: 1200px) {
 
-//     .nav-bar {
-//         width: 100vmax;
-
-//         .search-bar {
-//             display: none;
-//         }
+    .nav-bar {
+        width: 100%;
     
-//         .nav-bar-list {
-//             width: 100%;
-//         }
-//         .nav-bar-logo {
-//             display: none;
-//         }
-//     }
-// }
+        .nav-link {
+            display: none;
+        }
+
+        .nav-bar-logo {
+            display: none;
+        }
+    }
+}
