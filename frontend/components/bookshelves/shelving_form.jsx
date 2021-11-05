@@ -44,7 +44,9 @@ class ShelvingForm extends React.Component {
         if (!this.state.shelvingId) {
             this.props.createShelving(shelving)
                 .then(shelving => {
-                console.log(shelving)
+                this.setState({
+                    shelvingId: shelving.shelving.id
+                })
             });
             this.setState({
                 shelf: shelving.shelf,
