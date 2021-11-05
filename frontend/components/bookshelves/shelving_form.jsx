@@ -87,14 +87,18 @@ class ShelvingForm extends React.Component {
             return (
                 <span className="default-shelving" >
                     <span onClick={() => this.updateShelving('Want to Read')}>Want to Read</span>
-                    <button className="fa fa-caret-down" onClick={() => this.handleDropdown()}></button>
+                    <button onClick={() => this.handleDropdown()}>
+                        <i class="fa fa-caret-down" aria-hidden="true"></i>
+                    </button>
                 </span>
             )
         } else {
             return (
                 <span className="default-shelving">
                     <span id="shelved-span" onClick={() => this.deleteShelving()}>{this.state.shelf}</span>
-                    <button id="shelved-span" className="fa fa-caret-down" onClick={() => this.handleDropdown()}></button>
+                    <button id="shelved-span" onClick={() => this.handleDropdown()}>
+                        <i class="fa fa-caret-down" aria-hidden="true"></i>
+                    </button>
                 </span>
             )
         }
