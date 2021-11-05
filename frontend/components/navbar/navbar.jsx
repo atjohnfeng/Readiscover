@@ -6,7 +6,7 @@ class Navbar extends React.Component {
         super(props);
 
         this.state = {
-            searchString: ''
+            searchString: '',
         }
 
         this.resetNavbar = this.resetNavbar.bind(this);
@@ -124,7 +124,7 @@ class Navbar extends React.Component {
     render() {
         if ($(window).width() <= 1200) {
             const footer = document.getElementById('footer');
-            footer.innerHTML = '<a href="/">hello</a>'
+            // footer.innerHTML = '<a href="/">hello</a>'
         }
 
         return (

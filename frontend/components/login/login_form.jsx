@@ -82,7 +82,7 @@ class LoginForm extends React.Component {
                             </label>
                             <input type="text"
                                 value={this.state.username}
-                                placeholder="Username"
+                                placeholder="Username (case sensitive)"
                                 onChange={this.update("username")}
                                 required />
                             <label>
