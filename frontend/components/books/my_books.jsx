@@ -7,19 +7,61 @@ class MyBooks extends React.Component {
         super(props)
 
         this.state = {
-            filter: null
+            filter: null,
+            all: null,
+            read: null,
+            tbr: null,
+            cr: null
         }
     }
 
     componentDidMount() {
-        this.props.getBookshelf(this.props.currentUser)
+        this.props.getBookshelf(this.props.currentUser).then(payload => {
+            let shelved = Object.values(payload.bookshelf);
+            let read;
+            let tbr;
+            let cr;
+
+            if (!!shelved) {
+                read = shelved.filter(book => {
+                    return book.shelf === 'Read';
+                });
+                tbr = shelved.filter(book => {
+                    return book.shelf === 'Want to Read';
+                });
+                cr = shelved.filter(book => {
+                    return book.shelf === 'Currently Reading';
+                });
+            }
+            
+            this.setState({
+                all: shelved,
+                read: read,
+                tbr: tbr,
+                cr: cr
+            })
+            
+        })
     }
 
     renderBooks() {
         const shelved = this.props.bookshelf;
         let filteredBooks;
+        // switch (this.state.filter) {
+        //     case 'All':
+        //         filteredBooks = this.state.all;
+        //     case 'Want to Read':
+        //         filteredBooks = this.state.tbr;
+        //     case 'Currently Reading':
+        //         filteredBooks = this.state.cr;
+        //     case 'Read':
+        //         filteredBooks = this.state.read;
+        //     default:
+        //         filteredBooks = this.state.all;
+        //         console.log(this.state.filter)
+        // }
         if (!this.state.filter) {
-            filteredBooks = shelved
+            filteredBooks = shelved;
         } else {
             filteredBooks = shelved.filter(book => {
                 return book.shelf === this.state.filter;
@@ -69,10 +111,10 @@ class MyBooks extends React.Component {
                         <div className="my-books-filters">
                             <ul>
                                 <h2>Bookshelves</h2>
-                                <li onClick={() => this.setFilter('All')}>All</li>
-                                <li onClick={() => this.setFilter('Read')}>Read</li>
-                                <li onClick={() => this.setFilter('Currently Reading')}>Currently Reading</li>
-                                <li onClick={() => this.setFilter('Want to Read')}>Want to Read</li>
+                                <li onClick={() => this.setFilter('All')}>All ({this.state.all ? this.state.all.length : 0})</li>
+                                <li onClick={() => this.setFilter('Read')}>Read ({this.state.read ? this.state.read.length : 0})</li>
+                                <li onClick={() => this.setFilter('Currently Reading')}>Currently Reading ({this.state.cr ? this.state.cr.length : 0})</li>
+                                <li onClick={() => this.setFilter('Want to Read')}>Want to Read ({this.state.tbr ? this.state.tbr.length : 0})</li>
                             </ul>
                         </div>
                         <div className="my-books">
