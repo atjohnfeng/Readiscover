@@ -26,10 +26,13 @@ Rediscover the joy of reading. `Readiscover` is a Goodreads clone, a social medi
 
 * ### Books
     * Users may browse a selection of books and see their information.
+    ![Browse Books](app/assets/images/browse-gif.gif)
 
 * ### Reviews
     * Users may view reviews left on books by other users, or rate and leave a review of their own.
+    ![Add Review](app/assets/images/review-gif.gif)
     * Users may also update or delete their ratings and reviews.
+    ![Delete Review](app/assets/images/delete-review-gif.gif)
 
 * ### Bookshelves
     * Users may add to their bookshelves by marking them as 'Read', 'Want to Read', or 'Currently Reading'
