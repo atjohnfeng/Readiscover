@@ -33,6 +33,7 @@ Rediscover the joy of reading. `Readiscover` is a Goodreads clone, a social medi
 
 * ### Search
     * Users may search for a book by title or author name.
+    ![Search](app/assets/images/search_gif.gif)
 
 * ### Mobile and Tablet Friendly
     * Readiscover is dynamically-scaling and built for devices of all sizes.
