@@ -43,6 +43,14 @@ Rediscover the joy of reading. `Readiscover` is a Goodreads clone, a social medi
 * ### Search
     * Users may search for a book by title or author name.
     ![Search](app/assets/images/search-gif.gif)
+    ```const searchString = this.state.searchString;
+        if (searchString.length >= 1) {
+            filteredBooks = this.props.books.filter(book => {
+                return book.title.toLowerCase().includes(searchString.toLowerCase()) ||
+                    book.author.toLowerCase().includes(searchString.toLowerCase());})
+                }
+    ```
+    The user's input will update the state of the navbar component, and searchString allows the user to filter books by book title or author name, utilizing toLowerCase() to avoid case-sensitivity.
 
 * ### Mobile and Tablet Friendly
     * Readiscover is dynamically-scaling and built for devices of all sizes.
@@ -52,4 +60,5 @@ Rediscover the joy of reading. `Readiscover` is a Goodreads clone, a social medi
 
 * Review Statistics
 * Review Comments
+* Review Likes
 * Splash Page
