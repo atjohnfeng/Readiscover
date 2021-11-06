@@ -40,7 +40,8 @@ Rediscover the joy of reading. `Readiscover` is a Goodreads clone, a social medi
                 "fa fa-star"
             )
         }
-    }```  
+    }
+    ```  
     By utilizing a renderStar function, stars will show up as orange based on the user's rating, and checking each star for its value. Stars are also positioned via flex-reverse to highlight stars upon hovering as CSS only allows you to choose child elements, but not parent elements.  
     * Users may also update or delete their ratings and reviews.  
     ![Delete Review](app/assets/images/delete-review-gif.gif)  
