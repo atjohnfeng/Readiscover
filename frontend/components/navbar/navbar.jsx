@@ -41,7 +41,7 @@ class Navbar extends React.Component {
         this.setState({
             searchString: ''
         })
-        console.log(this.state);
+        // console.log(this.state);
     }
 
     renderSearch() {
@@ -137,7 +137,7 @@ class Navbar extends React.Component {
     render() {
         if (this.state.WindowSize <= 1200) {
             const footer = document.getElementById('footer');
-            footer.innerHTML = '<a href="/">hello</a>'
+            footer.innerHTML = `<img class='footer' src=${window.logoURL} alt ='readiscover-logo-image' />`
         } else {
             footer.innerHTML = '';
         }

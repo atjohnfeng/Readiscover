@@ -73,6 +73,13 @@
         flex-direction: column;
     }
 
+    .my-books-container {
+
+        .my-books {
+            max-height: 50vh;
+        }
+    }
+
     .my-books-filters {
         width: 60vw;
     }
