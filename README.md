@@ -18,7 +18,8 @@ Rediscover the joy of reading. `Readiscover` is a Goodreads clone, a social medi
 ## Features
 
 * ### User auth 
-    * Users may register an account and login.
+    * Users may register an account and login. 
+    
     ![Sign Up](app/assets/images/signup-gif.gif)
 
     * Users may also login using a demo user account.
@@ -50,7 +51,7 @@ Rediscover the joy of reading. `Readiscover` is a Goodreads clone, a social medi
                     book.author.toLowerCase().includes(searchString.toLowerCase());})
                 }
     ```
-    The user's input will update the state of the navbar component, and searchString allows the user to filter books by book title or author name, utilizing toLowerCase() to avoid case-sensitivity.
+    The user's input will update the state of the navbar component, and the searchString in the state allows the user to filter books by book title or author name, utilizing toLowerCase() to avoid case-sensitivity.
 
 * ### Mobile and Tablet Friendly
     * Readiscover is dynamically-scaling and built for devices of all sizes.
