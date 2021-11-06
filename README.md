@@ -35,8 +35,10 @@ Rediscover the joy of reading. `Readiscover` is a Goodreads clone, a social medi
     ![Delete Review](app/assets/images/delete-review-gif.gif)
 
 * ### Bookshelves
-    * Users may add to their bookshelves by marking them as 'Read', 'Want to Read', or 'Currently Reading'
+    * Users may add to their bookshelves by marking them as 'Read', 'Want to Read', or 'Currently Reading'.
+    ![Add Shelving](app/assets/images/addshelving.gif)
     * Users may also remove a book from their shelves.
+    ![Remove Shelving](app/assets/images/removeshelving.gif)
 
 * ### Search
     * Users may search for a book by title or author name.
