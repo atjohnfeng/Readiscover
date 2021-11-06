@@ -18,7 +18,11 @@ Rediscover the joy of reading. `Readiscover` is a Goodreads clone, a social medi
 ## Features
 
 * ### User auth 
-    * Users may register an account and login
+    * Users may register an account and login.
+    ![Sign Up](app/assets/images/signup-gif.gif)
+
+    * Users may also login using a demo user account.
+    ![Demo User](app/assets/images/demouser-gif.gif)
 
 * ### Books
     * Users may browse a selection of books and see their information.
