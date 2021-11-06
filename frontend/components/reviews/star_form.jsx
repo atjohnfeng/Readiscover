@@ -68,7 +68,6 @@ class StarForm extends React.Component {
                 }
             );
         } else if (this.state.formType === 'edit') {
-            // console.log(this.state.reviewId)
             this.props.editReview(review, this.state.reviewId);
             this.setState({ rating: review.rating });
         }
