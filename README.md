@@ -30,7 +30,8 @@ Rediscover the joy of reading. `Readiscover` is a Goodreads clone, a social medi
 * ### Reviews
     * Users may view reviews left on books by other users, or rate and leave a review of their own.  
     ![Add Review](app/assets/images/review-gif.gif)  
-    ```renderStar(value) {
+    ```
+    renderStar(value) {
         if (value <= this.state.rating && this.state.rating !== '') {
             return (
                 "fa fa-star checked"
