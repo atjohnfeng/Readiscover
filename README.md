@@ -1,4 +1,4 @@
-### Readiscover Readme
+# Readiscover Readme
 
 You can find Readiscover live [here](https://readiscover.herokuapp.com/)!
 
@@ -8,9 +8,37 @@ Rediscover the joy of reading. `Readiscover` is a Goodreads clone, a social medi
 
 ## Technologies
 
-Ruby on Rails
-React/Redux
-PostgreSQL
-JavaScript
-AJAX / JBuilder
-HTML5 / SCSS
+* Ruby on Rails
+* React/Redux
+* PostgreSQL
+* JavaScript
+* AJAX / JBuilder
+* HTML5 / SCSS
+
+## Features
+
+* ### User auth 
+    * Users may register an account and login
+
+* ### Books
+    * Users may browse a selection of books and see their information.
+
+* ### Reviews
+    * Users may view reviews left on books by other users, or rate and leave a review of their own.
+    * Users may also update or delete their ratings and reviews.
+
+* ### Bookshelves
+    * Users may add to their bookshelves by marking them as 'Read', 'Want to Read', or 'Currently Reading'
+    * Users may also remove a book from their shelves.
+
+* ### Search
+    * Users may search for a book by title or author name.
+
+* ### Mobile and Tablet Friendly
+    * Readiscover is dynamically-scaling and built for devices of all sizes.
+
+## Upcoming Features
+
+* Review Statistics
+* Review Comments
+* Splash Page
