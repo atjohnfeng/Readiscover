@@ -36,6 +36,7 @@ Rediscover the joy of reading. `Readiscover` is a Goodreads clone, a social medi
 
 * ### Mobile and Tablet Friendly
     * Readiscover is dynamically-scaling and built for devices of all sizes.
+    ![Dynamic Scaling](app/assets/images/dynamic_gif.gif)
 
 ## Upcoming Features
 
