@@ -135,7 +135,7 @@ class Navbar extends React.Component {
     }
 
     render() {
-        if (this.state.WindowSize <= 1200) {
+        if (this.state.WindowSize <= 950) {
             const footer = document.getElementById('footer');
             footer.innerHTML = `<img class='footer' src=${window.logoURL} alt ='readiscover-logo-image' />`
         } else {
